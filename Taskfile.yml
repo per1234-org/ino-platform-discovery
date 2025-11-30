@@ -25,6 +25,7 @@ tasks:
       - task: markdown:check-links
       - task: markdown:lint
       - task: markdown:toc
+      - task: poetry:validate
 
   fix:
     desc: Make automated corrections to the project's files
@@ -34,6 +35,7 @@ tasks:
       - task: go:fix
       - task: go:format
       - task: markdown:fix
+      - task: poetry:sync
 
   docs:generate:
     desc: Create all generated documentation content
@@ -300,6 +302,27 @@ tasks:
       - |
         poetry install \
           {{if .POETRY_GROUPS}} --only {{.POETRY_GROUPS}} {{end}}
+
+  # Source: https://github.com/arduino/tooling-project-assets/blob/main/workflow-templates/assets/check-poetry-task/Taskfile.yml
+  poetry:sync:
+    desc: Sync Poetry lockfile
+    deps:
+      - task: poetry:install
+    cmds:
+      - |
+        poetry lock \
+          --no-cache
+
+  # Source: https://github.com/arduino/tooling-project-assets/blob/main/workflow-templates/assets/check-poetry-task/Taskfile.yml
+  poetry:validate:
+    desc: Validate Poetry configuration
+    deps:
+      - task: poetry:install
+    cmds:
+      - |
+        poetry check \
+          --lock \
+          --strict
 
   # Print a normalized version of the path to stdout.
   # Environment variable parameters:
