@@ -16,6 +16,7 @@ tasks:
   fix:
     desc: Make automated corrections to the project's files
     deps:
+      - task: general:format-prettier
       - task: markdown:fix
 
   docs:generate:
@@ -23,6 +24,20 @@ tasks:
     run: when_changed
     # This is an "umbrella" task used to call any documentation generation processes the project has.
     # It can be left empty if there are none.
+
+  # Source: https://github.com/arduino/tooling-project-assets/blob/main/workflow-templates/assets/check-prettier-formatting-task/Taskfile.yml
+  general:format-prettier:
+    desc: Format all supported files with Prettier
+    deps:
+      - task: npm:install-deps
+        vars:
+          PROJECT_PATH: .
+    cmds:
+      - |
+        npx \
+          prettier \
+            --write \
+            .
 
   # Source: https://github.com/arduino/tooling-project-assets/blob/main/workflow-templates/assets/check-markdown-task/Taskfile.yml
   markdown:check-links:
