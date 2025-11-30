@@ -12,3 +12,23 @@ The following development tools must be available in your local environment:
 - [**Node.js** / **npm**](https://nodejs.org/en/download/) - Node.js dependencies management tool
   - The **Node.js** version in use is defined by the `engines.node` key of [`package.json`](../package.json).
   - [**nvm**](https://github.com/nvm-sh/nvm#installing-and-updating) is recommended if you want to manage multiple installations of **Node.js** on your system.
+
+## Running Checks
+
+Checks and tests are set up to ensure the project content is functional and compliant with the established standards.
+
+You can run the checks by running this command from the root folder of the project:
+
+```text
+go tool task check
+```
+
+## Automatic Corrections
+
+Tools are provided to automatically bring the project into compliance with some of the required checks.
+
+You can make these automatic fixes by running this command from the root folder of the project:
+
+```text
+go tool task fix
+```
