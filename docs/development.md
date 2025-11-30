@@ -12,6 +12,8 @@ The following development tools must be available in your local environment:
 - [**Node.js** / **npm**](https://nodejs.org/en/download/) - Node.js dependencies management tool
   - The **Node.js** version in use is defined by the `engines.node` key of [`package.json`](../package.json).
   - [**nvm**](https://github.com/nvm-sh/nvm#installing-and-updating) is recommended if you want to manage multiple installations of **Node.js** on your system.
+- [**Python**](https://wiki.python.org/moin/BeginnersGuide/Download)
+  - The **Python** version in use is defined by the `tool.poetry.dependencies.python` key of [`pyproject.toml`](../pyproject.toml).
 
 ## Running Checks
 

@@ -190,3 +190,101 @@ tasks:
     dir: "{{default .DEFAULT_NPM_PROJECT_PATH .PROJECT_PATH}}"
     cmds:
       - npm install
+
+  # Source: https://github.com/arduino/tooling-project-assets/blob/main/workflow-templates/assets/poetry-task/Taskfile.yml
+  poetry:install:
+    desc: Install Poetry
+    run: when_changed
+    cmds:
+      - |
+        if
+          ! which go \
+          &>/dev/null
+        then
+          echo "Go not found or not in PATH."
+          echo "Please install: https://go.dev/doc/install"
+          exit 1
+        fi
+      - |
+        if
+          ! which python \
+          &>/dev/null
+        then
+          python_constraint="$( \
+            go tool \
+              yq \
+                --input-format toml \
+                --output-format yaml \
+                '.tool.poetry.dependencies.python' \
+            <pyproject.toml
+          )"
+
+          echo "Python not found or not in PATH."
+          echo "Please install a version of Python satisfying the constraint ${python_constraint}:"
+          echo "https://wiki.python.org/moin/BeginnersGuide/Download"
+          exit 1
+        fi
+      - |
+        if
+          ! which pipx \
+          &>/dev/null
+        then
+          echo "pipx not found or not in PATH."
+          echo "Please install: https://pipx.pypa.io/stable/installation/#installing-pipx"
+          exit 1
+        fi
+      - |
+        export PIPX_DEFAULT_PYTHON="$( \
+          go tool \
+            task utility:normalize-path \
+              RAW_PATH="$(which python)" \
+        )"
+
+        poetry_constraint="$( \
+          go tool \
+            yq \
+              --input-format toml \
+              --output-format yaml \
+              '.tool.poetry.group.pipx.dependencies.poetry' \
+          <pyproject.toml
+        )"
+
+        pipx install \
+          --force \
+          "poetry==$poetry_constraint"
+
+  # Source: https://github.com/arduino/tooling-project-assets/blob/main/workflow-templates/assets/poetry-task/Taskfile.yml
+  poetry:install-deps:
+    desc: |
+      Install dependencies managed by Poetry.
+      Environment variable parameters:
+      - POETRY_GROUPS: Poetry dependency groups to install (default: install all dependencies).
+    run: when_changed
+    deps:
+      - task: poetry:install
+    cmds:
+      - |
+        poetry install \
+          {{if .POETRY_GROUPS}} --only {{.POETRY_GROUPS}} {{end}}
+
+  # Print a normalized version of the path to stdout.
+  # Environment variable parameters:
+  # - RAW_PATH: the path to be normalized.
+  # Source: https://github.com/arduino/tooling-project-assets/blob/main/workflow-templates/assets/windows-task/Taskfile.yml
+  utility:normalize-path:
+    cmds:
+      - |
+        if
+          [[ "{{.OS}}" == "Windows_NT" ]] \
+          && \
+          which cygpath \
+          &>/dev/null
+        then
+          # Even though the shell handles POSIX format absolute paths as expected, external applications do not.
+          # So paths passed to such applications must first be converted to Windows format.
+          cygpath \
+            -w \
+            "{{.RAW_PATH}}"
+        else
+          echo "{{.RAW_PATH}}"
+        fi
