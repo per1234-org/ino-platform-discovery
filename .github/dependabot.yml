@@ -26,3 +26,14 @@ updates:
     schedule:
       cronjob: 0 14 * * *
       interval: cron
+
+  - package-ecosystem: pip
+    directory: /
+    assignees:
+      - per1234
+    labels:
+      - "topic: infrastructure"
+    open-pull-requests-limit: 100
+    schedule:
+      cronjob: 0 15 * * *
+      interval: cron
