@@ -1,0 +1,9 @@
+# See: https://taskfile.dev/#/usage
+version: "3"
+
+tasks:
+  check:
+    desc: Check for problems with the project
+
+  fix:
+    desc: Make automated corrections to the project's files
