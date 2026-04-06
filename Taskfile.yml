@@ -15,8 +15,15 @@ vars:
   # Source: https://github.com/arduino/tooling-project-assets/blob/main/workflow-templates/assets/npm-task/Taskfile.yml
   # Path of the project's primary npm-managed project:
   DEFAULT_NPM_PROJECT_PATH: .
+  # `-ldflags` flag to use for `go build` command
+  LDFLAGS:
 
 tasks:
+  build:
+    desc: Build the project
+    deps:
+      - task: go:build
+
   check:
     desc: Check for problems with the project
     deps:
@@ -145,6 +152,16 @@ tasks:
   general:prepare-deps:
     desc: Prepare project dependencies for license check
     # No preparation is needed for Go module-based projects.
+
+  # Source: https://github.com/arduino/tooling-project-assets/blob/main/workflow-templates/assets/go-task/Taskfile.yml
+  go:build:
+    desc: Build the Go code
+    dir: "{{.DEFAULT_GO_MODULE_PATH}}"
+    cmds:
+      - |
+        go build \
+          -v \
+          {{.LDFLAGS}}
 
   # Source: https://github.com/arduino/tooling-project-assets/blob/main/workflow-templates/assets/check-go-task/Taskfile.yml
   go:fix:

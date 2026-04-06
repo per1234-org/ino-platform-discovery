@@ -1,10 +1,18 @@
 module github.com/per1234-org/ino-platform-discovery
 
-go 1.25.0
+go 1.26.1
 
 tool (
 	github.com/go-task/task/v3/cmd/task
 	github.com/mikefarah/yq/v4
+)
+
+require (
+	github.com/arduino/go-paths-helper v1.14.0
+	github.com/google/go-github/v79 v79.0.0
+	github.com/sirupsen/logrus v1.9.3
+	github.com/spf13/cobra v1.10.1
+	github.com/stretchr/testify v1.10.0
 )
 
 require (
@@ -38,6 +46,7 @@ require (
 	github.com/goccy/go-json v0.10.5 // indirect
 	github.com/goccy/go-yaml v1.18.0 // indirect
 	github.com/golang/groupcache v0.0.0-20241129210726-2c02b8208cf8 // indirect
+	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 // indirect
@@ -57,10 +66,8 @@ require (
 	github.com/sajari/fuzzy v1.0.0 // indirect
 	github.com/sergi/go-diff v1.3.2-0.20230802210424-5b0b94c5c0d3 // indirect
 	github.com/skeema/knownhosts v1.3.1 // indirect
-	github.com/spf13/cobra v1.10.1 // indirect
 	github.com/spf13/pflag v1.0.10 // indirect
 	github.com/stretchr/objx v0.5.2 // indirect
-	github.com/stretchr/testify v1.10.0 // indirect
 	github.com/xanzy/ssh-agent v0.3.3 // indirect
 	github.com/yuin/gopher-lua v1.1.1 // indirect
 	github.com/zeebo/xxh3 v1.0.2 // indirect
