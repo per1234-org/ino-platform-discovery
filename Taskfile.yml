@@ -17,6 +17,9 @@ vars:
   DEFAULT_NPM_PROJECT_PATH: .
   # `-ldflags` flag to use for `go build` command
   LDFLAGS:
+  # Source: https://github.com/arduino/tooling-project-assets/blob/main/workflow-templates/assets/test-go-task/Taskfile.yml
+  # `-ldflags` flag to use for `go test` command
+  TEST_LDFLAGS:
 
 tasks:
   build:
@@ -203,6 +206,25 @@ tasks:
           exit 1
         fi
       - golangci-lint run
+
+  # Source: https://github.com/arduino/tooling-project-assets/blob/main/workflow-templates/assets/test-go-task/Taskfile.yml
+  go:test:
+    desc: |
+      Run unit tests.
+      Environment variable parameters:
+      - GO_MODULE_PATH: Path of the Go module root (default: {{.DEFAULT_GO_MODULE_PATH}}).
+      - GO_PACKAGES: List of Go packages to test (default: all packages of the module).
+    dir: "{{default .DEFAULT_GO_MODULE_PATH .GO_MODULE_PATH}}"
+    cmds:
+      - |
+        go test \
+          -v \
+          -short \
+          -run '{{default ".*" .GO_TEST_REGEX}}' \
+          {{default "-timeout 10m -coverpkg=./... -covermode=atomic" .GO_TEST_FLAGS}} \
+          -coverprofile=coverage_unit.txt \
+          {{.TEST_LDFLAGS}} \
+          {{default .DEFAULT_GO_PACKAGES .GO_PACKAGES}}
 
   # Source: https://github.com/arduino/tooling-project-assets/blob/main/workflow-templates/assets/check-markdown-task/Taskfile.yml
   markdown:check-links:
