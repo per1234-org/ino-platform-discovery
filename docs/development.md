@@ -25,6 +25,18 @@ You can run the checks by running this command from the root folder of the proje
 go tool task check
 ```
 
+### Dependency License Metadata
+
+Metadata about the license types of all dependencies is cached in the repository. To update this cache, run the following command from the repository root folder:
+
+```text
+go tool task general:cache-dep-licenses
+```
+
+The necessary **Licensed** tool can be installed by following [these instructions](https://github.com/licensee/licensed#installation).
+
+An updated cache is also generated whenever the cache is found to be outdated by the "**Check Go Dependencies**" CI workflow and made available for download via the `dep-licenses-cache` [workflow artifact](https://docs.github.com/actions/how-tos/manage-workflow-runs/download-workflow-artifacts).
+
 ## Automatic Corrections
 
 Tools are provided to automatically bring the project into compliance with some of the required checks.
