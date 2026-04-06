@@ -112,12 +112,6 @@ jobs:
         with:
           go-version-file: ${{ matrix.module.path }}/go.mod
 
-      - name: Install golangci-lint
-        uses: golangci/golangci-lint-action@v9
-        with:
-          install-only: true
-          version: v2.6.2
-
       - name: Check style
         env:
           GO_MODULE_PATH: ${{ matrix.module.path }}
