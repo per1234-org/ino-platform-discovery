@@ -1,5 +1,6 @@
 /node_modules/
 /*.tsv#
+/coverage_unit.txt
 /discoveries.tsv
 /ino-platform-discovery
 /ino-platform-discovery.exe

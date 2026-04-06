@@ -9,6 +9,8 @@
 [![Check ToC status](https://github.com/per1234-org/ino-platform-discovery/actions/workflows/check-toc-task.yml/badge.svg)](https://github.com/per1234-org/ino-platform-discovery/actions/workflows/check-toc-task.yml)
 [![Spell Check status](https://github.com/per1234-org/ino-platform-discovery/actions/workflows/spell-check-task.yml/badge.svg)](https://github.com/per1234-org/ino-platform-discovery/actions/workflows/spell-check-task.yml)
 [![Sync Labels status](https://github.com/per1234-org/ino-platform-discovery/actions/workflows/sync-labels-npm.yml/badge.svg)](https://github.com/per1234-org/ino-platform-discovery/actions/workflows/sync-labels-npm.yml)
+[![Test Go status](https://github.com/per1234-org/ino-platform-discovery/actions/workflows/test-go-task.yml/badge.svg)](https://github.com/per1234-org/ino-platform-discovery/actions/workflows/test-go-task.yml)
+[![Codecov](https://codecov.io/gh/per1234-org/ino-platform-discovery/branch/main/graph/badge.svg)](https://codecov.io/gh/per1234-org/ino-platform-discovery)
 
 A tool to discover Arduino [package indexes](https://arduino.github.io/arduino-cli/latest/package_index_json-specification/) and [boards platforms](https://arduino.github.io/arduino-cli/latest/platform-specification/).
 
