@@ -16,9 +16,83 @@ A tool to discover Arduino [package indexes](https://arduino.github.io/arduino-c
 
 <!-- toc -->
 
+- [Usage](#usage)
+  - [Prerequisites](#prerequisites)
+  - [A. Obtain inoplatforms Catalog File](#a-obtain-inoplatforms-catalog-file)
+  - [B. Set Up GitHub Access Token](#b-set-up-github-access-token)
+  - [C. Run the Tool](#c-run-the-tool)
+  - [D. Review Discoveries](#d-review-discoveries)
 - [Contributing](#contributing)
 
 <!-- tocstop -->
+
+## Usage
+
+### Prerequisites
+
+The following development tools must be available in your local environment:
+
+- [**Go**](https://go.dev/dl/) - programming language
+  - The **Go** version in use is defined in the `go` directive of [`go.mod`](go.mod).
+  - [**gvm**](https://github.com/moovweb/gvm#installing) is recommended if you want to manage multiple installations of **Go** on your system.
+
+### A. Obtain inoplatforms Catalog File
+
+[**inoplatforms**](https://github.com/per1234/inoplatforms) is a catalog of all known Arduino boards platforms. **ino-platform-discovery** is intended to be used to discover previously unknown platforms. For this reason, this tool compares the candidate platforms it finds against the content of the **inoplatforms** catalog, and excludes those platforms that are already cataloged.
+
+For this reason, it is necessary to download a copy of the **inoplatforms** catalog file for **ino-platform-discovery** to access.
+
+1. Click the following link to open the GitHub page for the catalog file in your web browser:<br />
+   https://github.com/per1234/inoplatforms/blob/main/ino-hardware-package-list.tsv
+1. Click the button that looks like an arrow pointing downwards into a tray ("Download raw file").
+
+The file will be downloaded to your hard drive.
+
+### B. Set Up GitHub Access Token
+
+The tool makes requests to the GitHub API. These requests must be authenticated with a [GitHub access token](https://docs.github.com/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens), for the following reasons:
+
+- GitHub [requires authentication of all requests to the `/search/code` endpoint](https://docs.github.com/rest/search/search#search-code:~:text=This%20endpoint%20requires%20you%20to%20authenticate), even though we are only interested in public code.
+- To avoid rate limiting while making requests to the `/repos/{owner}/{repo}` endpoint.
+
+1. Click the following link to open the token creation page in your web browser:<br />
+   https://github.com/settings/personal-access-tokens/new
+1. Type a meaningful name into the "**Token name**" field.
+1. Select an appropriate expiration from the "**Expiration**" menu.
+1. Select the **Repository access > Public repositories** radio button.
+1. Leave the "**Permissions**" section empty.
+1. Click the "**Generate token**" button.<br />
+   The "**New personal access token**" dialog will open.
+1. Click the "**Generate token**" button.<br />
+   The token will be generated, and its value displayed.
+1. Save the displayed token value to a safe place.
+
+### C. Run the Tool
+
+1. Open a terminal in the project folder.
+1. Type the following command in the terminal:
+   ```text
+   GITHUB_TOKEN="<token>" go run main.go --catalog "<catalog path>"
+   ```
+1. Replace the `<token>` placeholder with the value of the GitHub access token you created for use by the script.
+1. Replace the `<catalog path>` placeholder with the path of the [**inoplatforms** catalog file](#a-obtain-inoplatforms-catalog-file) on your hard drive.
+1. Press the <kbd>**Enter**</kbd> key.
+
+The tool run will take some time to complete.
+
+### D. Review Discoveries
+
+A successful run of **ino-platform-discovery** produces a spreadsheet of discoveries. The tool attempts to filter out repositories that do not represent novel Arduino boards platforms. However, the spreadsheet is still likely to contain items that are not of value to the user. For this reason, the discoveries must be manually reviewed.
+
+A discovery might fall into one of the following classifications:
+
+- **Original:** An independent creation.
+- **Hard Fork:** A derivative of an existing platform containing significant modifications.
+- **Staging Fork:** A repository with the sole purpose of staging work for contribution to the parent platform.
+  - **ⓘ** In the case where a proposal of significant modifications is not accepted by the maintainer of the parent, the creator of what was originally intended to be a staging fork may decide to maintain it as a **hard fork**.
+- **Trivial Fork:** A fork that contains modifications, but the modifications are insignificant. These may be created in the case where the owner performed some experimentation, but did not produce something relevant to platform users.
+- **Duplicate:** A copy of a platform. The copy may have been made at any point in the development history of the parent project, so these can have different content from the latest revision of the parent, but only in the absence of recent changes in the parent.
+  - **ⓘ** We would expect a copy to be marked as a fork by GitHub (in which case it would have been filtered out by **ino-platform-discovery**). However, copies may have be created in a manner that does not produce that linkage.
 
 ## Contributing
 

@@ -15,6 +15,14 @@ The following development tools must be available in your local environment:
 - [**Python**](https://wiki.python.org/moin/BeginnersGuide/Download)
   - The **Python** version in use is defined by the `tool.poetry.dependencies.python` key of [`pyproject.toml`](../pyproject.toml).
 
+## Building the Project
+
+You can build the project by running this command from the root folder of the project:
+
+```text
+go tool task build
+```
+
 ## Running Checks
 
 Checks and tests are set up to ensure the project content is functional and compliant with the established standards.
