@@ -16,6 +16,17 @@ updates:
       cronjob: 0 12 * * *
       interval: cron
 
+  - package-ecosystem: gomod
+    directory: /
+    assignees:
+      - per1234
+    labels:
+      - "topic: infrastructure"
+    open-pull-requests-limit: 100
+    schedule:
+      cronjob: 0 13 * * *
+      interval: cron
+
   - package-ecosystem: npm
     directory: /
     assignees:
