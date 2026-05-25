@@ -45,6 +45,7 @@ tasks:
       - task: general:format-prettier
       - task: go:fix
       - task: go:format
+      - task: go:generate
       - task: markdown:fix
       - task: poetry:sync
 
@@ -187,6 +188,13 @@ tasks:
     dir: "{{default .DEFAULT_GO_MODULE_PATH .GO_MODULE_PATH}}"
     cmds:
       - go fmt {{default .DEFAULT_GO_PACKAGES .GO_PACKAGES}}
+
+  go:generate:
+    desc: Generate Go code
+    cmds:
+      - go generate ./...
+      - task: go:format
+        silent: true
 
   # Source: https://github.com/arduino/tooling-project-assets/blob/main/workflow-templates/assets/check-go-task/Taskfile.yml
   go:lint:

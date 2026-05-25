@@ -5,6 +5,7 @@ import (
 
 	"github.com/per1234-org/ino-platform-discovery/internal/results/repo"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/result/content"
+	"github.com/per1234-org/ino-platform-discovery/internal/results/result/host"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -12,6 +13,7 @@ import (
 func TestTypeToCatalogEntry(t *testing.T) {
 	result := Type{
 		Content: content.Index,
+		Host:    host.GitHub,
 		Owner:   "foo-owner",
 		Path:    "foo-index-path/package_foo_index.json",
 		RepositoryData: repo.Type{

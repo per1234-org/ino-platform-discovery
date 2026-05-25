@@ -15,6 +15,7 @@ import (
 	"github.com/per1234-org/ino-platform-discovery/internal/results"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/result"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/result/content"
+	"github.com/per1234-org/ino-platform-discovery/internal/results/result/host"
 	"github.com/sirupsen/logrus"
 )
 
@@ -134,6 +135,7 @@ func indexes(clientContext context.Context, client *gogithub.Client) (results.Ty
 
 		result := result.Type{
 			Content:        content.Index,
+			Host:           host.GitHub,
 			Owner:          *searchResult.Repository.Owner.Login,
 			Path:           *searchResult.Path,
 			RepositoryName: *searchResult.Repository.Name,
@@ -166,6 +168,7 @@ func platforms(clientContext context.Context, client *gogithub.Client) (results.
 	for _, searchResult := range searchResults {
 		result := result.Type{
 			Content:        content.Platform,
+			Host:           host.GitHub,
 			Path:           *searchResult.Path,
 			Owner:          *searchResult.Repository.Owner.Login,
 			RepositoryName: *searchResult.Repository.Name,
