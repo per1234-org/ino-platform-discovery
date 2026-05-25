@@ -51,6 +51,43 @@ jobs:
 
           echo "result=$RESULT" >>$GITHUB_OUTPUT
 
+  check-generated:
+    name: check-generated (${{ matrix.module.path }})
+    needs: run-determination
+    if: needs.run-determination.outputs.result == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        module:
+          - path: ./
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Install Go
+        uses: actions/setup-go@v6
+        with:
+          go-version-file: ${{ matrix.module.path }}/go.mod
+
+      - name: Generate code
+        env:
+          GO_MODULE_PATH: ${{ matrix.module.path }}
+        run: |
+          go tool \
+            task go:generate
+
+      - name: Check for missing code generation
+        run: |
+          git diff \
+            --color \
+            --exit-code
+
   check-outdated:
     name: check-outdated (${{ matrix.module.path }})
     needs: run-determination

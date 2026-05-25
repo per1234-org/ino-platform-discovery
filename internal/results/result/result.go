@@ -9,12 +9,15 @@ import (
 	"github.com/per1234-org/ino-platform-discovery/internal/catalog/catalogentry"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/repo"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/result/content"
+	"github.com/per1234-org/ino-platform-discovery/internal/results/result/host"
 )
 
 // Type is the type for the result data.
 type Type struct {
 	// Content is the type of content discovered in the result.
 	Content content.Type
+	// Host is the Git host.
+	Host host.Type
 	// Owner is the username of the repository owner.
 	Owner string
 	// Path is the path of the discovered file in the repository.
