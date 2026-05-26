@@ -1,0 +1,6 @@
+- host: foohost
+  name: fooname
+  owner: fooowner
+  path: foopath
+- host: barhost
+  owner: barowner
