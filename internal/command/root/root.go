@@ -7,6 +7,7 @@ import (
 
 	"github.com/arduino/go-paths-helper"
 	"github.com/per1234-org/ino-platform-discovery/internal/catalog"
+	"github.com/per1234-org/ino-platform-discovery/internal/exclusions"
 	"github.com/per1234-org/ino-platform-discovery/internal/feedback"
 	"github.com/per1234-org/ino-platform-discovery/internal/request"
 	"github.com/per1234-org/ino-platform-discovery/internal/request/github"
@@ -31,6 +32,17 @@ func Run(command *cobra.Command, _ []string) {
 		os.Exit(1)
 	}
 
+	// Load the data from the exclusions file.
+	exclusionsArg, err := command.Flags().GetString("exclusions")
+	if err != nil {
+		panic(err)
+	}
+	exclusions, err := exclusions.Load(paths.New(exclusionsArg))
+	if err != nil {
+		feedback.Error(fmt.Errorf("while loading exclusions file %s: %s", exclusionsArg, err))
+		os.Exit(1)
+	}
+
 	githubContext, githubClient := github.NewClient(os.Getenv("GITHUB_TOKEN"))
 
 	// Search GitHub for repositories that appear to contain a platform or package index.
@@ -42,6 +54,9 @@ func Run(command *cobra.Command, _ []string) {
 
 	// Remove results already present in the catalog.
 	searchResults.Deduplicate(catalog)
+
+	// Remove excluded results.
+	searchResults.Exclude(exclusions)
 
 	// Obtain additional data for each of the results.
 	fmt.Println("Obtaining supplemental data for discoveries...")
@@ -92,6 +107,19 @@ func validateUserInput(command *cobra.Command) error {
 		}
 
 		return fmt.Errorf("unable to access %s: %s", catalogArg, err)
+	}
+
+	exclusionsArg, err := command.Flags().GetString("exclusions")
+	if err != nil {
+		panic(err)
+	}
+
+	if exist, err := paths.New(exclusionsArg).ExistCheck(); !exist {
+		if err == nil {
+			return fmt.Errorf("file not found: %s", exclusionsArg)
+		}
+
+		return fmt.Errorf("unable to access %s: %s", exclusionsArg, err)
 	}
 
 	outputArg, err := command.Flags().GetString("output")

@@ -24,6 +24,9 @@ A tool to discover Arduino [package indexes](https://arduino.github.io/arduino-c
   - [B. Set Up GitHub Access Token](#b-set-up-github-access-token)
   - [C. Run the Tool](#c-run-the-tool)
   - [D. Review Discoveries](#d-review-discoveries)
+- [Configuration](#configuration)
+  - [Exclusions](#exclusions)
+    - [Keys](#keys)
 - [Contributing](#contributing)
 
 <!-- tocstop -->
@@ -95,6 +98,27 @@ A discovery might fall into one of the following classifications:
 - **Trivial Fork:** A fork that contains modifications, but the modifications are insignificant. These may be created in the case where the owner performed some experimentation, but did not produce something relevant to platform users.
 - **Duplicate:** A copy of a platform. The copy may have been made at any point in the development history of the parent project, so these can have different content from the latest revision of the parent, but only in the absence of recent changes in the parent.
   - **ⓘ** We would expect a copy to be marked as a fork by GitHub (in which case it would have been filtered out by **ino-platform-discovery**). However, copies may have be created in a manner that does not produce that linkage.
+
+Add any discoveries that are determined to be invalid, trivial forks, or duplicates to the [exclusion](#exclusions) so you can avoid the need to review them again for future runs.
+
+## Configuration
+
+### Exclusions
+
+**ino-platform-discovery** can be configured to exclude items that would otherwise be included in the discoveries. This is done via a data file in [YAML](https://www.yaml.info/learn/index.html) format. Pass the path to the file as an argument to the `--exclusions` flag in the `ino-platform-discovery` invocation.
+
+#### Keys
+
+The exclusions file is a [sequence](https://yaml.org/spec/1.2.2/ext/glossary/#sequence) (i.e., array) of [mappings](https://yaml.org/spec/1.2.2/ext/glossary/#mapping) (i.e., objects/dictionaries). Each mapping may contain the following keys:
+
+- **`host`:** (required) The Git host.
+- **`owner`:** (required) The name of the repository owner.
+- **`name`:** (optional) The name of the repository.
+  - Default: `.*` (exclude all repositories from the given owner)
+- **`path`:** (optional) The path of the discovery. This is the path of the package index file or the folder containing a platform.
+  - Default: `.*` (exclude all discoveries from the given repository)
+
+The values of the keys are regular expressions. The regular expression syntax is that of the Go [`regexp` package](https://pkg.go.dev/regexp).
 
 ## Contributing
 

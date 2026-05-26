@@ -6,6 +6,7 @@ import (
 
 	"github.com/per1234-org/ino-platform-discovery/internal/catalog"
 	"github.com/per1234-org/ino-platform-discovery/internal/catalog/catalogentry"
+	"github.com/per1234-org/ino-platform-discovery/internal/exclusions"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/result"
 )
 
@@ -31,6 +32,26 @@ func (results *Type) Deduplicate(catalog catalog.Type) {
 	)
 
 	*results = deduplicated
+}
+
+// Exclude removes excluded results.
+func (results *Type) Exclude(exclusions exclusions.Type) {
+	included := slices.DeleteFunc(
+		*results,
+		func(result result.Type) bool {
+			for _, exclusion := range exclusions {
+				if exclusion.Match(result) {
+					// Result is to be excluded, delete.
+					return true
+				}
+			}
+
+			// Result is not to be excluded, retain.
+			return false
+		},
+	)
+
+	*results = included
 }
 
 // Filter removes results determined to not be valid discoveries.

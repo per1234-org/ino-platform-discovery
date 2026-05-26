@@ -2,5 +2,7 @@
 /*.tsv#
 /coverage_unit.txt
 /discoveries.tsv
+/exclusions.yaml
+/exclusions.yml
 /ino-platform-discovery
 /ino-platform-discovery.exe

@@ -15,6 +15,7 @@ func Root() *cobra.Command {
 	}
 
 	command.PersistentFlags().String("catalog", "ino-hardware-package-list.tsv", "Path to the inoplatforms catalog file.")
+	command.PersistentFlags().String("exclusions", "exclusions.yml", "Path to the exclusions file.")
 	command.PersistentFlags().String("output", "discoveries.tsv", "Path of the discovery results file that should be written by the tool.")
 
 	return command
