@@ -46,8 +46,12 @@ func indexes(clientContext context.Context, client *gogithub.Client) (results.Ty
 	results := results.Type{}
 	var err error
 
-	// Unlike the website search, the API does not support filename patterns. This crude approach is all that is available
-	// to find files with a `package_*_index.json` name pattern.
+	/*
+		See: https://docs.github.com/search-github/searching-on-github/searching-code
+
+		Unlike the website search, the API does not support filename patterns. This crude approach is all that is available
+		to find files with a `package_*_index.json` name pattern.
+	*/
 	query := "in:path language:json package_ _index.json"
 	fmt.Println("Searching GitHub for package indexes...")
 	searchResults, err := search(clientContext, client, query)
@@ -158,6 +162,7 @@ func indexes(clientContext context.Context, client *gogithub.Client) (results.Ty
 func platforms(clientContext context.Context, client *gogithub.Client) (results.Type, error) {
 	results := results.Type{}
 
+	// See: https://docs.github.com/search-github/searching-on-github/searching-code
 	query := "filename:boards.txt \".upload.tool\""
 	fmt.Println("Searching GitHub for platforms...")
 	searchResults, err := search(clientContext, client, query)
