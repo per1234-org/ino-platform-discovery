@@ -18,6 +18,10 @@ func IsDuplicate(incoming []string, existing []string) bool {
 		(presence in the same repository is not sufficient evidence because a repository may contain multiple platforms
 		and/or indexes). So the "incoming" results only contain platform or index data alone. For this reason, checks for
 		the "incoming" as a duplicate index and as a duplicate platform are performed separately.
+
+		The branch name must be compared because, even though GitHub code search only covers the default branch, the catalog
+		also contains items manually discovered in other branches. A catalog item may be present in the same repository as
+		the result, but located in a non-default branch. In this case, the result is not a duplicate.
 	*/
 
 	// Check if it is a duplicate platform.
