@@ -64,6 +64,9 @@ func (result Type) ToCatalogEntry() []string {
 		platformBranch = result.RepositoryData.DefaultBranch
 		platformFolder = toCatalogPath(result.Path)
 		platformRepository = result.RepositoryURL
+
+	default:
+		panic("result has unhandled content type")
 	}
 
 	catalogEntry := catalogentry.New()
