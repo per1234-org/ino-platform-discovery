@@ -77,10 +77,11 @@ The tool makes requests to the GitHub API. These requests must be authenticated 
 1. Open a terminal in the project folder.
 1. Type the following command in the terminal:
    ```text
-   GITHUB_TOKEN="<token>" go run main.go --catalog "<catalog path>"
+   GITHUB_TOKEN="<token>" go run main.go --catalog "<catalog path>" --exclusions "<exclusions file path>"
    ```
 1. Replace the `<token>` placeholder with the value of the GitHub access token you created for use by the script.
 1. Replace the `<catalog path>` placeholder with the path of the [**inoplatforms** catalog file](#a-obtain-inoplatforms-catalog-file) on your hard drive.
+1. Replace the `<exclusions file path>` placeholder with the path of the [exclusions file](#exclusions) on your hard drive.
 1. Press the <kbd>**Enter**</kbd> key.
 
 The tool run will take some time to complete.
