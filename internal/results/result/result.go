@@ -41,6 +41,10 @@ func (result Type) ToCatalogEntry() []string {
 	platformFolder := ""
 	platformRepository := ""
 
+	if result.RepositoryData == (repo.Type{}) {
+		panic("result has not been supplemented")
+	}
+
 	switch result.Content {
 	case content.Index:
 		// E.g., https://raw.githubusercontent.com/damellis/attiny/refs/heads/ide-1.6.x-boards-manager/package_damellis_attiny_index.json

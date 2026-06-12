@@ -80,25 +80,42 @@ func TestTypeDeduplicate(t *testing.T) {
 
 // TestTypeFilter provides coverage for the `(*Type) Filter` method.
 func TestTypeFilter(t *testing.T) {
+	unsupplementedResults := Type{
+		{
+			RepositoryURL: "https://example.com/foo",
+		},
+	}
+
+	assert.Panics(
+		t,
+		func() {
+			unsupplementedResults.Filter()
+		},
+		"Should panic if results have not been supplemented",
+	)
+
 	results := Type{
 		{
 			RepositoryData: repo.Type{
-				Fork:  true,
-				Ahead: true,
+				DefaultBranch: "foo-branch",
+				Fork:          true,
+				Ahead:         true,
 			},
 			RepositoryURL: "https://example.com/foo",
 		},
 		{
 			RepositoryData: repo.Type{
-				Fork:  true,
-				Ahead: false,
+				DefaultBranch: "bar-branch",
+				Fork:          true,
+				Ahead:         false,
 			},
 			RepositoryURL: "https://example.com/bar",
 		},
 		{
 			RepositoryData: repo.Type{
-				Fork:  false,
-				Ahead: false,
+				DefaultBranch: "baz-branch",
+				Fork:          false,
+				Ahead:         false,
 			},
 			RepositoryURL: "https://example.com/baz",
 		},
@@ -107,15 +124,17 @@ func TestTypeFilter(t *testing.T) {
 	assertion := Type{
 		{
 			RepositoryData: repo.Type{
-				Fork:  true,
-				Ahead: true,
+				DefaultBranch: "foo-branch",
+				Fork:          true,
+				Ahead:         true,
 			},
 			RepositoryURL: "https://example.com/foo",
 		},
 		{
 			RepositoryData: repo.Type{
-				Fork:  false,
-				Ahead: false,
+				DefaultBranch: "baz-branch",
+				Fork:          false,
+				Ahead:         false,
 			},
 			RepositoryURL: "https://example.com/baz",
 		},

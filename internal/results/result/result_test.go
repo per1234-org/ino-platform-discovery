@@ -12,15 +12,24 @@ import (
 // TestTypeToCatalogEntry provides coverage for the `(*Type) ToCatalogEntry` method.
 func TestTypeToCatalogEntry(t *testing.T) {
 	result := Type{
-		Content: content.Index,
-		Host:    host.GitHub,
-		Owner:   "foo-owner",
-		Path:    "foo-index-path/package_foo_index.json",
-		RepositoryData: repo.Type{
-			DefaultBranch: "foo-branch",
-		},
+		Content:        content.Index,
+		Host:           host.GitHub,
+		Owner:          "foo-owner",
+		Path:           "foo-index-path/package_foo_index.json",
 		RepositoryName: "foo-repo",
 		RepositoryURL:  "https://github.com/foo-owner/foo-repo",
+	}
+
+	assert.Panics(
+		t,
+		func() {
+			result.ToCatalogEntry()
+		},
+		"Should panic if result has not been supplemented",
+	)
+
+	result.RepositoryData = repo.Type{
+		DefaultBranch: "foo-branch",
 	}
 
 	assertion := []string{
