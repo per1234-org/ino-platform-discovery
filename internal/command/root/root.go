@@ -52,9 +52,6 @@ func Run(command *cobra.Command, _ []string) {
 		os.Exit(1)
 	}
 
-	// Remove results already present in the catalog.
-	searchResults.Deduplicate(catalog)
-
 	// Remove excluded results.
 	searchResults.Exclude(exclusions)
 
@@ -67,6 +64,13 @@ func Run(command *cobra.Command, _ []string) {
 
 	// Remove results the supplemental data indicates as invalid.
 	searchResults.Filter()
+
+	/*
+		Remove results already present in the catalog.
+		This must be performed after supplementing the results, as the branch name is one of the items compared to determine
+		whether a result is a duplicate, and that is added by supplementation.
+	*/
+	searchResults.Deduplicate(catalog)
 
 	if len(searchResults) == 0 {
 		feedback.Warning(fmt.Errorf("no discoveries were made"))
