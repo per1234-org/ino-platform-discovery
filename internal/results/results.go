@@ -7,6 +7,7 @@ import (
 	"github.com/per1234-org/ino-platform-discovery/internal/catalog"
 	"github.com/per1234-org/ino-platform-discovery/internal/catalog/catalogentry"
 	"github.com/per1234-org/ino-platform-discovery/internal/exclusions"
+	"github.com/per1234-org/ino-platform-discovery/internal/results/repo"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/result"
 )
 
@@ -59,6 +60,10 @@ func (results *Type) Filter() {
 	filtered := slices.DeleteFunc(
 		*results,
 		func(result result.Type) bool {
+			if result.RepositoryData == (repo.Type{}) {
+				panic("result has not been supplemented")
+			}
+
 			if result.RepositoryData.Fork && !result.RepositoryData.Ahead {
 				// Filter out forks that are not ahead of the parent repo.
 				return true
