@@ -52,6 +52,9 @@ func Run(command *cobra.Command, _ []string) {
 		os.Exit(1)
 	}
 
+	// Remove results the search data indicates as invalid.
+	searchResults.Prefilter()
+
 	// Remove excluded results.
 	searchResults.Exclude(exclusions)
 
@@ -63,7 +66,7 @@ func Run(command *cobra.Command, _ []string) {
 	}
 
 	// Remove results the supplemental data indicates as invalid.
-	searchResults.Filter()
+	searchResults.FilterSupplemented()
 
 	/*
 		Remove results already present in the catalog.
