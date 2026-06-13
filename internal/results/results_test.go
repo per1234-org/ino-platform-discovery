@@ -78,8 +78,8 @@ func TestTypeDeduplicate(t *testing.T) {
 	assert.Equal(t, assertion, results)
 }
 
-// TestTypeFilter provides coverage for the `(*Type) Filter` method.
-func TestTypeFilter(t *testing.T) {
+// TestTypeFilterSupplemented provides coverage for the `(*Type) FilterSupplemented` method.
+func TestTypeFilterSupplemented(t *testing.T) {
 	unsupplementedResults := Type{
 		{
 			RepositoryURL: "https://example.com/foo",
@@ -89,7 +89,7 @@ func TestTypeFilter(t *testing.T) {
 	assert.Panics(
 		t,
 		func() {
-			unsupplementedResults.Filter()
+			unsupplementedResults.FilterSupplemented()
 		},
 		"Should panic if results have not been supplemented",
 	)
@@ -140,7 +140,40 @@ func TestTypeFilter(t *testing.T) {
 		},
 	}
 
-	results.Filter()
+	results.FilterSupplemented()
+
+	assert.Equal(t, assertion, results)
+}
+
+// TestTypePrefilter provides coverage for the `(*Type) Prefilter` method.
+func TestTypePrefilter(t *testing.T) {
+	results := Type{
+		{
+			Content: content.Platform,
+			Path:    "/libraries/FooLib/Packages_Patches/bar/hardware/baz/1.2.3/boards.txt",
+		},
+		{
+			Content: content.Platform,
+			Path:    "/foo/boards.txt",
+		},
+		{
+			Content: content.Index,
+			Path:    "/Packages_Patches/package_foo_index.json",
+		},
+	}
+
+	assertion := Type{
+		{
+			Content: content.Platform,
+			Path:    "/foo/boards.txt",
+		},
+		{
+			Content: content.Index,
+			Path:    "/Packages_Patches/package_foo_index.json",
+		},
+	}
+
+	results.Prefilter()
 
 	assert.Equal(t, assertion, results)
 }
