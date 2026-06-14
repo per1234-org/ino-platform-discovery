@@ -1,0 +1,26 @@
+# See: https://cspell.org/docs/Configuration
+
+language: en
+words:
+  - barbranch
+  - barindexpath
+  - barownner
+  - barplatformpath
+  - basehead
+  - catalogcolumn
+  - catalogentry
+  - foobranch
+  - foopath
+  - ghrepo
+  - ghsearch
+  - githubpagination
+  - gofri
+  - gogithub
+  - HTMLURL
+  - Infof
+  - Prefilter
+  - rawexclusion
+  - resultsrepo
+  - Tracef
+  - unsupplemented
+version: 0.2
