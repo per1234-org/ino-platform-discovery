@@ -64,7 +64,7 @@ tasks:
         go tool \
           github.com/mikefarah/yq/v4 \
             --inplace \
-            'sort_by(.host, .owner, .name)' \
+            'sort_by(.host, .owner, .name, .path)' \
             exclusions.yml
 
   # Source: https://github.com/arduino/tooling-project-assets/blob/main/workflow-templates/assets/check-dependencies-task/Taskfile.yml
