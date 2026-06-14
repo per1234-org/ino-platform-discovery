@@ -7,6 +7,7 @@ import (
 
 	"github.com/per1234-org/ino-platform-discovery/internal/catalog"
 	"github.com/per1234-org/ino-platform-discovery/internal/catalog/catalogentry"
+	"github.com/per1234-org/ino-platform-discovery/internal/data"
 	"github.com/per1234-org/ino-platform-discovery/internal/exclusions"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/repo"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/result"
@@ -91,6 +92,19 @@ func (results *Type) Prefilter() {
 				result is not a unique platform.
 			*/
 			if result.Content == content.Platform && strings.Contains(result.Path, "/Packages_Patches/") {
+				return true
+			}
+
+			/*
+				The platform search query uses the `filename` qualifier to search for files named `boards.txt`. This qualifier
+				also matches against filenames that are a substring match (e.g., a file named `foo.boards.txt` matches against
+				the `filename:boards.txt` query). Any result that doesn't contain a file named exactly `boards.txt` is not valid
+				and thus must be filtered out.
+
+				An equivalent check is done on the filename of index results, but that is done in `ghsearch.indexes` instead of
+				here in order to avoid unnecessary API requests.
+			*/
+			if result.Content == content.Platform && result.Filename != data.PlatformIndicatorFile {
 				return true
 			}
 

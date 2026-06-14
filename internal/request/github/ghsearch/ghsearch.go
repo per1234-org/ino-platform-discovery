@@ -11,6 +11,7 @@ import (
 	"strings"
 
 	gogithub "github.com/google/go-github/v79/github"
+	"github.com/per1234-org/ino-platform-discovery/internal/data"
 	"github.com/per1234-org/ino-platform-discovery/internal/request/github"
 	"github.com/per1234-org/ino-platform-discovery/internal/results"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/result"
@@ -67,9 +68,20 @@ func indexes(clientContext context.Context, client *gogithub.Client) (results.Ty
 	fmt.Println("Validating package index search results...")
 	for _, searchResult := range searchResults {
 		/*
-			The path search is not precise, so likely to yield false positives. These should be eliminated by also checking
-			for the presence of distinctive key names in the file content. We might expect to be able to accomplish this in a
-			single search query like:
+			The code search query syntax doesn't provide any mechanism for specifying an exact filename format, so might
+			return invalid results which can be identified by having a noncompliant filename.
+
+			An equivalent check is done for platform results in `results.Type.Prefilter`
+		*/
+		if !verifyIndexFilename(*searchResult.Name) {
+			// This search result is does not have a valid package index filename, so exclude it.
+			continue
+		}
+
+		/*
+			Non-index files might have a filename that happens to match the package index filename format. These should be
+			eliminated by also checking for the presence of distinctive key names in the file content. We might expect to be
+			able to accomplish this in a single search query like:
 			`fork:true+in:file,path+language:json+package_+_index.json+archiveFileName+architecture+version+url`
 			However, that will only return results where all keywords are present in the file content. For this reason, the
 			approach taken is to instead request the file content for each search result, and check whether it looks like an
@@ -139,6 +151,7 @@ func indexes(clientContext context.Context, client *gogithub.Client) (results.Ty
 
 		result := result.Type{
 			Content:        content.Index,
+			Filename:       *searchResult.Name,
 			Host:           host.GitHub,
 			Owner:          *searchResult.Repository.Owner.Login,
 			Path:           *searchResult.Path,
@@ -163,7 +176,7 @@ func platforms(clientContext context.Context, client *gogithub.Client) (results.
 	results := results.Type{}
 
 	// See: https://docs.github.com/search-github/searching-on-github/searching-code
-	query := "filename:boards.txt \".upload.tool\""
+	query := fmt.Sprintf("filename:%s \".upload.tool\"", data.PlatformIndicatorFile)
 	fmt.Println("Searching GitHub for platforms...")
 	searchResults, err := search(clientContext, client, query)
 	if err != nil {
@@ -173,6 +186,7 @@ func platforms(clientContext context.Context, client *gogithub.Client) (results.
 	for _, searchResult := range searchResults {
 		result := result.Type{
 			Content:        content.Platform,
+			Filename:       *searchResult.Name,
 			Host:           host.GitHub,
 			Path:           *searchResult.Path,
 			Owner:          *searchResult.Repository.Owner.Login,
@@ -286,4 +300,10 @@ func verifyIndex(reader io.Reader) (bool, error) {
 	}
 
 	return true, nil
+}
+
+// verifyIndexFilename determines whether the filename of the result is that of a package index.
+func verifyIndexFilename(filename string) bool {
+	// See: https://arduino.github.io/arduino-cli/latest/package_index_json-specification/#naming-of-the-json-index-file
+	return strings.HasPrefix(filename, "package_") && strings.HasSuffix(filename, "_index.json")
 }

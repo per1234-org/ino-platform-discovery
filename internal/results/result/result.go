@@ -16,6 +16,8 @@ import (
 type Type struct {
 	// Content is the type of content discovered in the result.
 	Content content.Type
+	// Filename is the name of the file that matched the search query.
+	Filename string
 	// Host is the Git host.
 	Host host.Type
 	// Owner is the username of the repository owner.
