@@ -1,0 +1,49 @@
+name: Check Exclusions File
+
+on:
+  push:
+    paths:
+      - ".github/workflows/check-exclusions.yml"
+      - "exclusions.yml"
+      - "go.mod"
+      - "go.sum"
+      - "Taskfile.ya?ml"
+  pull_request:
+    paths:
+      - ".github/workflows/check-exclusions.yml"
+      - "exclusions.yml"
+      - "go.mod"
+      - "go.sum"
+      - "Taskfile.ya?ml"
+  schedule:
+    # Run periodically to catch breakage caused by external changes.
+    - cron: "0 7 * * WED"
+  workflow_dispatch:
+  repository_dispatch:
+
+jobs:
+  sort:
+    name: Check sorting
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Install Go
+        uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+
+      - name: Sort
+        run: |
+          go tool \
+            task exclusions:sort
+
+      - name: Check for incorrect sorting
+        run: |
+          git diff \
+            --color \
+            --exit-code
