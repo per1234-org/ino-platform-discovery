@@ -60,3 +60,10 @@ func Test_verifyIndex(t *testing.T) {
 	require.NoError(t, err)
 	assert.False(t, verified)
 }
+
+// Test_verifyIndexFilename provides coverage for the `verifyIndexFilename` function.
+func Test_verifyIndexFilename(t *testing.T) {
+	assert.True(t, verifyIndexFilename("package_foo_index.json"))
+
+	assert.False(t, verifyIndexFilename("foo_package_bar_index.json"))
+}

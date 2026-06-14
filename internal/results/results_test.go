@@ -149,27 +149,37 @@ func TestTypeFilterSupplemented(t *testing.T) {
 func TestTypePrefilter(t *testing.T) {
 	results := Type{
 		{
-			Content: content.Platform,
-			Path:    "/libraries/FooLib/Packages_Patches/bar/hardware/baz/1.2.3/boards.txt",
+			Content:  content.Platform,
+			Filename: "boards.txt",
+			Path:     "/libraries/FooLib/Packages_Patches/bar/hardware/baz/1.2.3/boards.txt",
 		},
 		{
-			Content: content.Platform,
-			Path:    "/foo/boards.txt",
+			Content:  content.Platform,
+			Filename: "boards.txt",
+			Path:     "/foo/boards.txt",
 		},
 		{
-			Content: content.Index,
-			Path:    "/Packages_Patches/package_foo_index.json",
+			Content:  content.Platform,
+			Filename: "bar.boards.txt",
+			Path:     "foo/bar.boards.txt",
+		},
+		{
+			Content:  content.Index,
+			Filename: "package_foo_index.json",
+			Path:     "/Packages_Patches/package_foo_index.json",
 		},
 	}
 
 	assertion := Type{
 		{
-			Content: content.Platform,
-			Path:    "/foo/boards.txt",
+			Content:  content.Platform,
+			Filename: "boards.txt",
+			Path:     "/foo/boards.txt",
 		},
 		{
-			Content: content.Index,
-			Path:    "/Packages_Patches/package_foo_index.json",
+			Content:  content.Index,
+			Filename: "package_foo_index.json",
+			Path:     "/Packages_Patches/package_foo_index.json",
 		},
 	}
 
