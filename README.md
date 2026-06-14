@@ -1,5 +1,6 @@
 # ino-platform-discovery
 
+[![Check Exclusions File status](https://github.com/per1234-org/ino-platform-discovery/actions/workflows/check-exclusions.yml/badge.svg)](https://github.com/per1234-org/ino-platform-discovery/actions/workflows/check-exclusions.yml)
 [![Check Go status](https://github.com/per1234-org/ino-platform-discovery/actions/workflows/check-go-task.yml/badge.svg)](https://github.com/per1234-org/ino-platform-discovery/actions/workflows/check-go-task.yml)
 [![Check Go Dependencies status](https://github.com/per1234-org/ino-platform-discovery/actions/workflows/check-go-dependencies-task.yml/badge.svg)](https://github.com/per1234-org/ino-platform-discovery/actions/workflows/check-go-dependencies-task.yml)
 [![Check Markdown status](https://github.com/per1234-org/ino-platform-discovery/actions/workflows/check-markdown-task.yml/badge.svg)](https://github.com/per1234-org/ino-platform-discovery/actions/workflows/check-markdown-task.yml)
@@ -77,11 +78,10 @@ The tool makes requests to the GitHub API. These requests must be authenticated 
 1. Open a terminal in the project folder.
 1. Type the following command in the terminal:
    ```text
-   GITHUB_TOKEN="<token>" go run main.go --catalog "<catalog path>" --exclusions "<exclusions file path>"
+   GITHUB_TOKEN="<token>" go run main.go --catalog "<catalog path>"
    ```
 1. Replace the `<token>` placeholder with the value of the GitHub access token you created for use by the script.
 1. Replace the `<catalog path>` placeholder with the path of the [**inoplatforms** catalog file](#a-obtain-inoplatforms-catalog-file) on your hard drive.
-1. Replace the `<exclusions file path>` placeholder with the path of the [exclusions file](#exclusions) on your hard drive.
 1. Press the <kbd>**Enter**</kbd> key.
 
 The tool run will take some time to complete.
@@ -107,6 +107,8 @@ Add any discoveries that are determined to be invalid, trivial forks, or duplica
 ### Exclusions
 
 **ino-platform-discovery** can be configured to exclude items that would otherwise be included in the discoveries. This is done via a data file in [YAML](https://www.yaml.info/learn/index.html) format. Pass the path to the file as an argument to the `--exclusions` flag in the `ino-platform-discovery` invocation.
+
+An exclusions file is maintained in this project: [**here**](./exclusions.yml).
 
 #### Keys
 

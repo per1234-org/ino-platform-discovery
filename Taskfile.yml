@@ -41,6 +41,7 @@ tasks:
   fix:
     desc: Make automated corrections to the project's files
     deps:
+      - task: exclusions:sort
       - task: general:correct-spelling
       - task: general:format-prettier
       - task: go:fix
@@ -54,6 +55,16 @@ tasks:
     run: when_changed
     # This is an "umbrella" task used to call any documentation generation processes the project has.
     # It can be left empty if there are none.
+
+  exclusions:sort:
+    desc: Sort the exclusions file
+    cmds:
+      - |
+        go tool \
+          github.com/mikefarah/yq/v4 \
+            --inplace \
+            'sort_by(.host, .owner, .name)' \
+            exclusions.yml
 
   # Source: https://github.com/arduino/tooling-project-assets/blob/main/workflow-templates/assets/check-dependencies-task/Taskfile.yml
   general:cache-dep-licenses:
