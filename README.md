@@ -30,6 +30,7 @@ A tool to discover Arduino [package indexes](https://arduino.github.io/arduino-c
 - [Configuration](#configuration)
   - [Exclusions](#exclusions)
     - [Keys](#keys)
+- [Limitations](#limitations)
 - [Contributing](#contributing)
 
 <!-- tocstop -->
@@ -128,6 +129,18 @@ The exclusions file is a [sequence](https://yaml.org/spec/1.2.2/ext/glossary/#se
   - Default: `.*` (exclude all discoveries from the given repository)
 
 The values of the keys are regular expressions. The regular expression syntax is that of the Go [`regexp` package](https://pkg.go.dev/regexp).
+
+## Limitations
+
+Discoveries are made via data provided by the [GitHub code search API](https://docs.github.com/rest/search/search#search-code), and so is subject to the [limitations imposes on that endpoint](https://docs.github.com/search-github/searching-on-github/searching-code#considerations-for-code-search). This means the discoveries are limited to projects that meet the following conditions:
+
+- Hosted on GitHub.
+- Present in the [default branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches#about-the-default-branch) of the repository.
+- Repository is not [archived](https://docs.github.com/repositories/archiving-a-github-repository/archiving-repositories).
+- Repository has had activity, or been returned in search results, within the last year.
+- (For package index discovery) Index file is smaller than 384 kB.
+- (For platform discovery) [`boards.txt`](https://arduino.github.io/arduino-cli/latest/platform-specification/#boardstxt) file is smaller than 384 kB.
+- Repository contains less than 500000 files.
 
 ## Contributing
 
