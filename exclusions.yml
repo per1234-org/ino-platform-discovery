@@ -277,6 +277,14 @@
   owner: ^bien2552001$
   name: ^OP3_Humanoid_Robot$
 - host: ^github.com$
+  owner: ^biomurph$
+  name: ^chipKIT-core-prebuilt$
+  path: ^MacOS core/chipkit-core/pic32/variants/openbci$
+- host: ^github.com$
+  owner: ^biomurph$
+  name: ^chipKIT-core-prebuilt$
+  path: ^windows/chipkit-core/pic32/variants/openbci$
+- host: ^github.com$
   owner: ^bitbank2$
   name: ^MFRBadge$
 - host: ^github.com$
