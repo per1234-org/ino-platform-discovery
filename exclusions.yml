@@ -112,6 +112,18 @@
   owner: ^CadConsultants$
   name: ^Tasmota$
 - host: ^github.com$
+  owner: ^CannotLoadName$
+  name: ^CannotLoadName.github.io$
+- host: ^github.com$
+  owner: ^CelvinBraun$
+  name: ^Digispark-ATTiny85$
+- host: ^github.com$
+  owner: ^Cesarbautista10$
+  name: ^we_modules_arduino$
+- host: ^github.com$
+  owner: ^CheeseAnt$
+  name: ^Gouda$
+- host: ^github.com$
   owner: ^ChenWeiLiu$
   name: ^BlocklyduinoF2_Mac$
 - host: ^github.com$
@@ -120,6 +132,9 @@
 - host: ^github.com$
   owner: ^Code-Forge-Lab$
   name: ^Arduino$
+- host: ^github.com$
+  owner: ^CommunityGD32Cores$
+  name: ^arduino-board-index$
 - host: ^github.com$
   owner: ^DCC-Lab$
   name: ^Lemming$
@@ -312,8 +327,41 @@
   owner: ^calugo$
   name: ^OpenPlant-Electrophysiology$
 - host: ^github.com$
+  owner: ^campy$
+  name: ^UlticampyV3$
+- host: ^github.com$
   owner: ^capaci-thor$
   name: ^iimas-bot$
+- host: ^github.com$
+  owner: ^cetrespeo$
+  name: ^ESP32-E-Paper-Weather$
+- host: ^github.com$
+  owner: ^chain40$
+  name: ^chain40.github.io$
+- host: ^github.com$
+  owner: ^chcbaram$
+  name: ^FPGA$
+- host: ^github.com$
+  owner: ^chcbaram$
+  name: ^opencr_test$
+- host: ^github.com$
+  owner: ^chipKIT32$
+  name: ^chipKIT-compiler-builds$
+- host: ^github.com$
+  owner: ^chipsi007$
+  name: ^LittleArduinoProjects$
+- host: ^github.com$
+  owner: ^chipsi007$
+  name: ^Sonoff-Tasmota$
+- host: ^github.com$
+  owner: ^choukitty912$
+  name: ^Petoi$
+- host: ^github.com$
+  owner: ^claudio-walser$
+  name: ^AH64-SimPit$
+- host: ^github.com$
+  owner: ^claywd$
+  name: ^iAsset$
 - host: ^github.com$
   owner: ^codebendercc$
   name: ^external_cores$
