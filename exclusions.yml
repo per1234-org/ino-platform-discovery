@@ -136,11 +136,83 @@
   owner: ^CommunityGD32Cores$
   name: ^arduino-board-index$
 - host: ^github.com$
+  owner: ^Crane1195$
+  name: ^DIYB0XX$
+- host: ^github.com$
+  owner: ^Cyrillinux$
+  name: ^Ardui89$
+  path: ^package-IDE-0.4.2/package_json_bacciel.com_OLD/
+- host: ^github.com$
+  owner: ^CytronTechnologies$
+  name: ^Cytron-Arduino-URL$
+- host: ^github.com$
+  owner: ^CytronTechnologies$
+  name: ^CytronTechnologies.github.io$
+  path: ^package_cytron_arm_index.json$
+- host: ^github.com$
   owner: ^DCC-Lab$
   name: ^Lemming$
 - host: ^github.com$
+  owner: ^DaveBerkeley$
+  name: ^arduino$
+- host: ^github.com$
+  owner: ^DeftDynamics$
+  name: ^neoPLC-arduino$
+- host: ^github.com$
   owner: ^DiegoCCMM$
   name: ^portfolio$
+- host: ^github.com$
+  owner: ^Dnnda$
+  name: ^Smart-Care$
+- host: ^github.com$
+  owner: ^ETeissonniere$
+  name: ^redbear_backup$
+- host: ^github.com$
+  owner: ^Edragon$
+  name: ^LGT$
+- host: ^github.com$
+  owner: ^ElektorLabs$
+  name: ^Arduino$
+  path: ^package_elektor-labs.com_ide-1.6.5_index.json$
+- host: ^github.com$
+  owner: ^ElektorLabs$
+  name: ^Arduino$
+  path: ^package_elektor-labs.com_ide-1.6.6_index.json$
+- host: ^github.com$
+  owner: ^ElektorLabs$
+  name: ^Arduino$
+  path: ^package_elektor_boards_index.json$
+- host: ^github.com$
+  owner: ^ElektorLabs$
+  name: ^Arduino$
+  path: ^package_elektor_uno_r4_1_6_10_index.json$
+- host: ^github.com$
+  owner: ^ElektorLabs$
+  name: ^Arduino$
+  path: ^package_elektor_uno_r4_index.json$
+- host: ^github.com$
+  owner: ^ElektorLabs$
+  name: ^Arduino$
+  path: ^release/package_elektor_uno_r4_index.json$
+- host: ^github.com$
+  owner: ^EmbeddedDesign$
+  name: ^VehicleAccessoryController$
+- host: ^github.com$
+  owner: ^Engimusing$
+  name: ^engimusing.github.io$
+  path: ^arduinoIDE/test.*/
+- host: ^github.com$
+  owner: ^Epkhau5$
+  name: ^Clone-Clearcore-arduino$
+- host: ^github.com$
+  owner: ^ErmiaMoghadamy$
+  name: ^HotPlug$
+- host: ^github.com$
+  owner: ^ExploreEmbedded$
+  name: ^arduino-esp32$
+- host: ^github.com$
+  owner: ^FabienFerrero$
+  name: ^UCA21$
 - host: ^github.com$
   owner: ^FastLED$
   name: ^FastLED$
@@ -156,6 +228,10 @@
 - host: ^github.com$
   owner: ^Lyoncore$
   name: ^iotivity-demo-uc15$
+- host: ^github.com$
+  owner: ^RFThings$
+  name: ^rfthings.github.io$
+  path: ^docs/ArduinoBoardManagerJSON/package_rfthings-test_index.json$
 - host: ^github.com$
   owner: ^Rahul-coding$
   name: ^Arduino$
@@ -375,23 +451,89 @@
   owner: ^colinmccabe$
   name: ^dockerfiles$
 - host: ^github.com$
+  owner: ^conservationtechlab$
+  name: ^tinyscrubcam$
+- host: ^github.com$
+  owner: ^cotsom$
+  name: ^microcontrollers-learning$
+- host: ^github.com$
+  owner: ^cpawliuk$
+  name: ^gbs-control-complete$
+- host: ^github.com$
+  owner: ^craignm$
+  name: ^maixduino$
+- host: ^github.com$
+  owner: ^danielgohlke$
+  name: ^ATtiny$
+- host: ^github.com$
+  owner: ^darkomen$
+  name: ^4xiDraw$
+- host: ^github.com$
   owner: ^darrintw$
   name: ^ardublockly-tw$
+- host: ^github.com$
+  owner: ^darthm0e$
+  name: ^esp32-101$
 - host: ^github.com$
   owner: ^davidson-engineering$
   name: ^useful-snippets$
 - host: ^github.com$
+  owner: ^delare626$
+  name: ^52$
+- host: ^github.com$
+  owner: ^devstembotix9892$
+  name: ^Blockzie-tools$
+- host: ^github.com$
+  owner: ^dfcdsw$
+  name: ^learnPython$
+- host: ^github.com$
   owner: ^djdiptayan1$
   name: ^Arduino$
+- host: ^github.com$
+  owner: ^dominic248$
+  name: ^SFIT-SEMESTER-Practicals$
+- host: ^github.com$
+  owner: ^dominicklee$
+  name: ^GyroPalm$
+- host: ^github.com$
+  owner: ^dotmpe$
+  name: ^arduino-docs$
+- host: ^github.com$
+  owner: ^dplassgit$
+  name: ^arduino$
 - host: ^github.com$
   owner: ^dragosteach$
   name: ^Arduino-Foundations$
 - host: ^github.com$
+  owner: ^drtrigon$
+  name: ^sketchbook$
+- host: ^github.com$
   owner: ^dwengovzw$
   name: ^Dwengo-Website$
 - host: ^github.com$
+  owner: ^dymnz$
+  name: ^dymnz$
+- host: ^github.com$
   owner: ^edgeimpulse$
   name: ^example-SparkFun-MicroMod-nRF52840$
+- host: ^github.com$
+  owner: ^eerimoq$
+  name: ^pumbaa-releases$
+- host: ^github.com$
+  owner: ^eerimoq$
+  name: ^simba-arduino$
+- host: ^github.com$
+  owner: ^eerimoq$
+  name: ^simba-releases$
+- host: ^github.com$
+  owner: ^efrei-paris-sud$
+  name: ^2020-H-Team-of-2$
+- host: ^github.com$
+  owner: ^eggfly$
+  name: ^M5StickCProjects$
+- host: ^github.com$
+  owner: ^ekaggrat$
+  name: ^holo_clock$
 - host: ^github.com$
   owner: ^engduino$
   name: ^Engduino_v1.0_release$
@@ -404,6 +546,21 @@
 - host: ^github.com$
   owner: ^engduino$
   name: ^Engduino_v3.0_release_full$
+- host: ^github.com$
+  owner: ^equipe-javali$
+  name: ^API_4$
+- host: ^github.com$
+  owner: ^eric100lin$
+  name: ^Andino-M1$
+- host: ^github.com$
+  owner: ^estea8968$
+  name: ^osep_web_serial$
+- host: ^github.com$
+  owner: ^ethandudu$
+  name: ^UCA-Board$
+- host: ^github.com$
+  owner: ^evildevill$
+  name: ^evildevillpatch$
 - host: ^github.com$
   owner: ^facchinm$
   name: ^library-dependencies-extractor$
@@ -455,6 +612,18 @@
 - host: ^github.com$
   owner: ^n0xa$
   name: ^m5stick-nemo$
+- host: ^github.com$
+  owner: ^nguyenmanhthao996tn$
+  name: ^nguyenmanhthao996tn.github.io$
+  path: ^docs/my_files/package_rfthings-avr_index.json$
+- host: ^github.com$
+  owner: ^nguyenmanhthao996tn$
+  name: ^nguyenmanhthao996tn.github.io$
+  path: ^docs/my_files/package_rfthings-stm32l4_index.json$
+- host: ^github.com$
+  owner: ^nguyenmanhthao996tn$
+  name: ^nguyenmanhthao996tn.github.io$
+  path: ^docs/my_files/package_rfthings-test_index.json$
 - host: ^github.com$
   owner: ^nishpishx$
   name: ^Bittle_Robot$
