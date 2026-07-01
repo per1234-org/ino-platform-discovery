@@ -211,6 +211,16 @@
   owner: ^ExploreEmbedded$
   name: ^arduino-esp32$
 - host: ^github.com$
+  owner: ^FANTAMAN304$
+  name: ^M5CARDPUTER_nemo_RF$
+- host: ^github.com$
+  owner: ^FYSETC$
+  name: ^ArduinoAddons$
+  path: ^dev/fysetcf6$
+- host: ^github.com$
+  owner: ^FabLab-LaCote$
+  name: ^ATTiny-Programmer$
+- host: ^github.com$
   owner: ^FabienFerrero$
   name: ^UCA21$
 - host: ^github.com$
@@ -219,6 +229,27 @@
 - host: ^github.com$
   owner: ^FleshdeckTV$
   name: ^nRF52-Smartwatch$
+- host: ^github.com$
+  owner: ^FranCosMonX$
+  name: ^TCC-CCA-MIC-BKend$
+- host: ^github.com$
+  owner: ^FreddanK$
+  name: ^Robotfotboll$
+- host: ^github.com$
+  owner: ^Freenove$
+  name: ^Freenove_ESP32_Robot_Dog_SDK_for_Arduino_IDE$
+- host: ^github.com$
+  owner: ^GabrielNotman$
+  name: ^AutonomoTesting$
+- host: ^github.com$
+  owner: ^GenieLampProject$
+  name: ^Firefly2016-GenieLamp$
+- host: ^github.com$
+  owner: ^GersonESantos$
+  name: ^Projeto-Rega-Automatica$
+- host: ^github.com$
+  owner: ^Gigahawk$
+  name: ^dotfiles$
 - host: ^github.com$
   owner: ^Gujilde163904STI$
   name: ^lifi-project$
@@ -562,17 +593,53 @@
   owner: ^evildevill$
   name: ^evildevillpatch$
 - host: ^github.com$
+  owner: ^f32c$
+  name: ^arduino$
+  path: ^hardware/fpga/f32c/obsolete$
+- host: ^github.com$
   owner: ^facchinm$
   name: ^library-dependencies-extractor$
 - host: ^github.com$
   owner: ^fairecasoimeme$
   name: ^LiXee-Box$
 - host: ^github.com$
+  owner: ^fbeltrao$
+  name: ^Seeed_SAMD_Boards$
+- host: ^github.com$
+  owner: ^fobe-projects$
+  name: ^fobe-projects.github.io$
+  path: package_fobe_esp32(_dev)?_index.json
+- host: ^github.com$
+  owner: ^fontainejp$
+  name: ^blocklino$
+- host: ^github.com$
+  owner: ^foolish-products$
+  name: ^whoaboard_getstarted$
+  path: ^hardware/teeonardu/avr$
+- host: ^github.com$
+  owner: ^fran6p$
+  name: ^FirmPack$
+- host: ^github.com$
+  owner: ^furyhawk$
+  name: ^scratchpad$
+- host: ^github.com$
+  owner: ^gastonfeng$
+  name: ^framework-arduinoststm32$
+- host: ^github.com$
+  owner: ^gauteh$
+  name: ^omb-nano$
+- host: ^github.com$
+  owner: ^gazza2577$
+  name: ^arduino$
+- host: ^github.com$
   owner: ^goandreus$
   name: ^arduino-go$
 - host: ^github.com$
   owner: ^gravesreid$
   name: ^autonomous_opencat$
+- host: ^github.com$
+  owner: ^greg-norris$
+  name: ^duelink$
 - host: ^github.com$
   owner: ^grushaprasad$
   name: ^HackHolyoke$
