@@ -1,6 +1,6 @@
 ---
 name: go.yaml.in/yaml/v4
-version: v4.0.0-rc.5
+version: v4.0.0-rc.6
 type: go
 summary: Package yaml implements YAML 1.1/1.2 encoding and decoding for Go programs.
 homepage: https://pkg.go.dev/go.yaml.in/yaml/v4

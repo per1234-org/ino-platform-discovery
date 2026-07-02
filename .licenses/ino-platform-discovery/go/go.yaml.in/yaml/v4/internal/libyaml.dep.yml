@@ -1,12 +1,12 @@
 ---
 name: go.yaml.in/yaml/v4/internal/libyaml
-version: v4.0.0-rc.5
+version: v4.0.0-rc.6
 type: go
 summary: Package libyaml contains internal helpers for working with YAML
 homepage: https://pkg.go.dev/go.yaml.in/yaml/v4/internal/libyaml
 license: apache-2.0
 licenses:
-- sources: v4@v4.0.0-rc.5/LICENSE
+- sources: v4@v4.0.0-rc.6/LICENSE
   text: |2
 
                                      Apache License
