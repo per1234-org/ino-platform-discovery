@@ -1,12 +1,12 @@
 ---
 name: go.yaml.in/yaml/v4/plugin/limit
-version: v4.0.0-rc.5
+version: v4.0.0-rc.6
 type: go
 summary: Package limit provides a configurable safety limit plugin for go-yaml.
 homepage: https://pkg.go.dev/go.yaml.in/yaml/v4/plugin/limit
 license: apache-2.0
 licenses:
-- sources: v4@v4.0.0-rc.5/LICENSE
+- sources: v4@v4.0.0-rc.6/LICENSE
   text: |2
 
                                      Apache License
@@ -210,7 +210,7 @@ licenses:
        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
        See the License for the specific language governing permissions and
        limitations under the License.
-- sources: v4@v4.0.0-rc.5/README.md
+- sources: v4@v4.0.0-rc.6/README.md
   text: |-
     The yaml package is licensed under the MIT and Apache License 2.0 licenses.
     Please see the LICENSE file for details.
