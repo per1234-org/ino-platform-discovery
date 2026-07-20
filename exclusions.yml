@@ -1,6 +1,10 @@
 # See: https://github.com/per1234-org/ino-platform-discovery#exclusions
 
 - host: ^github\.com$
+  owner: ^$Rehab-Robotics-Lab
+  name: ^FloSystem$
+  path: ^bolide/ArduinoSetting/hardware/XYZrobot$
+- host: ^github\.com$
   owner: ^0hotpotman0$
   name: ^BLE_52840_Core$
 - host: ^github\.com$
@@ -230,6 +234,9 @@
   owner: ^FleshdeckTV$
   name: ^nRF52-Smartwatch$
 - host: ^github\.com$
+  owner: ^Fototux$
+  name: ^arduino-zero-board$
+- host: ^github\.com$
   owner: ^FranCosMonX$
   name: ^TCC-CCA-MIC-BKend$
 - host: ^github\.com$
@@ -369,21 +376,281 @@
   owner: ^MrTreeBark$
   name: ^SunrayMod$
 - host: ^github\.com$
+  owner: ^MyRobotLab$
+  name: ^myrobotlab$
+- host: ^github\.com$
+  owner: ^NEU-REAL$
+  name: ^EverySync-Hardware-Suite$
+- host: ^github\.com$
+  owner: ^NOAA-PMEL$
+  name: ^EcoFOCI_MTRDuino$
+- host: ^github\.com$
+  owner: ^NavSpark$
+  name: ^Arduino-1\.5\.6-r2-Src-NavSpark$
+- host: ^github\.com$
+  owner: ^NectarJS$
+  name: ^nectarjs_external$
+- host: ^github\.com$
+  owner: ^Nich1con$
+  name: ^ATtiny10Core-addon$
+- host: ^github\.com$
+  owner: ^NicoHood$
+  name: ^HoodLoader2$
+- host: ^github\.com$
+  owner: ^OS-Q$
+- host: ^github\.com$
+  owner: ^OpenEPaperLink$
+  name: ^Radio_AP_Other$
+- host: ^github\.com$
+  owner: ^OpenEPaperLink$
+  name: ^Radio_AP_Other$
+- host: ^github\.com$
+  owner: ^OpenEPaperLink$
+  name: ^Tag_FW_nRF52811$
+- host: ^github\.com$
+  owner: ^OpenEarable$
+  name: ^open-earable-PlatformIO$
+- host: ^github\.com$
+  owner: ^OpenROV-Dev$
+  name: ^RpiScripts$
+- host: ^github\.com$
+  owner: ^OpenRoberta$
+  name: ^create-agent$
+- host: ^github\.com$
+  owner: ^OttoDIY$
+  name: ^blocklyLinux$
+- host: ^github\.com$
+  owner: ^PUT-Motorsport$
+  name: ^PUTM_EV_TELEMETRY_SOFTWARE_2022$
+- host: ^github\.com$
+  owner: ^PalookaUniversity$
+  name: ^RealTime$
+- host: ^github\.com$
+  owner: ^ParrotSec$
+  name: ^car-hacking-tools$
+- host: ^github\.com$
+  owner: ^Patchoulino$
+  name: ^arduino$
+- host: ^github\.com$
+  owner: ^PaulStoffregen$
+  name: ^Arduino-1\..+-Teensyduino$
+- host: ^github\.com$
+  owner: ^PetoiCamp$
+  name: ^OpenCat-Old$
+- host: ^github\.com$
+  owner: ^Poemtech$
+  name: ^IoT-DASH-Arduino-Integration$
+- host: ^github\.com$
+  owner: ^Poemtech$
+  name: ^IoT-Dash-Firmware$
+- host: ^github\.com$
+  owner: ^Potsdam-Sensors$
+  name: ^TelosAir_Boards$
+- host: ^github\.com$
+  owner: ^PowerFeather$
+  name: ^powerfeather\.github\.io$
+- host: ^github\.com$
+  owner: ^Purple-Future-Trust$
+  name: ^PEEK-AI-Grain-Sorter$
+- host: ^github\.com$
+  owner: ^RAKWireless$
+  name: ^RAK-RP-Arduino$
+  path: ^package_rakrp_index\.json$
+- host: ^github\.com$
+  owner: ^RAKWireless$
+  name: ^RAK-nRF52-Arduino$
+  path: ^package_raknrf_index\.json$
+- host: ^github\.com$
   owner: ^RFThings$
   name: ^rfthings\.github\.io$
   path: ^docs/ArduinoBoardManagerJSON/package_rfthings-test_index\.json$
 - host: ^github\.com$
+  owner: ^ROBOTIS-Will$
+  name: ^OpenCR$
+- host: ^github\.com$
+  owner: ^RT-Thread-Studio$
+  name: ^sdk-thirdparty-platformio$
+- host: ^github\.com$
   owner: ^Rahul-coding$
   name: ^Arduino$
+- host: ^github\.com$
+  owner: ^Rain0716$
+  name: ^Arduino_Sensorcoil$
+- host: ^github\.com$
+  owner: ^RalphBacon$
+  name: ^LGT8F328P-Arduino-Clone-Chip-ATMega328P$
 - host: ^github\.com$
   owner: ^Ranajayy$
   name: ^Projects-$
 - host: ^github\.com$
+  owner: ^RedBearLab$
+  name: ^nRF51822-Arduino$
+- host: ^github\.com$
+  owner: ^RedBearLab$
+  name: ^redbearlab\.github\.io$
+  path: ^arduino/package_redbear_beta_index\.json$
+- host: ^github\.com$
+  owner: ^RedBearLab$
+  name: ^redbearlab\.github\.io$
+  path: ^arduino/package_redbear_index\.json$
+- host: ^github\.com$
+  owner: ^RedBearLab$
+  name: ^redbearlab\.github\.io$
+  path: ^arduino/package_redbear_nRF5x_beta_index\.json$
+- host: ^github\.com$
+  owner: ^RedBearLab$
+  name: ^redbearlab\.github\.io$
+  path: ^arduino/package_redbear_nRF5x_test_index\.json$
+- host: ^github\.com$
+  owner: ^RedBearLab$
+  name: ^redbearlab\.github\.io$
+  path: ^arduino/package_redbearlab_beta_index\.json$
+- host: ^github\.com$
+  owner: ^RedBearLab$
+  name: ^redbearlab\.github\.io$
+  path: ^arduino/package_redbearlab_index\.json$
+- host: ^github\.com$
+  owner: ^RedBearLab$
+  name: ^redbearlab\.github\.io$
+  path: ^arduino/package_redbearlab_nRF51_beta_index\.json$
+- host: ^github\.com$
+  owner: ^RedRiveRR$
+  name: ^M5Stack-NOVA$
+- host: ^github\.com$
+  owner: ^RedyAu$
+  name: ^FodorHome_vizrendszer$
+- host: ^github\.com$
+  owner: ^RemkoPr$
+  name: ^smart_textile_public$
+- host: ^github\.com$
+  owner: ^Roboy$
+  name: ^DarkRoom_MKR$
+- host: ^github\.com$
+  owner: ^Roboy$
+  name: ^MKR1000_Lighthouse_Embed$
+- host: ^github\.com$
+  owner: ^RuturajS$
+  name: ^Attiny85$
+- host: ^github\.com$
+  owner: ^S10143806H$
+  name: ^AmebaOTA$
+- host: ^github\.com$
+  owner: ^S10143806H$
+  name: ^Arduino_AmebaD_test$
+- host: ^github\.com$
+  owner: ^Santtu-Nyman$
+  name: ^sandbox$
+- host: ^github\.com$
+  owner: ^ScepticInt$
+  name: ^MarlinSTM32F7$
+- host: ^github\.com$
+  owner: ^Seeed-Studio$
+  name: ^CodeCraft$
+- host: ^github\.com$
   owner: ^SilvaAires$
   name: ^ArduinoIDE$
 - host: ^github\.com$
+  owner: ^Skrikunov$
+  name: ^Transceiver-SI4463$
+- host: ^github\.com$
+  owner: ^SlayterDev$
+  name: ^8Step$
+- host: ^github\.com$
+  owner: ^Snapmaker$
+  name: ^Snapmaker2-Modules$
+- host: ^github\.com$
+  owner: ^Snow-Remover$
+  name: ^snow-remover-code$
+- host: ^github\.com$
+  owner: ^SodaqMoja$
+  name: ^SodaqCore-samd$
+- host: ^github\.com$
+  owner: ^SoluTekSteam$
+  name: ^56_Multiprotocol_pascallanger_DIY-Multiprotocol-TX-Module$
+- host: ^github\.com$
+  owner: ^SomeshSagabla$
+  name: ^Board-Packages$
+- host: ^github\.com$
+  owner: ^Soumojitshome2023$
+  name: ^ESP32-Code$
+- host: ^github\.com$
+  owner: ^SpenceKonde$
+  name: ^ATTinyCore$
+  path: ^avr/extras/development$
+- host: ^github\.com$
+  owner: ^SpenceKonde$
+  name: ^ReleaseScripts$
+  path: ^package_azduino\.com_index\.json$
+- host: ^github\.com$
+  owner: ^SpenceKonde$
+  name: ^ReleaseScripts$
+  path: ^package_azduino\.comtest_index\.json$
+- host: ^github\.com$
+  owner: ^TanawatJukmongkol$
+  name: ^RAI-line-following$
+- host: ^github\.com$
+  owner: ^Tedezed$
+  name: ^Arduino$
+- host: ^github\.com$
+  owner: ^Tenroket$
+  name: ^AlpDroid$
+- host: ^github\.com$
+  owner: ^TheByteAttic$
+  name: ^CERBERUS2080$
+- host: ^github\.com$
+  owner: ^TheRoboticsClub$
+  name: ^tuxamito$
+- host: ^github\.com$
+  owner: ^ToTaleue$
+  name: ^windows-version-writein$
+- host: ^github\.com$
+  owner: ^Tophness$
+  name: ^Arduino_Core_STM32$
+- host: ^github\.com$
+  owner: ^TouchBlueSky$
+  name: ^arduino-core-ch592f$
+  path: ^ch592f$
+- host: ^github\.com$
+  owner: ^VSChina$
+  name: ^azureiotdevkit_tools$
+  path: ^test$
+- host: ^github\.com$
+  owner: ^Vulcainreo$
+  name: ^DVID$
+- host: ^github\.com$
+  owner: ^WaylandM$
+  name: ^XOD-SenseCAP-Indicator$
+- host: ^github\.com$
+  owner: ^Web4application$
+  name: ^ATmega2560-Optiboot-8$
+- host: ^github\.com$
+  owner: ^WelterRocks$
+  name: ^WESPOTA$
+- host: ^github\.com$
+  owner: ^Wiz-IO$
+  name: ^Arduino-MT2625-BC66$
+- host: ^github\.com$
+  owner: ^Wiznet$
+  name: ^document_framework$
+  path: ^static/img/products/wizfi360/download/arduino/package_WizFi360_index\.json$
+- host: ^github\.com$
+  owner: ^X16Community$
+  name: ^x16-smc$
+- host: ^github\.com$
+  owner: ^XuanMinh201$
+  name: ^RF210$
+- host: ^github\.com$
   owner: ^Yangchen-sudo$
   name: ^VTS$
+- host: ^github\.com$
+  owner: ^Zaph-x$
+  name: ^PseudoIno-lang$
+- host: ^github\.com$
+  owner: ^ZeroWorkshop$
+  name: ^ZeroBlocklyLite$
+- host: ^github\.com$
+  owner: ^ZroIsHere$
+  name: ^Ender-3-Pro$
 - host: ^github\.com$
   owner: ^abhayverma21$
   name: ^Indus-Board-Coin$
@@ -519,6 +786,9 @@
   owner: ^bitbank2$
   name: ^MFRBadge$
 - host: ^github\.com$
+  owner: ^bluesat-archive$
+  name: ^NonBLUEsat$
+- host: ^github\.com$
   owner: ^bm16ton$
   name: ^linux-notes$
 - host: ^github\.com$
@@ -559,7 +829,13 @@
   name: ^FPGA$
 - host: ^github\.com$
   owner: ^chcbaram$
+  name: ^SkyRover_Ardu$
+- host: ^github\.com$
+  owner: ^chcbaram$
   name: ^opencr_test$
+- host: ^github\.com$
+  owner: ^chilipeppr$
+  name: ^serial-port-json-server$
 - host: ^github\.com$
   owner: ^chipKIT32$
   name: ^chipKIT-compiler-builds$
@@ -608,6 +884,9 @@
 - host: ^github\.com$
   owner: ^darkomen$
   name: ^4xiDraw$
+- host: ^github\.com$
+  owner: ^darkomen$
+  name: ^Arduino$
 - host: ^github\.com$
   owner: ^darrintw$
   name: ^ardublockly-tw$
@@ -707,10 +986,16 @@
   path: ^hardware/fpga/f32c/obsolete$
 - host: ^github\.com$
   owner: ^facchinm$
+  name: ^arduino-flash-tools$
+- host: ^github\.com$
+  owner: ^facchinm$
   name: ^library-dependencies-extractor$
 - host: ^github\.com$
   owner: ^fairecasoimeme$
   name: ^LiXee-Box$
+- host: ^github\.com$
+  owner: ^fastlock$
+  name: ^testing-persona-stm32core$
 - host: ^github\.com$
   owner: ^fbeltrao$
   name: ^Seeed_SAMD_Boards$
@@ -840,6 +1125,9 @@
   owner: ^johnjsb$
   name: ^ArbotiX-M$
 - host: ^github\.com$
+  owner: ^johnlauer$
+  name: ^serial-port-json-server$
+- host: ^github\.com$
   owner: ^johnquanta$
   name: ^realtek-ameba-arduino$
 - host: ^github\.com$
@@ -866,6 +1154,9 @@
 - host: ^github\.com$
   owner: ^karimi$
   name: ^unbrickit$
+- host: ^github\.com$
+  owner: ^kashimAstro$
+  name: ^raspberry_attiny_programmer$
 - host: ^github\.com$
   owner: ^kevinfrei$
   name: ^Arduino2Make$
@@ -927,6 +1218,9 @@
 - host: ^github\.com$
   owner: ^lukahasch$
   name: ^informatik_projekt$
+- host: ^github\.com$
+  owner: ^lumi3005$
+  name: ^My-Arduino$
 - host: ^github\.com$
   owner: ^luni64$
   name: ^TeensyTimerTool$
@@ -1027,8 +1321,26 @@
   owner: ^mschlenker$
   name: ^rasperryun$
 - host: ^github\.com$
+  owner: ^mysensors$
+  name: ^MySensorsBootloaderRF24$
+- host: ^github\.com$
+  owner: ^mzymcm$
+  name: ^MEM$
+- host: ^github\.com$
   owner: ^n0xa$
   name: ^m5stick-nemo$
+- host: ^github\.com$
+  owner: ^nanbuwks$
+  name: ^AVTOKYOmacropad$
+- host: ^github\.com$
+  owner: ^ncnynl$
+  name: ^commands$
+- host: ^github\.com$
+  owner: ^neamatullah-JRC$
+  name: ^m3RBN_COLLAB_BOARD$
+- host: ^github\.com$
+  owner: ^nearnshaw$
+  name: ^arduino-salsipuedes$
 - host: ^github\.com$
   owner: ^nguyenmanhthao996tn$
   name: ^nguyenmanhthao996tn\.github\.io$
@@ -1045,29 +1357,348 @@
   owner: ^nishpishx$
   name: ^Bittle_Robot$
 - host: ^github\.com$
+  owner: ^nolan-gutierrez$
+  name: ^drazzy$
+- host: ^github\.com$
+  owner: ^npd2020$
+  name: ^electronics$
+- host: ^github\.com$
   owner: ^nulllaborg$
   name: ^nulllab_w80x_arduino$
+- host: ^github\.com$
+  owner: ^nuta$
+  name: ^archives$
+- host: ^github\.com$
+  owner: ^oleometal$
+  name: ^Arrow-ATS$
+- host: ^github\.com$
+  owner: ^open-seneca$
+  name: ^modular-aq-sensor$
+- host: ^github\.com$
+  owner: ^oroca$
+  name: ^OpenCM_Arduino_IDE$
+- host: ^github\.com$
+  owner: ^oroca$
+  name: ^SkyRover_Projects$
+- host: ^github\.com$
+  owner: ^orocapangyo$
+  name: ^iTurtle$
+- host: ^github\.com$
+  owner: ^palmerr23$
+  name: ^STM32F407$
+- host: ^github\.com$
+  owner: ^pammyleong$
+  name: ^Arduino_SDK_test$
+- host: ^github\.com$
+  owner: ^paulrozhkin$
+  name: ^DriverMotorsCortexM3$
+- host: ^github\.com$
+  owner: ^pepelax$
+  name: ^cookbook$
+- host: ^github\.com$
+  owner: ^petarstamenkovic$
+  name: ^WireLess_Embedded_Systems$
+- host: ^github\.com$
+  owner: ^piconomix$
+  name: ^px-fwlib$
+- host: ^github\.com$
+  owner: ^piloChambert$
+  name: ^RPI-I2C-Joystick$
+- host: ^github\.com$
+  owner: ^pimbongaerts$
+  name: ^firefish$
+  path: ^arduino/firefish_m4_v2/
+- host: ^github\.com$
+  owner: ^pimbongaerts$
+  name: ^firefish$
+  path: ^arduino/firefisk_m4_v4/package_firefish_index\.json$
+- host: ^github\.com$
+  owner: ^pomeroyb$
+  name: ^MarlinForBasic$
+- host: ^github\.com$
+  owner: ^premjithav$
+  name: ^vega-sdk-novnc$
 - host: ^github\.com$
   owner: ^princelundgren$
   name: ^arduino-v1\.8$
 - host: ^github\.com$
+  owner: ^qdrin$
+  name: ^taikodrum$
+- host: ^github\.com$
+  owner: ^qnimble$
+  name: ^arduino_json$
+  path: ^package_qnimble_beta_index\.json$
+- host: ^github\.com$
+  owner: ^qnimble$
+  name: ^arduino_json$
+  path: ^package_qnimble_prototype_index\.json$
+- host: ^github\.com$
+  owner: ^racarla96$
+  name: ^Arduino_1\.8\.16_Portable_Windows$
+- host: ^github\.com$
+  owner: ^rajpandya17$
+  name: ^indiesemic-arduino$
+- host: ^github\.com$
+  owner: ^raymondxie$
+  name: ^iotws$
+- host: ^github\.com$
+  owner: ^rbeiter$
+  name: ^arduino-boards-sandbox$
+- host: ^github\.com$
+  owner: ^reedb$
+  name: ^ProTrinket$
+- host: ^github\.com$
+  owner: ^repetier$
+  name: ^Repetier-Firmware$
+- host: ^github\.com$
+  owner: ^rick3rt$
+  name: ^framework-arduino-avr-lgt8f$
+- host: ^github\.com$
+  owner: ^riotgibbon$
+  name: ^iot-gibbon$
+- host: ^github\.com$
+  owner: ^rkarlsba$
+  name: ^ymse$
+- host: ^github\.com$
+  owner: ^robertinant$
+  name: ^emt$
+- host: ^github\.com$
+  owner: ^robertinant$
+  name: ^energia-package-index$
+- host: ^github\.com$
+  owner: ^rolfwessels$
+  name: ^lazycowprojects$
+- host: ^github\.com$
+  owner: ^ropg$
+  name: ^board_definitions$
+- host: ^github\.com$
+  owner: ^ropg$
+  name: ^board_experiments$
+- host: ^github\.com$
+  owner: ^rxpc$
+  name: ^attiny$
+- host: ^github\.com$
+  owner: ^ryujt-backup$
+  name: ^arduino$
+- host: ^github\.com$
   owner: ^s-be$
   name: ^Arduino$
+- host: ^github\.com$
+  owner: ^sabiinsearch$
+  name: ^IoT$
+- host: ^github\.com$
+  owner: ^sandeepmistry$
+  name: ^arduino-nRF5$
+- host: ^github\.com$
+  owner: ^sanje2v$
+  name: ^RGBLEDMatrixDriver$
+- host: ^github\.com$
+  owner: ^saphieng$
+  name: ^blast-furnace-moteino$
+- host: ^github\.com$
+  owner: ^satshakit$
+  name: ^satshakit-128$
+- host: ^github\.com$
+  owner: ^scirelli$
+  name: ^arduino-hardware-attiny$
+- host: ^github\.com$
+  owner: ^semir-t$
+  name: ^attinycore$
+- host: ^github\.com$
+  owner: ^sensebox$
+  name: ^senseBox_Eye$
+- host: ^github\.com$
+  owner: ^sensebox$
+  name: ^sensebox-arduino-esp32$
 - host: ^github\.com$
   owner: ^sglbll$
   name: ^about-me$
 - host: ^github\.com$
+  owner: ^shajra$
+  name: ^shajra-keyboards$
+- host: ^github\.com$
+  owner: ^sigdevel$
+  name: ^res$
+- host: ^github\.com$
+  owner: ^silverspringnetworks$
+  name: ^developer_program$
+- host: ^github\.com$
+  owner: ^skeatz$
+  name: ^skeatz\.github\.io$
+- host: ^github\.com$
+  owner: ^sl1pkn07$
+  name: ^Prusa$
+- host: ^github\.com$
+  owner: ^somik123$
+  name: ^Adafruit_nRF52_Arduino_ProMicro$
+- host: ^github\.com$
+  owner: ^space150$
+  name: ^spaceLock$
+- host: ^github\.com$
+  owner: ^sparkfun$
+  name: ^ATmega128RFA1_Dev$
+- host: ^github\.com$
+  owner: ^sparkfun$
+  name: ^Qduino_Mini$
+- host: ^github\.com$
+  owner: ^sportiduino$
+  name: ^sportiduino$
+- host: ^github\.com$
+  owner: ^srimix$
+  name: ^Aluminati-LED-Bhangra-2017$
+- host: ^github\.com$
+  owner: ^ssilverman$
+  name: ^teensy_betas$
+- host: ^github\.com$
+  owner: ^stanleyseow$
+  name: ^attiny-nRF24L01$
+- host: ^github\.com$
+  owner: ^stanlytw$
+- host: ^github\.com$
+  owner: ^stefanvt1981$
+  name: ^arduino$
+- host: ^github\.com$
+  owner: ^stm32duino$
+  name: ^BoardManagerFiles$
+  path: ^STM32/src/templates/
+- host: ^github\.com$
+  owner: ^strongwong$
+  name: ^arduino-bl618$
+- host: ^github\.com$
+  owner: ^synaption$
+  name: ^Arduino$
+- host: ^github\.com$
+  owner: ^tanakamasayuki$
+  name: ^host-arduino-core$
+  path: ^package_index\.json$
+- host: ^github\.com$
+  owner: ^tardate$
+  name: ^LittleArduinoProjects$
+- host: ^github\.com$
+  owner: ^tcafiero$
+  name: ^IoTWArduinoPortable$
+- host: ^github\.com$
+  owner: ^tcafiero$
+  name: ^NBCTestingMachine$
+- host: ^github\.com$
+  owner: ^tcafiero$
+  name: ^Spi$
+- host: ^github\.com$
   owner: ^technologiescollege$
   name: ^ArduinoTechnoEduc$
+- host: ^github\.com$
+  owner: ^technologiescollege$
+  name: ^BlocklyArduino_AIO_deprecated$
+- host: ^github\.com$
+  owner: ^technologiescollege$
+  name: ^BlocklyArduino_electrified$
+- host: ^github\.com$
+  owner: ^terminat0r7031$
+  name: ^ESP8266-WIFI-HACKING$
+- host: ^github\.com$
+  owner: ^tharandtwi$
+  name: ^smartHumiditySensor$
+- host: ^github\.com$
+  owner: ^theshibaprasad$
+  name: ^stm32_$
+- host: ^github\.com$
+  owner: ^thoughtstem$
+  name: ^rokit-racket$
+  path: ^rokit-racket-demos/demo/hardware/Rokit/avr$
+- host: ^github\.com$
+  owner: ^tigertooth4$
+  name: ^Kossel-XL$
+- host: ^github\.com$
+  owner: ^tim23x$
+  name: ^WebUSB$
+- host: ^github\.com$
+  owner: ^tofijak$
+  name: ^T\.HUE$
+- host: ^github\.com$
+  owner: ^tommyvhb$
+  name: ^Marlin_backup$
+- host: ^github\.com$
+  owner: ^tonigarioliver$
+  name: ^Controllino-Mega-with-Shutters_Slider_Counters_AnalogReadings$
+- host: ^github\.com$
+  owner: ^tonyj321$
+  name: ^Marlin$
+- host: ^github\.com$
+  owner: ^troykyo$
+  name: ^Arduino$
+- host: ^github\.com$
+  owner: ^uStepper$
+  name: ^uStepper$
+- host: ^github\.com$
+  owner: ^ucsb-seclab$
+  name: ^conware$
+- host: ^github\.com$
+  owner: ^umi-academy$
+  name: ^UMI_Block$
+- host: ^github\.com$
+  owner: ^una1veritas$
+  name: ^Arduino-public$
+- host: ^github\.com$
+  owner: ^vazhure$
+  name: ^loadcellhandbrake$
+- host: ^github\.com$
+  owner: ^vessp$
+  name: ^Arduino$
+- host: ^github\.com$
+  owner: ^void3729$
+  name: ^Mixly2\.0_hyseim$
+- host: ^github\.com$
+  owner: ^vs4vijay$
+  name: ^iot-playground$
+- host: ^github\.com$
+  owner: ^vvikas$
+  name: ^m5stickCp2-firmware$
+- host: ^github\.com$
+  owner: ^walmis$
+  name: ^repetier-firmware$
+- host: ^github\.com$
+  owner: ^wamisnet$
+  name: ^wamisnet\.github\.io$
+- host: ^github\.com$
+  owner: ^watterott$
+  name: ^Wattuino$
+  path: ^software/Arduino/package_watterott_index\.json$
 - host: ^github\.com$
   owner: ^wbovela$
   name: ^arcade2usb-converter$
 - host: ^github\.com$
+  owner: ^webmaster442$
+  name: ^ArduinoExtensions$
+- host: ^github\.com$
   owner: ^wmkouw$
   name: ^CONTACT-AI$
+- host: ^github\.com$
+  owner: ^wpi-bionics-club$
+  name: ^dextra$
 - host: ^github\.com$
   owner: ^wxzed$
   name: ^testurl$
 - host: ^github\.com$
   owner: ^xodio$
   name: ^xod$
+- host: ^github\.com$
+  owner: ^xtremind$
+  name: ^vagrant$
+- host: ^github\.com$
+  owner: ^xuexi1234567890$
+  name: ^xxbj$
+- host: ^github\.com$
+  owner: ^yangchaohong$
+  name: ^stc51duino$
+- host: ^github\.com$
+  owner: ^yuan910715$
+  name: ^Xiaomi_Scooter_HUD$
+- host: ^github\.com$
+  owner: ^yury-sannikov$
+  name: ^Sonoff-Tasmota-Sensor$
+- host: ^github\.com$
+  owner: ^zoubata$
+  name: ^Arduino15$
+- host: ^github\.com$
+  owner: ^zoujixing$
+  name: ^nRF51_Arduino_S130$
