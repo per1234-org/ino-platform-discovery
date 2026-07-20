@@ -2,7 +2,11 @@
 package catalogentry
 
 import (
+	"net/url"
+	"strings"
+
 	"github.com/per1234-org/ino-platform-discovery/internal/catalog/catalogcolumn"
+	"github.com/sirupsen/logrus"
 )
 
 // New returns a new catalog entry object.
@@ -33,12 +37,36 @@ func IsDuplicate(incoming []string, existing []string) bool {
 	}
 
 	// Check if it is a duplicate index.
-	if incoming[catalogcolumn.PackageIndexRepository] != "" &&
-		incoming[catalogcolumn.PackageIndexRepository] == existing[catalogcolumn.PackageIndexRepository] &&
-		incoming[catalogcolumn.PackageIndexFolder] == existing[catalogcolumn.PackageIndexFolder] &&
-		incoming[catalogcolumn.PackageIndexBranch] == existing[catalogcolumn.PackageIndexBranch] {
-		return true
+	if incoming[catalogcolumn.PackageIndexRepository] != "" {
+		incomingIndexFilename := urlFile(incoming[catalogcolumn.BoardsManagerURL])
+		existingIndexFilename := urlFile(existing[catalogcolumn.BoardsManagerURL])
+
+		if incoming[catalogcolumn.PackageIndexRepository] == existing[catalogcolumn.PackageIndexRepository] &&
+			incoming[catalogcolumn.PackageIndexFolder] == existing[catalogcolumn.PackageIndexFolder] &&
+			incoming[catalogcolumn.PackageIndexBranch] == existing[catalogcolumn.PackageIndexBranch] &&
+			incomingIndexFilename == existingIndexFilename {
+			return true
+		}
 	}
 
 	return false
+}
+
+// urlFile returns the last component of the path from the given URL.
+func urlFile(rawURL string) string {
+	urlObject, err := url.Parse(rawURL)
+	if err != nil {
+		logrus.Errorf("Invalid URL: %s", rawURL)
+		return ""
+	}
+
+	if urlObject.Path == "" {
+		// URL does not have a path component.
+		logrus.Errorf("URL without path component: %s", rawURL)
+		return ""
+	}
+
+	pathComponents := strings.Split(urlObject.Path, "/")
+
+	return pathComponents[len(pathComponents)-1]
 }

@@ -47,11 +47,13 @@ func TestTypeDeduplicate(t *testing.T) {
 	fooCatalogEntry[catalogcolumn.BranchName] = "foobranch"
 
 	barCatalogEntry := catalogentry.New()
+	barCatalogEntry[catalogcolumn.BoardsManagerURL] = "https://example.com/duplicate-index/foopath/package_foo_index.json"
 	barCatalogEntry[catalogcolumn.PackageIndexRepository] = "https://example.com/duplicate-index"
 	barCatalogEntry[catalogcolumn.PackageIndexFolder] = "/foopath/"
 	barCatalogEntry[catalogcolumn.PackageIndexBranch] = "foobranch"
 
 	bazCatalogEntry := catalogentry.New()
+	bazCatalogEntry[catalogcolumn.BoardsManagerURL] = "https://example.com/some-index/package_foo_index.json"
 	bazCatalogEntry[catalogcolumn.PackageIndexRepository] = "https://example.com/some-index"
 	bazCatalogEntry[catalogcolumn.PackageIndexFolder] = "/foopath/"
 	bazCatalogEntry[catalogcolumn.PackageIndexBranch] = "foobranch"
