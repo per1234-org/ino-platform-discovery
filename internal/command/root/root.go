@@ -10,6 +10,7 @@ import (
 	"github.com/per1234-org/ino-platform-discovery/internal/exclusions"
 	"github.com/per1234-org/ino-platform-discovery/internal/feedback"
 	"github.com/per1234-org/ino-platform-discovery/internal/request"
+	"github.com/per1234-org/ino-platform-discovery/internal/request/clients"
 	"github.com/per1234-org/ino-platform-discovery/internal/request/github"
 	"github.com/spf13/cobra"
 )
@@ -43,10 +44,10 @@ func Run(command *cobra.Command, _ []string) {
 		os.Exit(1)
 	}
 
-	githubClient := github.NewClient(os.Getenv("GITHUB_TOKEN"))
+	clients.Clients.GitHub = github.NewClient(os.Getenv("GITHUB_TOKEN"))
 
 	// Search GitHub for repositories that appear to contain a platform or package index.
-	searchResults, err := request.Search(githubClient)
+	searchResults, err := request.Search()
 	if err != nil {
 		feedback.Error(fmt.Errorf("while searching: %s", err))
 		os.Exit(1)
@@ -60,7 +61,7 @@ func Run(command *cobra.Command, _ []string) {
 
 	// Obtain additional data for each of the results.
 	fmt.Println("Obtaining supplemental data for discoveries...")
-	if err := request.Supplement(githubClient, &searchResults); err != nil {
+	if err := request.Supplement(&searchResults); err != nil {
 		feedback.Error(fmt.Errorf("while supplementing results: %s", err))
 		os.Exit(1)
 	}

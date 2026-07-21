@@ -5,6 +5,7 @@ import (
 	"testing"
 
 	gogithub "github.com/google/go-github/v79/github"
+	"github.com/per1234-org/ino-platform-discovery/internal/request/clients"
 	"github.com/per1234-org/ino-platform-discovery/internal/request/github"
 	resultsrepo "github.com/per1234-org/ino-platform-discovery/internal/results/repo"
 	"github.com/stretchr/testify/assert"
@@ -18,9 +19,9 @@ func TestGet(t *testing.T) {
 		t.Skip("Required GITHUB_TOKEN environment variable not defined.")
 	}
 
-	githubClient := github.NewClient(os.Getenv("GITHUB_TOKEN"))
+	clients.Clients.GitHub = github.NewClient(os.Getenv("GITHUB_TOKEN"))
 
-	repo, err := Get(githubClient, "per1234-org", "Enterprise")
+	repo, err := Get("per1234-org", "Enterprise")
 	require.NoError(t, err)
 
 	assertion := resultsrepo.Type{
@@ -39,7 +40,7 @@ func Test_ahead(t *testing.T) {
 		t.Skip("Required GITHUB_TOKEN environment variable not defined.")
 	}
 
-	githubClient := github.NewClient(os.Getenv("GITHUB_TOKEN"))
+	clients.Clients.GitHub = github.NewClient(os.Getenv("GITHUB_TOKEN"))
 
 	getRepoResponse := gogithub.Repository{
 		DefaultBranch: new("master"),
@@ -56,7 +57,7 @@ func Test_ahead(t *testing.T) {
 		},
 	}
 
-	ahead, err := ahead(githubClient, &getRepoResponse)
+	ahead, err := ahead(&getRepoResponse)
 	require.NoError(t, err)
 
 	assert.False(t, ahead, "Even fork is not considered ahead.")
