@@ -2,7 +2,6 @@
 package github
 
 import (
-	"context"
 	"errors"
 	"fmt"
 	"time"
@@ -42,7 +41,7 @@ func HandleRateLimiting(err error) error {
 }
 
 // NewClient creates a client for GitHub API requests.
-func NewClient(githubToken string) (context.Context, *github.Client) {
+func NewClient(githubToken string) *github.Client {
 	client := github.NewClient(nil)
 
 	// Token is needed to get a rate limiting allowance suitable for the full index, but some tests can run without.
@@ -51,5 +50,5 @@ func NewClient(githubToken string) (context.Context, *github.Client) {
 		client = client.WithAuthToken(githubToken)
 	}
 
-	return context.Background(), client
+	return client
 }
