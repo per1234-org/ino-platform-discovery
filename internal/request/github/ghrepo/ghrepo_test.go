@@ -27,7 +27,9 @@ func TestGet(t *testing.T) {
 	assertion := resultsrepo.Type{
 		Ahead:         false,
 		DefaultBranch: "master",
+		Error:         nil,
 		Fork:          true,
+		ResolvedURL:   "https://github.com/per1234-org/Enterprise",
 	}
 
 	assert.Equal(t, assertion, repo, "Repo data as expected.")

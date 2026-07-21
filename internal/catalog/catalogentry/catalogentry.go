@@ -2,10 +2,12 @@
 package catalogentry
 
 import (
+	"fmt"
 	"net/url"
 	"strings"
 
 	"github.com/per1234-org/ino-platform-discovery/internal/catalog/catalogcolumn"
+	"github.com/per1234-org/ino-platform-discovery/internal/request/github/ghrepo"
 	"github.com/sirupsen/logrus"
 )
 
@@ -29,27 +31,90 @@ func IsDuplicate(incoming []string, existing []string) bool {
 	*/
 
 	// Check if it is a duplicate platform.
-	if incoming[catalogcolumn.Repository] != "" &&
-		incoming[catalogcolumn.Repository] == existing[catalogcolumn.Repository] &&
-		incoming[catalogcolumn.RepositoryDataFolder] == existing[catalogcolumn.RepositoryDataFolder] &&
-		incoming[catalogcolumn.BranchName] == existing[catalogcolumn.BranchName] {
-		return true
+	if incoming[catalogcolumn.Repository] != "" {
+		// Perform initial check with verbatim catalog entry to avoid unnecessary normalization requests.
+		if isDuplicatePlatform(incoming, existing) {
+			return true
+		}
+
+		resolvedExistingRepository, err := resolveURL(existing[catalogcolumn.Repository])
+		if err == nil {
+			if existing[catalogcolumn.Repository] != resolvedExistingRepository {
+				existing[catalogcolumn.Repository] = resolvedExistingRepository
+				if isDuplicatePlatform(incoming, existing) {
+					return true
+				}
+			}
+		}
 	}
 
 	// Check if it is a duplicate index.
 	if incoming[catalogcolumn.PackageIndexRepository] != "" {
-		incomingIndexFilename := urlFile(incoming[catalogcolumn.BoardsManagerURL])
-		existingIndexFilename := urlFile(existing[catalogcolumn.BoardsManagerURL])
-
-		if incoming[catalogcolumn.PackageIndexRepository] == existing[catalogcolumn.PackageIndexRepository] &&
-			incoming[catalogcolumn.PackageIndexFolder] == existing[catalogcolumn.PackageIndexFolder] &&
-			incoming[catalogcolumn.PackageIndexBranch] == existing[catalogcolumn.PackageIndexBranch] &&
-			incomingIndexFilename == existingIndexFilename {
+		if isDuplicateIndex(incoming, existing) {
 			return true
+		}
+
+		resolvedExistingPackageIndexRepository, err := resolveURL(existing[catalogcolumn.PackageIndexRepository])
+		if err == nil {
+			if existing[catalogcolumn.PackageIndexRepository] != resolvedExistingPackageIndexRepository {
+				existing[catalogcolumn.PackageIndexRepository] = resolvedExistingPackageIndexRepository
+				if isDuplicateIndex(incoming, existing) {
+					return true
+				}
+			}
 		}
 	}
 
 	return false
+}
+
+// isDuplicateIndex determines whether a candidate index entry is a duplicate of an existing entry.
+func isDuplicateIndex(incoming []string, existing []string) bool {
+	incomingIndexFilename := urlFile(incoming[catalogcolumn.BoardsManagerURL])
+	existingIndexFilename := urlFile(existing[catalogcolumn.BoardsManagerURL])
+
+	return incoming[catalogcolumn.PackageIndexRepository] == existing[catalogcolumn.PackageIndexRepository] &&
+		incoming[catalogcolumn.PackageIndexFolder] == existing[catalogcolumn.PackageIndexFolder] &&
+		incoming[catalogcolumn.PackageIndexBranch] == existing[catalogcolumn.PackageIndexBranch] &&
+		incomingIndexFilename == existingIndexFilename
+}
+
+// isDuplicatePlatform determines whether a candidate platform entry is a duplicate of an existing entry.
+func isDuplicatePlatform(incoming []string, existing []string) bool {
+	return incoming[catalogcolumn.Repository] == existing[catalogcolumn.Repository] &&
+		incoming[catalogcolumn.RepositoryDataFolder] == existing[catalogcolumn.RepositoryDataFolder] &&
+		incoming[catalogcolumn.BranchName] == existing[catalogcolumn.BranchName]
+}
+
+// resolveURL returns the given URL after any redirects are resolved.
+func resolveURL(inputURL string) (string, error) {
+	urlObject, err := url.Parse(inputURL)
+	if err != nil {
+		logrus.Errorf("Invalid URL: %s", inputURL)
+		return inputURL, err
+	}
+
+	switch urlObject.Host {
+	case "github.com":
+		pathComponents := strings.Split(urlObject.Path, "/")
+		if len(pathComponents) < 3 {
+			logrus.Errorf("Incomplete GitHub repo URL: %s", inputURL)
+			return inputURL, fmt.Errorf("incomplete GitHub repo URL: %s", inputURL)
+		}
+
+		owner := pathComponents[1]
+		name := pathComponents[2]
+		repoData, err := ghrepo.Get(owner, name)
+		if err != nil {
+			logrus.Errorf("GitHub API endpoint returned an error: %s", err.Error())
+			return inputURL, err
+		}
+
+		return repoData.ResolvedURL, nil
+	default:
+		logrus.Tracef("URL not handled by resolver: %s", inputURL)
+		return inputURL, nil
+	}
 }
 
 // urlFile returns the last component of the path from the given URL.

@@ -53,6 +53,7 @@ func Get(owner string, name string) (repo.Type, error) {
 
 	repo.DefaultBranch = *githubResponse.DefaultBranch
 	repo.Fork = *githubResponse.Fork
+	repo.ResolvedURL = *githubResponse.HTMLURL
 
 	if repo.Fork {
 		ahead, err := ahead(githubResponse)

@@ -54,6 +54,7 @@ func TestTypeDeduplicate(t *testing.T) {
 
 	bazCatalogEntry := catalogentry.New()
 	bazCatalogEntry[catalogcolumn.BoardsManagerURL] = "https://example.com/some-index/package_foo_index.json"
+	// Use non-resolvable host to avoid request client dependency.
 	bazCatalogEntry[catalogcolumn.PackageIndexRepository] = "https://example.com/some-index"
 	bazCatalogEntry[catalogcolumn.PackageIndexFolder] = "/foopath/"
 	bazCatalogEntry[catalogcolumn.PackageIndexBranch] = "foobranch"
