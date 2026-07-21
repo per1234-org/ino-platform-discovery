@@ -10,3 +10,15 @@ type Type map[string]repo.Type
 func New() Type {
 	return make(Type)
 }
+
+// Get returns the repository data for the given repository name.
+func (cache Type) Get(name string) (repo.Type, bool) {
+	repo, cached := cache[name]
+
+	return repo, cached
+}
+
+// Set stores the repository data for the given repository name.
+func (cache Type) Set(name string, repoData repo.Type) {
+	cache[name] = repoData
+}

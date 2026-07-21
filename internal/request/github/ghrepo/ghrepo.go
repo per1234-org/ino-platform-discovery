@@ -8,7 +8,6 @@ import (
 	gogithub "github.com/google/go-github/v79/github"
 	"github.com/per1234-org/ino-platform-discovery/internal/request/github"
 	"github.com/per1234-org/ino-platform-discovery/internal/request/github/ghrepo/ghrepocache"
-	"github.com/per1234-org/ino-platform-discovery/internal/request/github/ghrepo/ghrepocache/ownercache"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/repo"
 	"github.com/sirupsen/logrus"
 )
@@ -20,13 +19,10 @@ func Get(clientContext context.Context, client *gogithub.Client, owner string, n
 	if repoCache == nil {
 		repoCache = ghrepocache.New()
 	}
-	if repoCache[owner] == nil {
-		repoCache[owner] = ownercache.New()
-	}
 
 	repo := repo.Type{}
 
-	if repo, cached := repoCache[owner][name]; cached {
+	if repo, cached := repoCache.Get(owner, name); cached {
 		// Use cached data instead of performing redundant request.
 		return repo, repo.Error
 	}
@@ -42,7 +38,7 @@ func Get(clientContext context.Context, client *gogithub.Client, owner string, n
 			err := github.HandleRateLimiting(err)
 			if err != nil {
 				// Error is not recoverable.
-				repoCache[owner][name] = repo
+				repoCache.Set(owner, name, repo)
 				return repo, err
 			}
 
@@ -66,7 +62,7 @@ func Get(clientContext context.Context, client *gogithub.Client, owner string, n
 		repo.Ahead = ahead
 	}
 
-	repoCache[owner][name] = repo
+	repoCache.Set(owner, name, repo)
 	return repo, nil
 }
 
