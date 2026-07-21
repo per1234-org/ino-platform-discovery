@@ -7,6 +7,8 @@ type Type struct {
 	Ahead bool
 	// DefaultBranch is the name of the default branch.
 	DefaultBranch string
+	// Error is the error returned by the GitHub API request.
+	Error error
 	// Fork is whether the repository is a fork.
 	Fork bool
 }
