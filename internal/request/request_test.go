@@ -19,7 +19,7 @@ func TestSupplement(t *testing.T) {
 		t.Skip("Required GITHUB_TOKEN environment variable not defined.")
 	}
 
-	githubContext, githubClient := github.NewClient(os.Getenv("GITHUB_TOKEN"))
+	githubClient := github.NewClient(os.Getenv("GITHUB_TOKEN"))
 
 	targetResults := results.Type{
 		result.Type{
@@ -28,7 +28,7 @@ func TestSupplement(t *testing.T) {
 			RepositoryURL:  "github.com/per1234-org/Enterprise",
 		},
 	}
-	err := Supplement(githubContext, githubClient, &targetResults)
+	err := Supplement(githubClient, &targetResults)
 	require.NoError(t, err)
 
 	assertion := results.Type{
@@ -54,13 +54,13 @@ func Test_repo(t *testing.T) {
 		t.Skip("Required GITHUB_TOKEN environment variable not defined.")
 	}
 
-	githubContext, githubClient := github.NewClient(os.Getenv("GITHUB_TOKEN"))
+	githubClient := github.NewClient(os.Getenv("GITHUB_TOKEN"))
 
 	result := result.Type{
 		Owner:          "per1234-org",
 		RepositoryName: "Enterprise",
 	}
-	repo, err := repo(githubContext, githubClient, result)
+	repo, err := repo(githubClient, result)
 	require.NoError(t, err)
 
 	assertion := resultsrepo.Type{

@@ -15,7 +15,7 @@ import (
 var repoCache ghrepocache.Type
 
 // Get makes a request to the `/repos/{owner}/{repo}` endpoint of the GitHub API and returns data extracted from the response.
-func Get(clientContext context.Context, client *gogithub.Client, owner string, name string) (repo.Type, error) {
+func Get(client *gogithub.Client, owner string, name string) (repo.Type, error) {
 	if repoCache == nil {
 		repoCache = ghrepocache.New()
 	}
@@ -31,7 +31,7 @@ func Get(clientContext context.Context, client *gogithub.Client, owner string, n
 	for {
 		logrus.Tracef("Making GitHub API /repos/{owner}/{repo} endpoint request for %s/%s", owner, name)
 		var err error
-		githubResponse, _, err = client.Repositories.Get(clientContext, owner, name)
+		githubResponse, _, err = client.Repositories.Get(context.Background(), owner, name)
 		repo.Error = err
 
 		if err != nil {
@@ -54,7 +54,7 @@ func Get(clientContext context.Context, client *gogithub.Client, owner string, n
 	repo.Fork = *githubResponse.Fork
 
 	if repo.Fork {
-		ahead, err := ahead(clientContext, client, githubResponse)
+		ahead, err := ahead(client, githubResponse)
 		if err != nil {
 			return repo, err
 		}
@@ -68,7 +68,7 @@ func Get(clientContext context.Context, client *gogithub.Client, owner string, n
 
 // ahead makes a request to the `/repos/{owner}/{repo}/compare/{basehead}` endpoint of the GitHub API for the subject
 // repo and its parent, then returns whether the subject repo is "ahead" of the parent.
-func ahead(clientContext context.Context, client *gogithub.Client, getRepoResponse *gogithub.Repository) (bool, error) {
+func ahead(client *gogithub.Client, getRepoResponse *gogithub.Repository) (bool, error) {
 	ahead := false
 	for {
 		logrus.Tracef("Making GitHub API /repos/{owner}/{repo}/compare/{basehead} endpoint request for %s", *getRepoResponse.FullName)
@@ -77,7 +77,7 @@ func ahead(clientContext context.Context, client *gogithub.Client, getRepoRespon
 		base := fmt.Sprintf("%s:%s", *getRepoResponse.Parent.Owner.Login, *getRepoResponse.Parent.DefaultBranch)
 		head := fmt.Sprintf("%s:%s", *getRepoResponse.Owner.Login, *getRepoResponse.DefaultBranch)
 		githubResponse, _, err := client.Repositories.CompareCommits(
-			clientContext,
+			context.Background(),
 			*getRepoResponse.Owner.Login,
 			*getRepoResponse.Name,
 			base,

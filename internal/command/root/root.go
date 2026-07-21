@@ -43,10 +43,10 @@ func Run(command *cobra.Command, _ []string) {
 		os.Exit(1)
 	}
 
-	githubContext, githubClient := github.NewClient(os.Getenv("GITHUB_TOKEN"))
+	githubClient := github.NewClient(os.Getenv("GITHUB_TOKEN"))
 
 	// Search GitHub for repositories that appear to contain a platform or package index.
-	searchResults, err := request.Search(githubContext, githubClient)
+	searchResults, err := request.Search(githubClient)
 	if err != nil {
 		feedback.Error(fmt.Errorf("while searching: %s", err))
 		os.Exit(1)
@@ -60,7 +60,7 @@ func Run(command *cobra.Command, _ []string) {
 
 	// Obtain additional data for each of the results.
 	fmt.Println("Obtaining supplemental data for discoveries...")
-	if err := request.Supplement(githubContext, githubClient, &searchResults); err != nil {
+	if err := request.Supplement(githubClient, &searchResults); err != nil {
 		feedback.Error(fmt.Errorf("while supplementing results: %s", err))
 		os.Exit(1)
 	}

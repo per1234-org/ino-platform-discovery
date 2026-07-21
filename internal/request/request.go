@@ -2,8 +2,6 @@
 package request
 
 import (
-	"context"
-
 	"github.com/google/go-github/v79/github"
 	"github.com/per1234-org/ino-platform-discovery/internal/request/github/ghrepo"
 	"github.com/per1234-org/ino-platform-discovery/internal/request/github/ghsearch"
@@ -13,12 +11,12 @@ import (
 )
 
 // Search searches for repositories that contain a package index and/or platform.
-func Search(githubContext context.Context, githubClient *github.Client) (results.Type, error) {
-	return ghsearch.Search(githubContext, githubClient)
+func Search(githubClient *github.Client) (results.Type, error) {
+	return ghsearch.Search(githubClient)
 }
 
 // Supplement requests additional data and uses it to supplement the passed results.
-func Supplement(clientContext context.Context, client *github.Client, results *results.Type) error {
+func Supplement(client *github.Client, results *results.Type) error {
 	repositoriesData := make(map[string](resultsrepo.Type))
 	for resultIndex, result := range *results {
 		// A repository may contain multiple platforms or indexes. In this case, it will be present multiple times in the
@@ -26,7 +24,7 @@ func Supplement(clientContext context.Context, client *github.Client, results *r
 		repositoryData, populated := repositoriesData[result.RepositoryURL]
 		if !populated {
 			var err error
-			repositoryData, err = repo(clientContext, client, result)
+			repositoryData, err = repo(client, result)
 			if err != nil {
 				return err
 			}
@@ -43,6 +41,6 @@ func Supplement(clientContext context.Context, client *github.Client, results *r
 }
 
 // repo gets data for the given repository.
-func repo(githubContext context.Context, githubClient *github.Client, result result.Type) (resultsrepo.Type, error) {
-	return ghrepo.Get(githubContext, githubClient, result.Owner, result.RepositoryName)
+func repo(githubClient *github.Client, result result.Type) (resultsrepo.Type, error) {
+	return ghrepo.Get(githubClient, result.Owner, result.RepositoryName)
 }

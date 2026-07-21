@@ -21,13 +21,13 @@ import (
 )
 
 // Search searches for GitHub repositories that contain a package index and/or platform.
-func Search(clientContext context.Context, client *gogithub.Client) (results.Type, error) {
-	results, err := indexes(clientContext, client)
+func Search(client *gogithub.Client) (results.Type, error) {
+	results, err := indexes(client)
 	if err != nil {
 		return nil, err
 	}
 
-	platformResults, err := platforms(clientContext, client)
+	platformResults, err := platforms(client)
 	if err != nil {
 		return nil, err
 	}
@@ -43,7 +43,7 @@ func Search(clientContext context.Context, client *gogithub.Client) (results.Typ
 }
 
 // indexes searches for package indexes.
-func indexes(clientContext context.Context, client *gogithub.Client) (results.Type, error) {
+func indexes(client *gogithub.Client) (results.Type, error) {
 	results := results.Type{}
 	var err error
 
@@ -55,7 +55,7 @@ func indexes(clientContext context.Context, client *gogithub.Client) (results.Ty
 	*/
 	query := "in:path language:json package_ _index.json"
 	fmt.Println("Searching GitHub for package indexes...")
-	searchResults, err := search(clientContext, client, query)
+	searchResults, err := search(client, query)
 	if err != nil {
 		return results, err
 	}
@@ -104,7 +104,7 @@ func indexes(clientContext context.Context, client *gogithub.Client) (results.Ty
 			)
 			var err error
 			contentReader, response, err = client.Repositories.DownloadContents(
-				clientContext,
+				context.Background(),
 				*searchResult.Repository.Owner.Login,
 				*searchResult.Repository.Name,
 				*searchResult.Path,
@@ -172,13 +172,13 @@ func indexes(clientContext context.Context, client *gogithub.Client) (results.Ty
 }
 
 // platforms searches for platforms.
-func platforms(clientContext context.Context, client *gogithub.Client) (results.Type, error) {
+func platforms(client *gogithub.Client) (results.Type, error) {
 	results := results.Type{}
 
 	// See: https://docs.github.com/search-github/searching-on-github/searching-code
 	query := fmt.Sprintf("filename:%s \".upload.tool\"", data.PlatformIndicatorFile)
 	fmt.Println("Searching GitHub for platforms...")
-	searchResults, err := search(clientContext, client, query)
+	searchResults, err := search(client, query)
 	if err != nil {
 		return results, err
 	}
@@ -206,7 +206,7 @@ func platforms(clientContext context.Context, client *gogithub.Client) (results.
 }
 
 // search makes requests to the `/search/code` endpoint of the GitHub API.
-func search(clientContext context.Context, client *gogithub.Client, query string) ([]*gogithub.CodeResult, error) {
+func search(client *gogithub.Client, query string) ([]*gogithub.CodeResult, error) {
 	results := []*gogithub.CodeResult{}
 	requestOptions := &gogithub.SearchOptions{
 		ListOptions: gogithub.ListOptions{
@@ -220,7 +220,7 @@ func search(clientContext context.Context, client *gogithub.Client, query string
 	for {
 		logrus.Tracef("Requesting results page %v", requestOptions.Page)
 		result, response, err := client.Search.Code(
-			clientContext,
+			context.Background(),
 			query,
 			requestOptions,
 		)
