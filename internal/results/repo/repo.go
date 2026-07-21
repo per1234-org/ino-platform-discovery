@@ -11,4 +11,6 @@ type Type struct {
 	Error error
 	// Fork is whether the repository is a fork.
 	Fork bool
+	// ResolvedURL is the resolved repository URL.
+	ResolvedURL string
 }
