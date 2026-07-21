@@ -7,24 +7,42 @@ import (
 
 	gogithub "github.com/google/go-github/v79/github"
 	"github.com/per1234-org/ino-platform-discovery/internal/request/github"
+	"github.com/per1234-org/ino-platform-discovery/internal/request/github/ghrepo/ghrepocache"
+	"github.com/per1234-org/ino-platform-discovery/internal/request/github/ghrepo/ghrepocache/ownercache"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/repo"
 	"github.com/sirupsen/logrus"
 )
 
+var repoCache ghrepocache.Type
+
 // Get makes a request to the `/repos/{owner}/{repo}` endpoint of the GitHub API and returns data extracted from the response.
 func Get(clientContext context.Context, client *gogithub.Client, owner string, name string) (repo.Type, error) {
+	if repoCache == nil {
+		repoCache = ghrepocache.New()
+	}
+	if repoCache[owner] == nil {
+		repoCache[owner] = ownercache.New()
+	}
+
 	repo := repo.Type{}
+
+	if repo, cached := repoCache[owner][name]; cached {
+		// Use cached data instead of performing redundant request.
+		return repo, repo.Error
+	}
 
 	var githubResponse *gogithub.Repository
 	for {
 		logrus.Tracef("Making GitHub API /repos/{owner}/{repo} endpoint request for %s/%s", owner, name)
 		var err error
 		githubResponse, _, err = client.Repositories.Get(clientContext, owner, name)
+		repo.Error = err
 
 		if err != nil {
 			err := github.HandleRateLimiting(err)
 			if err != nil {
 				// Error is not recoverable.
+				repoCache[owner][name] = repo
 				return repo, err
 			}
 
@@ -48,6 +66,7 @@ func Get(clientContext context.Context, client *gogithub.Client, owner string, n
 		repo.Ahead = ahead
 	}
 
+	repoCache[owner][name] = repo
 	return repo, nil
 }
 
