@@ -12,6 +12,7 @@ words:
   - foobranch
   - foopath
   - ghrepo
+  - ghrepocache
   - ghsearch
   - githubpagination
   - gofri
