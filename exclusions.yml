@@ -57,7 +57,7 @@
 - host: ^github\.com$
   owner: ^Ameba8195$
   name: ^Arduino$
-  path: ^release/package_realtek\.com_ameba_index\.json$
+  path: ^release/package_realtek\.com_ameba_early_index\.json$
 - host: ^github\.com$
   owner: ^AncelCarson$
   name: ^Personal-Projects$
