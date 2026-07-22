@@ -31,7 +31,7 @@ func IsDuplicate(incoming []string, existing []string) bool {
 	*/
 
 	// Check if it is a duplicate platform.
-	if incoming[catalogcolumn.Repository] != "" {
+	if incoming[catalogcolumn.Repository] != "" && existing[catalogcolumn.Repository] != "" {
 		// Perform initial check with verbatim catalog entry to avoid unnecessary normalization requests.
 		if isDuplicatePlatform(incoming, existing) {
 			return true
@@ -49,7 +49,7 @@ func IsDuplicate(incoming []string, existing []string) bool {
 	}
 
 	// Check if it is a duplicate index.
-	if incoming[catalogcolumn.PackageIndexRepository] != "" {
+	if incoming[catalogcolumn.PackageIndexRepository] != "" && existing[catalogcolumn.PackageIndexRepository] != "" {
 		if isDuplicateIndex(incoming, existing) {
 			return true
 		}
