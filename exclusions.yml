@@ -1479,7 +1479,6 @@
   name: ^attiny$
 - host: ^github\.com$
   owner: ^ryujt-backup$
-  name: ^arduino$
 - host: ^github\.com$
   owner: ^s-be$
   name: ^Arduino$
