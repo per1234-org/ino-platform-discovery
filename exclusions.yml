@@ -805,7 +805,7 @@
 - host: ^github\.com$
   owner: ^VSChina$
   name: ^azureiotdevkit_tools$
-  path: ^test$
+  path: ^test/package_azureboard_index.json$
 - host: ^github\.com$
   owner: ^Vulcainreo$
   name: ^DVID$
