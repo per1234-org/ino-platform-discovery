@@ -237,7 +237,7 @@
   path: ^package_cytron_arm_index\.json$
 - host: ^github\.com$
   owner: ^CytronTechnologies$
-  name: ^CytronTechnologies\.github\.io$
+  name: ^MakerUno$
   path: ^package_cytron_makeruno_index\.json$
 - host: ^github\.com$
   owner: ^DCC-Lab$
