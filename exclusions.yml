@@ -446,6 +446,9 @@
   owner: ^JackPikatea$
   name: ^Pikatea-SD-card-Firmware$
 - host: ^github\.com$
+  owner: ^Jason2866$
+  name: ^jason2866.github.io$
+- host: ^github\.com$
   owner: ^JeffTheStig$
   name: ^AudioCat_Seminar$
 - host: ^github\.com$
@@ -526,6 +529,10 @@
 - host: ^github\.com$
   owner: ^MikeEitel$
   name: ^___MeLib$
+- host: ^github\.com$
+  owner: ^MineARC$
+  name: ^arduino-boards$
+  path: ^boards/minearc-samd - arduino$
 - host: ^github\.com$
   owner: ^Moebyus$
   name: ^Firmwares$
@@ -1109,6 +1116,9 @@
   owner: ^chcbaram$
   name: ^opencr_test$
 - host: ^github\.com$
+  owner: ^chesskuo$
+  name: ^arduino-nRF5-HSNL$
+- host: ^github\.com$
   owner: ^chilipeppr$
   name: ^serial-port-json-server$
 - host: ^github\.com$
@@ -1374,6 +1384,9 @@
 - host: ^github\.com$
   owner: ^gtgspot$
   name: ^Arduino-cli$
+- host: ^github\.com$
+  owner: ^hellmutbrudny$
+  name: ^ArduinoLibs$
 - host: ^github\.com$
   owner: ^hidori$
   name: ^arduino-package-index-mirror$
@@ -1699,6 +1712,9 @@
   owner: ^mschlenker$
   name: ^rasperryun$
 - host: ^github\.com$
+  owner: ^mtcnxd$
+  name: ^arduino-libraries$
+- host: ^github\.com$
   owner: ^mvd-oulu$
   name: ^REAL-TIME-SLIP-ANGLE-ESTIMATION$
 - host: ^github\.com$
@@ -1939,6 +1955,10 @@
 - host: ^github\.com$
   owner: ^semir-t$
   name: ^attinycore$
+- host: ^github\.com$
+  owner: ^sensebox$
+  name: ^senseBoxMCU-core$
+  path: ^package_sensebox-dev_index\.json$
 - host: ^github\.com$
   owner: ^sensebox$
   name: ^senseBox_Eye$
