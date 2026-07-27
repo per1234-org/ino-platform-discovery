@@ -97,6 +97,7 @@ A discovery might fall into one of the following classifications:
 
 - **Original:** An independent creation.
 - **Hard Fork:** A derivative of an existing platform containing significant modifications.
+- **Supplemental Index:** A package index that distributes platforms or tools already covered by a canonical index. Supplemental indexes contain unique data, which may provide beta tester versions, old versions, or support for additional host architectures.
 - **Staging Fork:** A repository with the sole purpose of staging work for contribution to the parent platform.
   - **ⓘ** In the case where a proposal of significant modifications is not accepted by the maintainer of the parent, the creator of what was originally intended to be a staging fork may decide to maintain it as a **hard fork**.
 - **Trivial Fork:** A fork that contains modifications, but the modifications are insignificant. These may be created in the case where the owner performed some experimentation, but did not produce something relevant to platform users.
