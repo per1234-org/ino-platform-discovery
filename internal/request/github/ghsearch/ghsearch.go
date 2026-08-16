@@ -23,12 +23,14 @@ import (
 
 // Search searches for GitHub repositories that contain a package index and/or platform.
 func Search() (results.Type, error) {
-	results, err := indexes()
+	fmt.Println("Searching GitHub for package indexes in non-fork repositories...")
+	results, err := indexes(false)
 	if err != nil {
 		return nil, err
 	}
 
-	platformResults, err := platforms()
+	fmt.Println("Searching GitHub for package indexes in fork repositories...")
+	additionalResults, err := indexes(true)
 	if err != nil {
 		return nil, err
 	}
@@ -39,12 +41,29 @@ func Search() (results.Type, error) {
 		this association (because the repo may contain multiple platforms with separate indexes). Identification of
 		associations between discovery results and merging will need to be performed by the human user.
 	*/
-	results = append(results, platformResults...)
+	results = append(results, additionalResults...)
+
+	fmt.Println("Searching GitHub for platforms in non-fork repositories...")
+	additionalResults, err = platforms(false)
+	if err != nil {
+		return nil, err
+	}
+
+	results = append(results, additionalResults...)
+
+	fmt.Println("Searching GitHub for platforms in fork repositories...")
+	additionalResults, err = platforms(true)
+	if err != nil {
+		return nil, err
+	}
+
+	results = append(results, additionalResults...)
+
 	return results, nil
 }
 
 // indexes searches for package indexes.
-func indexes() (results.Type, error) {
+func indexes(forks bool) (results.Type, error) {
 	results := results.Type{}
 	var err error
 
@@ -55,7 +74,15 @@ func indexes() (results.Type, error) {
 		to find files with a `package_*_index.json` name pattern.
 	*/
 	query := "in:path language:json package_ _index.json"
-	fmt.Println("Searching GitHub for package indexes...")
+	if forks {
+		/*
+			The `fork:true` qualifier causes fork repositories to be searched exclusively.
+			We would expect to be able to use a `fork:false` qualifier to construct a query that explicitly excludes forks.
+			However, the API does not support this. A search of non-fork repositories is achieved by omitting the qualifier.
+			There is no way to searching both fork and non-fork repositories with a single query.
+		*/
+		query = fmt.Sprintf("fork:true %s", query)
+	}
 	searchResults, err := search(query)
 	if err != nil {
 		return results, err
@@ -173,12 +200,14 @@ func indexes() (results.Type, error) {
 }
 
 // platforms searches for platforms.
-func platforms() (results.Type, error) {
+func platforms(forks bool) (results.Type, error) {
 	results := results.Type{}
 
 	// See: https://docs.github.com/search-github/searching-on-github/searching-code
 	query := fmt.Sprintf("filename:%s \".upload.tool\"", data.PlatformIndicatorFile)
-	fmt.Println("Searching GitHub for platforms...")
+	if forks {
+		query = fmt.Sprintf("fork:true %s", query)
+	}
 	searchResults, err := search(query)
 	if err != nil {
 		return results, err

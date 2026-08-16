@@ -1,7 +1,10 @@
 package ghrepo
 
 import (
+	"io"
+	"net/http"
 	"os"
+	"strings"
 	"testing"
 
 	gogithub "github.com/google/go-github/v79/github"
@@ -63,4 +66,22 @@ func Test_ahead(t *testing.T) {
 	require.NoError(t, err)
 
 	assert.False(t, ahead, "Even fork is not considered ahead.")
+}
+
+// Test_noCommonAncestor provides coverage for the `noCommonAncestor` function.
+func Test_noCommonAncestor(t *testing.T) {
+	response := http.Response{
+		StatusCode: 418,
+	}
+
+	assert.False(t, noCommonAncestor(&response), "It should return false when response has status code other than 404.")
+
+	response.StatusCode = 404
+	response.Body = io.NopCloser(strings.NewReader("foo"))
+
+	assert.False(t, noCommonAncestor(&response), "It should return false when response body does not contain key text.")
+
+	response.Body = io.NopCloser(strings.NewReader("\"message\": \"No common ancestor between foo:main and bar:main.\","))
+
+	assert.True(t, noCommonAncestor(&response), "It should return true when response body contains key text.")
 }
