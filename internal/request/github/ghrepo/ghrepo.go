@@ -116,7 +116,7 @@ func ahead(getRepoResponse *gogithub.Repository) (bool, error) {
 			continue
 		}
 
-		ahead = *githubResponse.AheadBy > 0
+		ahead = len(githubResponse.Files) > 0
 
 		// Request was successful.
 		break

@@ -62,10 +62,50 @@ func Test_ahead(t *testing.T) {
 		},
 	}
 
-	ahead, err := ahead(&getRepoResponse)
+	isAhead, err := ahead(&getRepoResponse)
 	require.NoError(t, err)
 
-	assert.False(t, ahead, "Even fork is not considered ahead.")
+	assert.False(t, isAhead, "Fork without \"ahead\" status is not considered ahead.")
+
+	getRepoResponse = gogithub.Repository{
+		DefaultBranch: new("master"),
+		FullName:      new("bhunting/libpololu-avr"),
+		Name:          new("libpololu-avr"),
+		Owner: &gogithub.User{
+			Login: new("bhunting"),
+		},
+		Parent: &gogithub.Repository{
+			Owner: &gogithub.User{
+				Login: new("pololu"),
+			},
+			DefaultBranch: new("master"),
+		},
+	}
+
+	isAhead, err = ahead(&getRepoResponse)
+	require.NoError(t, err)
+
+	assert.False(t, isAhead, "Fork with \"ahead\" status, but null diff is not considered ahead.")
+
+	getRepoResponse = gogithub.Repository{
+		DefaultBranch: new("main"),
+		FullName:      new("arduino/ArduinoCore-zephyr"),
+		Name:          new("ArduinoCore-zephyr"),
+		Owner: &gogithub.User{
+			Login: new("arduino"),
+		},
+		Parent: &gogithub.Repository{
+			Owner: &gogithub.User{
+				Login: new("zephyrproject-rtos"),
+			},
+			DefaultBranch: new("main"),
+		},
+	}
+
+	isAhead, err = ahead(&getRepoResponse)
+	require.NoError(t, err)
+
+	assert.True(t, isAhead, "Fork with \"ahead\" status, and diff is considered ahead.")
 }
 
 // Test_noCommonAncestor provides coverage for the `noCommonAncestor` function.
