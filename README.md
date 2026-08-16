@@ -101,7 +101,7 @@ A discovery might fall into one of the following classifications:
 - **Staging Fork:** A repository with the sole purpose of staging work for contribution to the parent platform.
   - **ⓘ** In the case where a proposal of significant modifications is not accepted by the maintainer of the parent, the creator of what was originally intended to be a staging fork may decide to maintain it as a **hard fork**.
 - **Trivial Fork:** A fork that contains modifications, but the modifications are insignificant. These may be created in the case where the owner performed some experimentation, but did not produce something relevant to platform users.
-- **Duplicate:** A copy of a platform. The copy may have been made at any point in the development history of the parent project, so these can have different content from the latest revision of the parent, but only in the absence of recent changes in the parent.
+- **Duplicate:** A copy of a platform. The copy may have been made at any point in the development history of the parent project, so these can have different content from the latest revision of the parent, but only in the absence of recent changes present in the parent.
   - **ⓘ** We would expect a copy to be marked as a fork by GitHub (in which case it would have been filtered out by **ino-platform-discovery**). However, copies may have be created in a manner that does not produce that linkage.
 - **Platform Patch**: Components of a platform designed to be merged into a different platform, not installed atomically.
 
