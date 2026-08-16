@@ -1,5 +1,8 @@
 # See: https://github.com/per1234-org/ino-platform-discovery#exclusions
 
+- host: .*
+  owner: .*
+  name: m5stick-nemo
 - host: ^github\.com$
   owner: ^0hotpotman0$
   name: ^BLE_52840_Core$
@@ -1723,9 +1726,6 @@
 - host: ^github\.com$
   owner: ^mzymcm$
   name: ^MEM$
-- host: ^github\.com$
-  owner: ^n0xa$
-  name: ^m5stick-nemo$
 - host: ^github\.com$
   owner: ^najashark$
   name: ^MCC2024-Badge$
