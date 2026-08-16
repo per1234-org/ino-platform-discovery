@@ -81,6 +81,10 @@
   path: ^Arduino_package/package_.*_index\.json$
 - host: ^github\.com$
   owner: ^Ameba-AIoT$
+  name: ^ameba-arduino-d$
+  path: ^Arduino_package/
+- host: ^github\.com$
+  owner: ^Ameba-AIoT$
   name: ^ameba-arduino-pro2$
   path: ^Arduino_package/package_realtek\.com_amebapro2_early_index\.json$
 - host: ^github\.com$
@@ -167,6 +171,9 @@
   owner: ^Autonomi$
   name: ^limn$
 - host: ^github\.com$
+  owner: ^B1A5aus$
+  name: ^ArduinoCore-samd$
+- host: ^github\.com$
   owner: ^BeAnotherLab$
   name: ^The-Machine-to-be-Another-Unity$
 - host: ^github\.com$
@@ -184,6 +191,9 @@
 - host: ^github\.com$
   owner: ^BohdanZatserkovnyi$
   name: ^Bachelor-s-Diploma$
+- host: ^github\.com$
+  owner: ^BrownSpaceEngineering$
+  name: ^ArduinoCore-samd$
 - host: ^github\.com$
   owner: ^CadConsultants$
   name: ^Tasmota$
@@ -214,6 +224,9 @@
 - host: ^github\.com$
   owner: ^Code-Forge-Lab$
   name: ^Arduino$
+- host: ^github\.com$
+  owner: ^Codetector1374$
+  name: ^ATmega328PB-Testing$
 - host: ^github\.com$
   owner: ^CommunityGD32Cores$
   name: ^CommunityGD32Cores$
@@ -246,11 +259,20 @@
   owner: ^DCC-Lab$
   name: ^Lemming$
 - host: ^github\.com$
+  owner: ^DNANUDGELTD$
+  name: ^arduino-nRF5$
+- host: ^github\.com$
+  owner: ^Darth-Demetrius$
+  name: ^Berg-s-Personal-Projects$
+- host: ^github\.com$
   owner: ^DaveBerkeley$
   name: ^arduino$
 - host: ^github\.com$
   owner: ^DeftDynamics$
   name: ^neoPLC-arduino$
+- host: ^github\.com$
+  owner: ^DeqingSun$
+  name: ^vscode-arduino$
 - host: ^github\.com$
   owner: ^DiegoCCMM$
   name: ^portfolio$
@@ -270,6 +292,12 @@
 - host: ^github\.com$
   owner: ^Edragon$
   name: ^LGT$
+- host: ^github\.com$
+  owner: ^Eghors$
+  name: ^nRFMicro$
+- host: ^github\.com$
+  owner: ^ElectronicCats$
+  name: ^ch55xduino$
 - host: ^github\.com$
   owner: ^ElectronicsClubAltona$
   name: ^MicroviewOneWire$
@@ -307,6 +335,9 @@
 - host: ^github\.com$
   owner: ^Epkhau5$
   name: ^Clone-Clearcore-arduino$
+- host: ^github\.com$
+  owner: ^Erasertm$
+  name: ^Vidi-X$
 - host: ^github\.com$
   owner: ^ErmiaMoghadamy$
   name: ^HotPlug$
@@ -375,6 +406,10 @@
   owner: ^GabrielNotman$
   name: ^AutonomoTesting$
 - host: ^github\.com$
+  owner: ^GadgetFactory$
+  name: ^DesignLab$
+  path: ^hardware/arduino/
+- host: ^github\.com$
   owner: ^GenieLampProject$
   name: ^Firefly2016-GenieLamp$
 - host: ^github\.com$
@@ -389,6 +424,9 @@
 - host: ^github\.com$
   owner: ^Grazfather$
   name: ^CHV2017-Project-UDS-Lockdown$
+- host: ^github\.com$
+  owner: ^Guelakais$
+  name: ^OpenCR$
 - host: ^github\.com$
   owner: ^Gujilde163904STI$
   name: ^lifi-project$
@@ -418,9 +456,18 @@
   owner: ^Heavy-Vehicle-Networking-At-U-Tulsa$
   name: ^CAN-Data-Diode$
 - host: ^github\.com$
+  owner: ^HeuristicBishop$
+  name: ^guitar-configurator$
+- host: ^github\.com$
   owner: ^Hi-LinkDuino$
   name: ^w80x_arduino$
   path: ^package_w80x_proxy_index\.json$
+- host: ^github\.com$
+  owner: ^HiramSilvey$
+  name: ^HS-Switch-Support$
+- host: ^github\.com$
+  owner: ^HiveTracker$
+  name: ^arduino-nRF5$
 - host: ^github\.com$
   owner: ^HredayDhar$
   name: ^Digistump$
@@ -432,12 +479,21 @@
   name: ^ArduinoSTM32$
   path: ^package_inex_stm32_beta_index\.json$
 - host: ^github\.com$
+  owner: ^IVOES$
+  name: ^OpenCR$
+- host: ^github\.com$
   owner: ^Imposter$
   name: ^framework-arduinoststm32$
+- host: ^github\.com$
+  owner: ^Infection321$
+  name: ^gbs-control-complete2$
 - host: ^github\.com$
   owner: ^Infineon$
   name: ^Assets$
   path: ^JSON/package_infineon_index\.json$
+- host: ^github\.com$
+  owner: ^InvenTech-LLC$
+  name: ^Arduino$
 - host: ^github\.com$
   owner: ^IoTThinks$
   name: ^EasyLoRaNode_LowPower$
@@ -467,8 +523,14 @@
   owner: ^JoelHanerth$
   name: ^BlocklyArduino_AIO$
 - host: ^github\.com$
+  owner: ^JohnDVos$
+  name: ^Computer-Science-Brighton-Uni$
+- host: ^github\.com$
   owner: ^Jonas-commits$
   name: ^Neo-Keyboard-Adapter$
+- host: ^github\.com$
+  owner: ^JoyfulOak$
+  name: ^xod-2$
 - host: ^github\.com$
   owner: ^KG-NEW$
   name: ^KGNEW$
@@ -490,8 +552,14 @@
   owner: ^LZY1586$
   name: ^test1$
 - host: ^github\.com$
+  owner: ^LaZsolt$
+  name: ^lgt8fx$
+- host: ^github\.com$
   owner: ^LarbiBekka34$
   name: ^WhArduino$
+- host: ^github\.com$
+  owner: ^LebaiRobotics$
+  name: ^robertalab$
 - host: ^github\.com$
   owner: ^LeoRuer$
   name: ^Aduino-Digispark$
@@ -502,8 +570,14 @@
   owner: ^LiviLammister$
   name: ^RagnarFirmware$
 - host: ^github\.com$
+  owner: ^LuiCat$
+  name: ^ArduinoTaikoController$
+- host: ^github\.com$
   owner: ^Lyoncore$
   name: ^iotivity-demo-uc15$
+- host: ^github\.com$
+  owner: ^MHEtLive$
+  name: ^arduino-esp32$
 - host: ^github\.com$
   owner: ^MaxPayne86$
   name: ^arduino-json-manifests$
@@ -543,14 +617,26 @@
   owner: ^Mohammedsajjad45$
   name: ^Autonomous-Mobile-Robot$
 - host: ^github\.com$
+  owner: ^MonsieurDahlstrom$
+  name: ^arduino-nRF5$
+- host: ^github\.com$
   owner: ^MonsterDruide1$
   name: ^ArduinoSwitchTAS$
+- host: ^github\.com$
+  owner: ^Move38$
+  name: ^Blinks-SDK$
+- host: ^github\.com$
+  owner: ^MrAPierce$
+  name: ^RAK-nRF52-Arduino$
 - host: ^github\.com$
   owner: ^MrE-Fog$
   name: ^iotdevkit-2$
 - host: ^github\.com$
   owner: ^MrTreeBark$
   name: ^SunrayMod$
+- host: ^github\.com$
+  owner: ^MrTreeBark$
+  name: ^SunrayModdingSpielwiese$
 - host: ^github\.com$
   owner: ^MyRobotLab$
   name: ^myrobotlab$
@@ -574,6 +660,9 @@
   name: ^Document$
   path: ^docs/develop/package_devnefrybt_index\.json$
 - host: ^github\.com$
+  owner: ^Nefry-Community$
+  name: ^arduino-esp32$
+- host: ^github\.com$
   owner: ^NessieCircuits$
   name: ^Riotee_SDK$
   path: ^arduino/package_index\.json$
@@ -586,6 +675,9 @@
 - host: ^github\.com$
   owner: ^NikolayStankov$
   name: ^Arduino$
+- host: ^github\.com$
+  owner: ^Novus4K$
+  name: ^Sunray$
 - host: ^github\.com$
   owner: ^OMSI-Dev$
   name: ^NatSci$
@@ -618,6 +710,9 @@
   owner: ^OpenRoberta$
   name: ^create-agent$
 - host: ^github\.com$
+  owner: ^OpenSwift$
+  name: ^nRFMicro-Arduino-Core$
+- host: ^github\.com$
   owner: ^OttoDIY$
   name: ^blocklyLinux$
 - host: ^github\.com$
@@ -645,6 +740,9 @@
 - host: ^github\.com$
   owner: ^Pharap$
   name: ^ArduboyPackage$
+- host: ^github\.com$
+  owner: ^Phonog$
+  name: ^Arduino_STM32$
 - host: ^github\.com$
   owner: ^Poemtech$
   name: ^IoT-DASH-Arduino-Integration$
@@ -687,6 +785,9 @@
 - host: ^github\.com$
   owner: ^RMI-NITT$
   name: ^STM32f1-code-base$
+- host: ^github\.com$
+  owner: ^ROBOTIS-GIT$
+  name: ^BoardManagerFiles$
 - host: ^github\.com$
   owner: ^ROBOTIS-Will$
   name: ^OpenCR$
@@ -768,6 +869,12 @@
   owner: ^S10143806H$
   name: ^Arduino_AmebaD_test$
 - host: ^github\.com$
+  owner: ^S10143806H$
+  name: ^ambd_arduino$
+- host: ^github\.com$
+  owner: ^S10143806H$
+  name: ^ambpro2_arduino$
+- host: ^github\.com$
   owner: ^SWITCHSCIENCE$
   name: ^Arduino_Board_Package$
   path: ^package_Switch_Science_dev_index\.json$
@@ -805,6 +912,9 @@
   owner: ^SomeshSagabla$
   name: ^Board-Packages$
 - host: ^github\.com$
+  owner: ^Sorunome$
+  name: ^Gamebuino$
+- host: ^github\.com$
   owner: ^Soumojitshome2023$
   name: ^ESP32-Code$
 - host: ^github\.com$
@@ -822,6 +932,18 @@
   owner: ^SpenceKonde$
   name: ^ReleaseScripts$
   path: ^package_azduino\.comtest_index\.json$
+- host: ^github\.com$
+  owner: ^SpenceKonde$
+  name: ^Rewritten_Wire_for_DxCore$
+- host: ^github\.com$
+  owner: ^Stanimir-Petev$
+  name: ^Arduino_Core_STM32$
+- host: ^github\.com$
+  owner: ^SymmetryLabs$
+  name: ^Arduino_STM32$
+- host: ^github\.com$
+  owner: ^THEQUIETBOI$
+  name: ^esp-idf$
 - host: ^github\.com$
   owner: ^TanawatJukmongkol$
   name: ^RAI-line-following$
@@ -851,8 +973,14 @@
   name: ^arduino-core-ch592f$
   path: ^ch592f$
 - host: ^github\.com$
+  owner: ^Trellis-Logic$
+  name: ^STM32-Arduino$
+- host: ^github\.com$
   owner: ^UBCHiveLab$
   name: ^HIVE-3Dprinters$
+- host: ^github\.com$
+  owner: ^UM-Battery-Control-Group$
+  name: ^Longan-RP2040$
 - host: ^github\.com$
   owner: ^VSChina$
   name: ^azureiotdevkit_tools$
@@ -866,6 +994,9 @@
 - host: ^github\.com$
   owner: ^Web4application$
   name: ^ATmega2560-Optiboot-8$
+- host: ^github\.com$
+  owner: ^Web4application$
+  name: ^optiboot$
 - host: ^github\.com$
   owner: ^WelterRocks$
   name: ^WESPOTA$
@@ -889,6 +1020,9 @@
   owner: ^Yangchen-sudo$
   name: ^VTS$
 - host: ^github\.com$
+  owner: ^YannCat$
+  name: ^open_evse$
+- host: ^github\.com$
   owner: ^Zachaeiah$
   name: ^6-DOF-Robot-Capstone$
 - host: ^github\.com$
@@ -901,6 +1035,9 @@
   owner: ^ZroIsHere$
   name: ^Ender-3-Pro$
 - host: ^github\.com$
+  owner: ^a-c-sreedhar-reddy$
+  name: ^arduino-esp32$
+- host: ^github\.com$
   owner: ^aalonso99$
   name: ^BluetoothControlled_Localized_PololuCar$
 - host: ^github\.com$
@@ -909,6 +1046,9 @@
 - host: ^github\.com$
   owner: ^abstractguy$
   name: ^TSO_project$
+- host: ^github\.com$
+  owner: ^achingbrain$
+  name: ^Arduino-1$
 - host: ^github\.com$
   owner: ^adamant666$
   name: ^Worx$
@@ -943,11 +1083,20 @@
   owner: ^agomezgar$
   name: ^masayloBlocklyLinux$
 - host: ^github\.com$
+  owner: ^ailyProject$
+  name: ^arduino-nRF5$
+- host: ^github\.com$
   owner: ^akkdong$
   name: ^Vario-STM32$
 - host: ^github\.com$
+  owner: ^akosyakov$
+  name: ^arduino-create-agent$
+- host: ^github\.com$
   owner: ^akouz$
   name: ^HBnode$
+- host: ^github\.com$
+  owner: ^alex-ong$
+  name: ^ArduinoTaikoController$
 - host: ^github\.com$
   owner: ^alex-ong$
   name: ^LaglessNESUSB$
@@ -955,8 +1104,14 @@
   owner: ^alexchenfeng$
   name: ^coralmicro$
 - host: ^github\.com$
+  owner: ^alexfh$
+  name: ^robertalab$
+- host: ^github\.com$
   owner: ^alexfrancow$
   name: ^badusb_botnet$
+- host: ^github\.com$
+  owner: ^alextsam$
+  name: ^arduino-nRF5$
 - host: ^github\.com$
   owner: ^alibasta$
   name: ^sunnyHOME$
@@ -964,8 +1119,21 @@
   owner: ^alizaenall$
   name: ^Flight-Controller$
 - host: ^github\.com$
+  owner: ^alranel$
+  name: ^arduino-cli$
+- host: ^github\.com$
   owner: ^altaga$
   name: ^Boards$
+- host: ^github\.com$
+  owner: ^alvieboy$
+  name: ^ZPUino$
+  path: ^hardware/arduino/
+- host: ^github\.com$
+  owner: ^amirzaidi$
+  name: ^Seeed_Platform$
+- host: ^github\.com$
+  owner: ^andrewflash$
+  name: ^RAK-STM32-RUI$
 - host: ^github\.com$
   owner: ^anidea$
   name: ^aeifx$
@@ -998,6 +1166,13 @@
   owner: ^artisgaisma$
   name: ^info$
 - host: ^github\.com$
+  owner: ^atc1441$
+  name: ^D6-arduino-nRF5$
+  path: ^docs/package_nRF5_boards_index\.json$
+- host: ^github\.com$
+  owner: ^atc1441$
+  name: ^ch55xduino-1$
+- host: ^github\.com$
   owner: ^atmosuwiryo$
   name: ^package_esp32_index\.json$
 - host: ^github\.com$
@@ -1013,6 +1188,9 @@
   owner: ^balakrishna31arju$
   name: ^Safety-Monitering-System-for-Children$
 - host: ^github\.com$
+  owner: ^be1ieve$
+  name: ^ambd_arduino$
+- host: ^github\.com$
   owner: ^beckyea$
   name: ^HugsArduino$
 - host: ^github\.com$
@@ -1025,11 +1203,17 @@
   owner: ^benjaminwan$
   name: ^arduino-boards-index$
 - host: ^github\.com$
+  owner: ^betaEncoder$
+  name: ^ch55xduino$
+- host: ^github\.com$
   owner: ^better-adapted$
   name: ^ihf_arduino_max326xx$
 - host: ^github\.com$
   owner: ^bhanupr4$
   name: ^share$
+- host: ^github\.com$
+  owner: ^bhunting$
+  name: ^libpololu-avr$
 - host: ^github\.com$
   owner: ^biaslab$
   name: ^ARxI-Bittle$
@@ -1043,6 +1227,9 @@
   owner: ^bien2552001$
   name: ^OP3_Humanoid_Robot$
 - host: ^github\.com$
+  owner: ^biohead$
+  name: ^open_evse_rolec$
+- host: ^github\.com$
   owner: ^biomurph$
   name: ^chipKIT-core-prebuilt$
   path: ^MacOS core/chipkit-core/pic32/variants/openbci$
@@ -1053,6 +1240,9 @@
 - host: ^github\.com$
   owner: ^bitbank2$
   name: ^MFRBadge$
+- host: ^github\.com$
+  owner: ^blakewford$
+  name: ^Arduino$
 - host: ^github\.com$
   owner: ^bluesat-archive$
   name: ^NonBLUEsat$
@@ -1067,6 +1257,9 @@
   owner: ^board707$
   name: ^w80x_arduino$
   path: ^package_w80x_test_index\.json$
+- host: ^github\.com$
+  owner: ^bole2334$
+  name: ^ArduinoCore-GD32$
 - host: ^github\.com$
   owner: ^bouk$
   name: ^arduino-indexes$
@@ -1110,6 +1303,9 @@
   owner: ^chain40$
   name: ^chain40\.github\.io$
 - host: ^github\.com$
+  owner: ^chandong83$
+  name: ^OpenCR$
+- host: ^github\.com$
   owner: ^chcbaram$
   name: ^FPGA$
 - host: ^github\.com$
@@ -1128,6 +1324,9 @@
   owner: ^chipKIT32$
   name: ^chipKIT-compiler-builds$
 - host: ^github\.com$
+  owner: ^chipKIT32$
+  name: ^chipKIT32-MAX$
+- host: ^github\.com$
   owner: ^chipsi007$
   name: ^LittleArduinoProjects$
 - host: ^github\.com$
@@ -1145,6 +1344,9 @@
 - host: ^github\.com$
   owner: ^claywd$
   name: ^iAsset$
+- host: ^github\.com$
+  owner: ^cneill$
+  name: ^Marlin$
 - host: ^github\.com$
   owner: ^codebendercc$
   name: ^external_cores$
@@ -1173,8 +1375,17 @@
   owner: ^craignm$
   name: ^maixduino$
 - host: ^github\.com$
+  owner: ^cyberhasse$
+  name: ^DigistumpArduino$
+- host: ^github\.com$
+  owner: ^cyruscook$
+  name: ^Dasduino-Board-Definitions-for-Arduino-IDE$
+- host: ^github\.com$
   owner: ^danielgohlke$
   name: ^ATtiny$
+- host: ^github\.com$
+  owner: ^daradib$
+  name: ^dash-system-firmware$
 - host: ^github\.com$
   owner: ^darkomen$
   name: ^4xiDraw$
@@ -1191,17 +1402,29 @@
   owner: ^davidson-engineering$
   name: ^useful-snippets$
 - host: ^github\.com$
+  owner: ^deladriere$
+  name: ^euro-modules$
+- host: ^github\.com$
   owner: ^delare626$
   name: ^52$
 - host: ^github\.com$
   owner: ^denlabo$
   name: ^dockerfile-arduino-ide-ble-nano$
 - host: ^github\.com$
+  owner: ^devonh$
+  name: ^Open-Bionics.github.io$
+- host: ^github\.com$
   owner: ^devstembotix9892$
   name: ^Blockzie-tools$
 - host: ^github\.com$
   owner: ^dfcdsw$
   name: ^learnPython$
+- host: ^github\.com$
+  owner: ^dicey-code$
+  name: ^Arduino_Boards$
+- host: ^github\.com$
+  owner: ^dirkmueller$
+  name: ^arduino-esp32$
 - host: ^github\.com$
   owner: ^dizhengao$
   name: ^plant-growth-chamber$
@@ -1211,6 +1434,15 @@
 - host: ^github\.com$
   owner: ^djzrs$
   name: ^picx-images-hosting$
+- host: ^github\.com$
+  owner: ^dlech$
+  name: ^robertalab$
+- host: ^github\.com$
+  owner: ^dmlambo$
+  name: ^ArduinoCore-GD32$
+- host: ^github\.com$
+  owner: ^doctea$
+  name: ^functional-vlpp$
 - host: ^github\.com$
   owner: ^dominic248$
   name: ^SFIT-SEMESTER-Practicals$
@@ -1242,8 +1474,14 @@
   owner: ^eassisv$
   name: ^uffs$
 - host: ^github\.com$
+  owner: ^easyas314159$
+  name: ^arduino-cli$
+- host: ^github\.com$
   owner: ^edgeimpulse$
   name: ^example-SparkFun-MicroMod-nRF52840$
+- host: ^github\.com$
+  owner: ^eegrok$
+  name: ^Move38-Arduino-Platform$
 - host: ^github\.com$
   owner: ^eerimoq$
   name: ^pumbaa-releases$
@@ -1274,6 +1512,9 @@
   owner: ^ekaggrat$
   name: ^holo_clock$
 - host: ^github\.com$
+  owner: ^ekawahyu$
+  name: ^arduino-nRF5$
+- host: ^github\.com$
   owner: ^engduino$
   name: ^Engduino_v1\.0_release$
 - host: ^github\.com$
@@ -1285,6 +1526,9 @@
 - host: ^github\.com$
   owner: ^engduino$
   name: ^Engduino_v3\.0_release_full$
+- host: ^github\.com$
+  owner: ^entropia$
+  name: ^gpn17-badge-esp8266-arduino$
 - host: ^github\.com$
   owner: ^equipe-javali$
   name: ^API_4$
@@ -1301,8 +1545,17 @@
   owner: ^everslick$
   name: ^Arduino-ESP32-1.0.6$
 - host: ^github\.com$
+  owner: ^evgenykzz2$
+  name: ^Arduboy-homemade-package$
+- host: ^github\.com$
   owner: ^evildevill$
   name: ^evildevillpatch$
+- host: ^github\.com$
+  owner: ^ez-turtlebot3$
+  name: ^OpenCR$
+- host: ^github\.com$
+  owner: ^f1729$
+  name: ^Remote-Prosthetic-Control$
 - host: ^github\.com$
   owner: ^f32c$
   name: ^arduino$
@@ -1335,9 +1588,18 @@
   name: ^felias-fogg.github.io$
   path: ^package_debugging_index\.json$
 - host: ^github\.com$
+  owner: ^fengjixuchui$
+  name: ^Arduino-USB-HID-RetroJoystickAdapter$
+- host: ^github\.com$
+  owner: ^feralcoder$
+  name: ^HardwareSerialRS485$
+- host: ^github\.com$
   owner: ^fobe-projects$
   name: ^fobe-projects\.github\.io$
   path: package_fobe_esp32(_dev)?_index\.json
+- host: ^github\.com$
+  owner: ^focalintent$
+  name: ^arduino-builder$
 - host: ^github\.com$
   owner: ^fontainejp$
   name: ^blocklino$
@@ -1346,8 +1608,14 @@
   name: ^whoaboard_getstarted$
   path: ^hardware/teeonardu/avr$
 - host: ^github\.com$
+  owner: ^foxundermoon$
+  name: ^Arduino$
+- host: ^github\.com$
   owner: ^fran6p$
   name: ^FirmPack$
+- host: ^github\.com$
+  owner: ^furballroller$
+  name: ^super_cat_game$
 - host: ^github\.com$
   owner: ^furyhawk$
   name: ^scratchpad$
@@ -1363,6 +1631,12 @@
 - host: ^github\.com$
   owner: ^gbellido-dev$
   name: ^arduino$
+- host: ^github\.com$
+  owner: ^gdsports$
+  name: ^NSGadget_Teensy$
+- host: ^github\.com$
+  owner: ^gilbertoverg$
+  name: ^ArduinoCore-samd$
 - host: ^github\.com$
   owner: ^gimasi$
   name: ^TUINO_ZERO_96$
@@ -1382,23 +1656,44 @@
   owner: ^greg-norris$
   name: ^duelink$
 - host: ^github\.com$
+  owner: ^gregmatthewcrossley$
+  name: ^arduino$
+- host: ^github\.com$
   owner: ^grushaprasad$
   name: ^HackHolyoke$
 - host: ^github\.com$
   owner: ^gtgspot$
   name: ^Arduino-cli$
 - host: ^github\.com$
+  owner: ^gyf304$
+  name: ^Sanguino$
+- host: ^github\.com$
+  owner: ^happyvalley-lmx$
+  name: ^sdvx-diy$
+- host: ^github\.com$
   owner: ^hellmutbrudny$
   name: ^ArduinoLibs$
 - host: ^github\.com$
+  owner: ^henrydiesner$
+  name: ^ide-hardware$
+- host: ^github\.com$
+  owner: ^hermixy$
+  name: ^guitar-configurator$
+- host: ^github\.com$
   owner: ^hidori$
   name: ^arduino-package-index-mirror$
+- host: ^github\.com$
+  owner: ^hjw2015$
+  name: ^Sunray$
 - host: ^github\.com$
   owner: ^hoanglx123$
   name: ^How-to-create-and-burn-Arduino-Bootloader-for-Atmega32$
 - host: ^github\.com$
   owner: ^hohno-46466$
   name: ^hohno-46466\.github\.io$
+- host: ^github\.com$
+  owner: ^honnet$
+  name: ^arduino-nRF5-with-nRF24-radio$
 - host: ^github\.com$
   owner: ^howardginsburg$
   name: ^framework-arduinostm32mxchip$
@@ -1409,6 +1704,10 @@
   owner: ^hradec$
   name: ^poors-man-ip-kvm$
 - host: ^github\.com$
+  owner: ^huaweiwx$
+  name: ^sduino$
+  path: ^package_sduino_stm8_index\.json$
+- host: ^github\.com$
   owner: ^hurzhurz$
   name: ^xh18lcd$
 - host: ^github\.com$
@@ -1416,10 +1715,22 @@
   name: ^arcade2usb-converter$
 - host: ^github\.com$
   owner: ^ianhi$
+  name: ^DFRobotDuinoBoard$
+- host: ^github\.com$
+  owner: ^ianhi$
   name: ^detect-arduino$
+- host: ^github\.com$
+  owner: ^ikraamg$
+  name: ^MFRBadge$
+- host: ^github\.com$
+  owner: ^ilja2209$
+  name: ^Arduino-Add-On-for-LinkIt-SDK$
 - host: ^github\.com$
   owner: ^immarianaas$
   name: ^iot-bling-bling$
+- host: ^github\.com$
+  owner: ^inajob$
+  name: ^Gamebuino$
 - host: ^github\.com$
   owner: ^inovatink$
   name: ^ws-hardware$
@@ -1430,17 +1741,26 @@
   owner: ^iotechbugs$
   name: ^esp32-arduino$
 - host: ^github\.com$
+  owner: ^ioxgd$
+  name: ^Maixduino$
+- host: ^github\.com$
   owner: ^ipodvideo87$
   name: ^arduino-cli-android$
 - host: ^github\.com$
   owner: ^isbogdanov$
   name: ^arte_due_json$
 - host: ^github\.com$
+  owner: ^j-d-rutherford$
+  name: ^guitar-configurator$
+- host: ^github\.com$
   owner: ^jPerotto$
   name: ^Board_manager$
 - host: ^github\.com$
   owner: ^jacks808$
   name: ^arduino-ide-1\.5\.2$
+- host: ^github\.com$
+  owner: ^jacoblai$
+  name: ^arduino-cli$
 - host: ^github\.com$
   owner: ^javastraat$
   name: ^esp32_mmdvm_hotspot$
@@ -1453,6 +1773,12 @@
 - host: ^github\.com$
   owner: ^jellespijker$
   name: ^RazorIMUFirmware$
+- host: ^github\.com$
+  owner: ^jena-th$
+  name: ^DigistumpArduino$
+- host: ^github\.com$
+  owner: ^jft7$
+  name: ^ATmegaxxM1-C1$
 - host: ^github\.com$
   owner: ^jgugalde$
   name: ^STM8S-Microcontrollers$
@@ -1469,11 +1795,17 @@
   owner: ^jlewallen$
   name: ^okavango$
 - host: ^github\.com$
+  owner: ^jmacato$
+  name: ^egizmo.github.io$
+- host: ^github\.com$
   owner: ^jnsbyr$
   name: ^arduino-samd21lpe$
 - host: ^github\.com$
   owner: ^joaopedrovbs$
   name: ^tapFi$
+- host: ^github\.com$
+  owner: ^johae1$
+  name: ^OpenCR$
 - host: ^github\.com$
   owner: ^johnjsb$
   name: ^ArbotiX-M$
@@ -1489,6 +1821,9 @@
   owner: ^johnwalz97$
   name: ^AnetA8PlusStuff$
 - host: ^github\.com$
+  owner: ^jonas-merkle$
+  name: ^TeensyTimerTool$
+- host: ^github\.com$
   owner: ^joshbrew$
   name: ^HEG_ESP32$
 - host: ^github\.com$
@@ -1497,6 +1832,9 @@
 - host: ^github\.com$
   owner: ^jotorral$
   name: ^cubecell$
+- host: ^github\.com$
+  owner: ^jovandeginste$
+  name: ^onewire-wireless-network-dependencies$
 - host: ^github\.com$
   owner: ^joyspce$
   name: ^Arduino_Core_STC$
@@ -1514,14 +1852,28 @@
   name: ^DynoHub$
   path: ^Software/arduino-esp32-dynohub/hardware/FH Dortmund/esp32/package_dynohub_index\.json$
 - host: ^github\.com$
+  owner: ^kaiconcepts$
+  name: ^ArduinoCore-samd$
+  path: ^boardDefinitionPackages/1_0_0/package_jetfoiler_index\.json$
+- host: ^github\.com$
   owner: ^karimi$
   name: ^unbrickit$
+- host: ^github\.com$
+  owner: ^kartben$
+  name: ^arduino$
 - host: ^github\.com$
   owner: ^kashimAstro$
   name: ^raspberry_attiny_programmer$
 - host: ^github\.com$
+  owner: ^kendemu$
+  name: ^OpenCR$
+- host: ^github\.com$
   owner: ^kevinfrei$
   name: ^Arduino2Make$
+- host: ^github\.com$
+  owner: ^keyboardio$
+  name: ^ArduinoCore-GD32-Keyboardio$
+  path: ^package_gd32_index\.json$
 - host: ^github\.com$
   owner: ^keyboardio$
   name: ^arduino-kaleidoscope-master$
@@ -1530,8 +1882,14 @@
   name: ^boardsmanager$
   path: ^devel/package_kaleidoscope_devel_index\.json$
 - host: ^github\.com$
+  owner: ^khoih-prog$
+  name: ^functional-vlpp$
+- host: ^github\.com$
   owner: ^ki-william$
   name: ^ESP8266$
+- host: ^github\.com$
+  owner: ^kikeelectronico$
+  name: ^ZUMCore$
 - host: ^github\.com$
   owner: ^kimio-kosaka$
   name: ^Akibaduino$
@@ -1545,9 +1903,30 @@
   name: ^Akibaduino$
   path: ^hardware/bitDuino13/
 - host: ^github\.com$
+  owner: ^kornpow$
+  name: ^SparkFun_Pi_AVR_Programmer_HAT$
+- host: ^github\.com$
+  owner: ^krikkirk$
+  name: ^Tag_FW_nRF52811$
+- host: ^github\.com$
+  owner: ^kubuds$
+  name: ^sophgo-arduino$
+- host: ^github\.com$
+  owner: ^lani772$
+  name: ^arduino-cli$
+- host: ^github\.com$
+  owner: ^lansalot$
+  name: ^AOG_RC$
+- host: ^github\.com$
+  owner: ^lbtrobit$
+  name: ^ch55xduino$
+- host: ^github\.com$
   owner: ^leafony$
   name: ^BoardManagerFiles$
   path: ^test/
+- host: ^github\.com$
+  owner: ^leonwilly$
+  name: ^arduino-nRF5$
 - host: ^github\.com$
   owner: ^leowerd$
   name: ^port-arduino-1\.8\.19-yo$
@@ -1558,8 +1937,14 @@
   owner: ^lewispg228$
   name: ^Pi_grammer$
 - host: ^github\.com$
+  owner: ^lewispg228$
+  name: ^ambd_arduino$
+- host: ^github\.com$
   owner: ^liamcottle$
   name: ^Adafruit_nRF52_Arduino$
+- host: ^github\.com$
+  owner: ^libarra111$
+  name: ^Arduino_STM32$
 - host: ^github\.com$
   owner: ^lifaet$
   name: ^RC-Surveillance-Car$
@@ -1569,6 +1954,9 @@
 - host: ^github\.com$
   owner: ^limbongofficial$
   name: ^STM32_Core-Arduino$
+- host: ^github\.com$
+  owner: ^lincomatic$
+  name: ^open_evse$
 - host: ^github\.com$
   owner: ^lisergio$
   name: ^Smoke_sensor_conpatible_con_homekit$
@@ -1580,14 +1968,27 @@
   owner: ^liuwenxin0410$
   name: ^InternetSource7$
 - host: ^github\.com$
+  owner: ^liyanage$
+  name: ^Arduino$
+- host: ^github\.com$
   owner: ^lizardbeans$
   name: ^sdvx-diy$
+- host: ^github\.com$
+  owner: ^ljunquera$
+  name: ^arduino-smartwatch-boards$
+  path: ^docs/package_nRF5_boards_index\.json$
 - host: ^github\.com$
   owner: ^lmtreser$
   name: ^Proyectos-Educativos$
 - host: ^github\.com$
   owner: ^ln1202$
   name: ^linkit_7688_duo_sht30$
+- host: ^github\.com$
+  owner: ^loune$
+  name: ^bleduino-firmware$
+- host: ^github\.com$
+  owner: ^lpercifield$
+  name: ^arduino-nRF5$
 - host: ^github\.com$
   owner: ^ltrlab$
   name: ^aizee$
@@ -1598,14 +1999,26 @@
   owner: ^lumi3005$
   name: ^My-Arduino$
 - host: ^github\.com$
+  owner: ^lunardyveline$
+  name: ^arduino$
+- host: ^github\.com$
   owner: ^luni64$
   name: ^TeensyTimerTool$
 - host: ^github\.com$
   owner: ^lx071$
   name: ^caravel_usb1_project$
 - host: ^github\.com$
+  owner: ^m2wasabi$
+  name: ^Document$
+- host: ^github\.com$
   owner: ^machinaut$
   name: ^arbotix$
+- host: ^github\.com$
+  owner: ^madalozzo$
+  name: ^linkit-smart-7688-duo-arduino$
+- host: ^github\.com$
+  owner: ^maisonsmd$
+  name: ^nRFMicro-Arduino-Core$
 - host: ^github\.com$
   owner: ^makeredu$
   name: ^OSEP$
@@ -1619,11 +2032,17 @@
   owner: ^manualdigital$
   name: ^Arduino-Foundations$
 - host: ^github\.com$
+  owner: ^marcos-mendez$
+  name: ^open_evse$
+- host: ^github\.com$
   owner: ^mariopesch$
   name: ^sensebox-esp32-dev$
 - host: ^github\.com$
   owner: ^martin-rod$
   name: ^t41mr_public$
+- host: ^github\.com$
+  owner: ^mastrogippo$
+  name: ^macchina.github.io$
 - host: ^github\.com$
   owner: ^matYang$
   name: ^DroneTime$
@@ -1644,7 +2063,16 @@
   name: ^ArduinoLibrary$
 - host: ^github\.com$
   owner: ^maxgerhardt$
+  name: ^ArduinoCore-mbed$
+- host: ^github\.com$
+  owner: ^maxgerhardt$
+  name: ^RAK-STM32-RUI$
+- host: ^github\.com$
+  owner: ^maxgerhardt$
   name: ^pio-blinks-core$
+- host: ^github\.com$
+  owner: ^maxgerhardt$
+  name: ^spresense-arduino-compatible$
 - host: ^github\.com$
   owner: ^maxgerhardt$
   name: ^teensy-core-pio-package$
@@ -1654,6 +2082,12 @@
 - host: ^github\.com$
   owner: ^mcgurk$
   name: ^Arduino-USB-HID-RetroJoystickAdapter$
+- host: ^github\.com$
+  owner: ^mcvdmvs$
+  name: ^blocklyLinux$
+- host: ^github\.com$
+  owner: ^mdjurfeldt$
+  name: ^Prusa-Firmware$
 - host: ^github\.com$
   owner: ^melchor985$
   name: ^vscodearduino$
@@ -1667,8 +2101,17 @@
   owner: ^merlinepedra$
   name: ^DigistumpArduino$
 - host: ^github\.com$
+  owner: ^metacollin$
+  name: ^HoodLoader2$
+- host: ^github\.com$
+  owner: ^mharizanov$
+  name: ^RFM2Pi$
+- host: ^github\.com$
   owner: ^michpro$
   name: ^cryptboot_GD32$
+- host: ^github\.com$
+  owner: ^microcai$
+  name: ^Arduino-PY32$
 - host: ^github\.com$
   owner: ^mihaigalos$
   name: ^Drivers$
@@ -1697,6 +2140,9 @@
   owner: ^mmakaay$
   name: ^arduino-esp32-unicore-no-mac-crc$
 - host: ^github\.com$
+  owner: ^morganrallen$
+  name: ^macchina.github.io$
+- host: ^github\.com$
   owner: ^morselliluca$
   name: ^Robotica$
 - host: ^github\.com$
@@ -1710,10 +2156,19 @@
   name: ^ILA-AUTO-WIFI-KILLER$
 - host: ^github\.com$
   owner: ^mschlenker$
+  name: ^Arduino-Boards$
+- host: ^github\.com$
+  owner: ^mschlenker$
   name: ^Arduino-Hausautomation$
 - host: ^github\.com$
   owner: ^mschlenker$
+  name: ^CO2-Ampel$
+- host: ^github\.com$
+  owner: ^mschlenker$
   name: ^rasperryun$
+- host: ^github\.com$
+  owner: ^msrd0$
+  name: ^MarlinAnycubicI3$
 - host: ^github\.com$
   owner: ^mtcnxd$
   name: ^arduino-libraries$
@@ -1778,6 +2233,17 @@
   owner: ^npd2020$
   name: ^electronics$
 - host: ^github\.com$
+  owner: ^npdkdev$
+  name: ^ArduinoESP8266$
+- host: ^github\.com$
+  owner: ^nulllaborg$
+  name: ^arduino_nulllab$
+  path: ^package_nulllab_boards_index_zh\.json$
+- host: ^github\.com$
+  owner: ^nulllaborg$
+  name: ^arduino_nulllab$
+  path: ^package_nulllab_lgt_mixly_index\.json$
+- host: ^github\.com$
   owner: ^nulllaborg$
   name: ^nulllab_w80x_arduino$
 - host: ^github\.com$
@@ -1793,6 +2259,12 @@
   owner: ^open-seneca$
   name: ^modular-aq-sensor$
 - host: ^github\.com$
+  owner: ^openenergymonitor$
+  name: ^RFM2Pi$
+- host: ^github\.com$
+  owner: ^openenergymonitor$
+  name: ^open_evse$
+- host: ^github\.com$
   owner: ^openlcb$
   name: ^OpenLCB_Arduino$
 - host: ^github\.com$
@@ -1804,6 +2276,15 @@
 - host: ^github\.com$
   owner: ^orocapangyo$
   name: ^iTurtle$
+- host: ^github\.com$
+  owner: ^oscarcreativeshop$
+  name: ^Assets$
+- host: ^github\.com$
+  owner: ^ovidiu4$
+  name: ^smart-plant-monitor$
+- host: ^github\.com$
+  owner: ^pablo67340$
+  name: ^SwitchME$
 - host: ^github\.com$
   owner: ^palmerr23$
   name: ^STM32F407$
@@ -1821,11 +2302,21 @@
   name: ^DIY-Multiprotocol-TX-Module-Boards$
   path: ^source/package_multi_4in1_board_devel_index\.json$
 - host: ^github\.com$
+  owner: ^pats-drones$
+  name: ^DIY-Multiprotocol-TX-Module$
+- host: ^github\.com$
   owner: ^paulrozhkin$
   name: ^DriverMotorsCortexM3$
 - host: ^github\.com$
   owner: ^pepelax$
   name: ^cookbook$
+- host: ^github\.com$
+  owner: ^per1234$
+  name: ^Ariadne-Bootloader$
+  path: ^$
+- host: ^github\.com$
+  owner: ^per1234$
+  name: ^ReleaseScripts$
 - host: ^github\.com$
   owner: ^petarstamenkovic$
   name: ^WireLess_Embedded_Systems$
@@ -1853,6 +2344,9 @@
   owner: ^pomeroyb$
   name: ^MarlinForBasic$
 - host: ^github\.com$
+  owner: ^pranavb104$
+  name: ^OpenCM9.04$
+- host: ^github\.com$
   owner: ^premjithav$
   name: ^vega-sdk-novnc$
 - host: ^github\.com$
@@ -1870,6 +2364,13 @@
   name: ^arduino_json$
   path: ^package_qnimble_prototype_index\.json$
 - host: ^github\.com$
+  owner: ^qqice$
+  name: ^arduino-nRF5$
+  path: ^docs/package_nRF5_boards_index.json$
+- host: ^github\.com$
+  owner: ^quanliew28$
+  name: ^Arduboy-homemade-package-antbot-arduboy$
+- host: ^github\.com$
   owner: ^racarla96$
   name: ^Arduino_1\.8\.16_Portable_Windows$
 - host: ^github\.com$
@@ -1882,14 +2383,26 @@
   owner: ^rbeiter$
   name: ^arduino-boards-sandbox$
 - host: ^github\.com$
+  owner: ^redelacruz$
+  name: ^ambpro2_arduino$
+- host: ^github\.com$
   owner: ^reedb$
   name: ^ProTrinket$
+- host: ^github\.com$
+  owner: ^rena2019$
+  name: ^nRFMicro-Arduino-Core$
 - host: ^github\.com$
   owner: ^repetier$
   name: ^Repetier-Firmware$
 - host: ^github\.com$
+  owner: ^replaid$
+  name: ^know$
+- host: ^github\.com$
   owner: ^rick3rt$
   name: ^framework-arduino-avr-lgt8f$
+- host: ^github\.com$
+  owner: ^rickbassham$
+  name: ^EthernetWebServer$
 - host: ^github\.com$
   owner: ^riotgibbon$
   name: ^iot-gibbon$
@@ -1899,6 +2412,9 @@
 - host: ^github\.com$
   owner: ^rkarlsba$
   name: ^ymse$
+- host: ^github\.com$
+  owner: ^robb-j$
+  name: ^TeeOnArdu$
 - host: ^github\.com$
   owner: ^robertinant$
   name: ^emt$
@@ -1921,6 +2437,15 @@
   owner: ^ropg$
   name: ^board_experiments$
 - host: ^github\.com$
+  owner: ^rpseng$
+  name: ^D6-arduino-nRF5$
+- host: ^github\.com$
+  owner: ^rsora$
+  name: ^arduino-cli-1$
+- host: ^github\.com$
+  owner: ^rsrdesarrollo$
+  name: ^DigistumpArduino$
+- host: ^github\.com$
   owner: ^rubex01$
   name: ^Tetris-Multiplayer-Arduino$
 - host: ^github\.com$
@@ -1938,8 +2463,17 @@
   owner: ^sabiinsearch$
   name: ^IoT$
 - host: ^github\.com$
+  owner: ^sammothxc$
+  name: ^framework-arduinow60x$
+- host: ^github\.com$
   owner: ^sandeepmistry$
   name: ^arduino-nRF5$
+- host: ^github\.com$
+  owner: ^sandev83$
+  name: ^AlpDroid$
+- host: ^github\.com$
+  owner: ^sandy680$
+  name: ^w80x_arduino$
 - host: ^github\.com$
   owner: ^sanje2v$
   name: ^RGBLEDMatrixDriver$
@@ -1950,11 +2484,26 @@
   owner: ^satshakit$
   name: ^satshakit-128$
 - host: ^github\.com$
+  owner: ^schwabe$
+  name: ^DIY-Multiprotocol-TX-Module$
+- host: ^github\.com$
   owner: ^scirelli$
   name: ^arduino-hardware-attiny$
 - host: ^github\.com$
+  owner: ^scratchyes$
+  name: ^ch55xduino$
+- host: ^github\.com$
+  owner: ^sdrshnptl$
+  name: ^EthernetWebServer$
+- host: ^github\.com$
+  owner: ^sebastiankmilo$
+  name: ^robertalab$
+- host: ^github\.com$
   owner: ^semir-t$
   name: ^attinycore$
+- host: ^github\.com$
+  owner: ^sensebox$
+  name: ^board-support-watterott-fork$
 - host: ^github\.com$
   owner: ^sensebox$
   name: ^senseBoxMCU-core$
@@ -1978,11 +2527,21 @@
   owner: ^silverspringnetworks$
   name: ^developer_program$
 - host: ^github\.com$
+  owner: ^simonedegiacomi$
+  name: ^robertalab$
+- host: ^github\.com$
   owner: ^skeatz$
   name: ^skeatz\.github\.io$
 - host: ^github\.com$
   owner: ^sl1pkn07$
   name: ^Prusa$
+- host: ^github\.com$
+  owner: ^smeshlink$
+  name: ^Arduino-Plus$
+  path: ^hardware/arduino/sam$
+- host: ^github\.com$
+  owner: ^soligen2010$
+  name: ^DIY-Multiprotocol-TX-Module$
 - host: ^github\.com$
   owner: ^somik123$
   name: ^Adafruit_nRF52_Arduino_ProMicro$
@@ -1995,6 +2554,9 @@
 - host: ^github\.com$
   owner: ^sparkfun$
   name: ^Qduino_Mini$
+- host: ^github\.com$
+  owner: ^sparkfun$
+  name: ^SparkFun_Pi_AVR_Programmer_HAT$
 - host: ^github\.com$
   owner: ^spdale$
   name: ^Pololu-3pi-Library$
@@ -2013,8 +2575,14 @@
 - host: ^github\.com$
   owner: ^stanlytw$
 - host: ^github\.com$
+  owner: ^stefan-schlagh$
+  name: ^conware$
+- host: ^github\.com$
   owner: ^stefanvt1981$
   name: ^arduino$
+- host: ^github\.com$
+  owner: ^stickbreaker$
+  name: ^arduino-esp32$
 - host: ^github\.com$
   owner: ^stm32duino$
   name: ^BoardManagerFiles$
@@ -2022,6 +2590,12 @@
 - host: ^github\.com$
   owner: ^strongwong$
   name: ^arduino-bl618$
+- host: ^github\.com$
+  owner: ^sukawatd$
+  name: ^Arduino_Tony$
+- host: ^github\.com$
+  owner: ^swallace23$
+  name: ^framework-arduino-sam$
 - host: ^github\.com$
   owner: ^swapsCAPS$
   name: ^esp32-woohoo$
@@ -2031,6 +2605,9 @@
 - host: ^github\.com$
   owner: ^synaption$
   name: ^Arduino$
+- host: ^github\.com$
+  owner: ^talelas$
+  name: ^Elyssa-dev-board--test-continous-deployement$
 - host: ^github\.com$
   owner: ^tanakamasayuki$
   name: ^host-arduino-core$
@@ -2069,8 +2646,14 @@
   owner: ^technologiescollege$
   name: ^BlocklyArduino_electrified$
 - host: ^github\.com$
+  owner: ^tehfedaykin$
+  name: ^arduino-library$
+- host: ^github\.com$
   owner: ^terminat0r7031$
   name: ^ESP8266-WIFI-HACKING$
+- host: ^github\.com$
+  owner: ^tetov$
+  name: ^arduino-indexes$
 - host: ^github\.com$
   owner: ^tharandtwi$
   name: ^smartHumiditySensor$
@@ -2088,8 +2671,21 @@
   owner: ^tim23x$
   name: ^WebUSB$
 - host: ^github\.com$
+  owner: ^tiwater$
+  name: ^arduino-cli$
+- host: ^github\.com$
+  owner: ^tkellogg$
+  name: ^dueboot$
+- host: ^github\.com$
   owner: ^tobeca$
   name: ^Tobeca2$
+- host: ^github\.com$
+  owner: ^tobozo$
+  name: ^Arduino$
+  path: ^sdk_fix/
+- host: ^github\.com$
+  owner: ^tobozo$
+  name: ^ArduinoCore-avr$
 - host: ^github\.com$
   owner: ^toffentoffen$
   name: ^iotworkshop$
@@ -2100,6 +2696,9 @@
   owner: ^tommyvhb$
   name: ^Marlin_backup$
 - host: ^github\.com$
+  owner: ^tomtor$
+  name: ^Arduino_STM32$
+- host: ^github\.com$
   owner: ^tonigarioliver$
   name: ^Controllino-Mega-with-Shutters_Slider_Counters_AnalogReadings$
 - host: ^github\.com$
@@ -2108,6 +2707,9 @@
 - host: ^github\.com$
   owner: ^totovr$
   name: ^Esp32-Dev$
+- host: ^github\.com$
+  owner: ^treeoftenere$
+  name: ^Arduino_STM32$
 - host: ^github\.com$
   owner: ^troykyo$
   name: ^Arduino$
@@ -2124,11 +2726,23 @@
   owner: ^una1veritas$
   name: ^Arduino-public$
 - host: ^github\.com$
+  owner: ^vaginessa$
+  name: ^ESP8266-WIFI-HACKING$
+- host: ^github\.com$
+  owner: ^varunshankar$
+  name: ^robertalab$
+- host: ^github\.com$
   owner: ^vazhure$
   name: ^loadcellhandbrake$
 - host: ^github\.com$
+  owner: ^vbadri$
+  name: ^ArduCAM_ESP32S_UNO$
+- host: ^github\.com$
   owner: ^vessp$
   name: ^Arduino$
+- host: ^github\.com$
+  owner: ^vivitainc$
+  name: ^custom_cell_boards$
 - host: ^github\.com$
   owner: ^vlast3k$
   name: ^ESP8266Arduino230$
@@ -2148,9 +2762,15 @@
   owner: ^wamisnet$
   name: ^wamisnet\.github\.io$
 - host: ^github\.com$
+  owner: ^wangtt03$
+  name: ^robertalab$
+- host: ^github\.com$
   owner: ^watterott$
   name: ^Wattuino$
   path: ^software/Arduino/package_watterott_index\.json$
+- host: ^github\.com$
+  owner: ^wayneandlayne$
+  name: ^Adafruit_Arduino_Boards$
 - host: ^github\.com$
   owner: ^wbovela$
   name: ^arcade2usb-converter$
@@ -2160,6 +2780,9 @@
 - host: ^github\.com$
   owner: ^wmkouw$
   name: ^CONTACT-AI$
+- host: ^github\.com$
+  owner: ^wormyrocks$
+  name: ^TeeOnArdu$
 - host: ^github\.com$
   owner: ^wpi-bionics-club$
   name: ^dextra$
@@ -2173,6 +2796,9 @@
   owner: ^wzqvip$
   name: ^EHS-Lab-Manage$
 - host: ^github\.com$
+  owner: ^xinux87$
+  name: ^arduino-esp32$
+- host: ^github\.com$
   owner: ^xodio$
   name: ^xod$
 - host: ^github\.com$
@@ -2182,6 +2808,12 @@
   owner: ^xuexi1234567890$
   name: ^xxbj$
 - host: ^github\.com$
+  owner: ^yadox666$
+  name: ^KEYVILBOARD$
+- host: ^github\.com$
+  owner: ^yakaracolombia$
+  name: ^IRGun_Makoto_Yakarizado$
+- host: ^github\.com$
   owner: ^yangchaohong$
   name: ^stc51duino$
 - host: ^github\.com$
@@ -2190,6 +2822,9 @@
 - host: ^github\.com$
   owner: ^yury-sannikov$
   name: ^Sonoff-Tasmota-Sensor$
+- host: ^github\.com$
+  owner: ^zmarcantel$
+  name: ^arduino-cli$
 - host: ^github\.com$
   owner: ^zoubata$
   name: ^Arduino15$
