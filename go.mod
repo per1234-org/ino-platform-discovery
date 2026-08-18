@@ -12,7 +12,7 @@ tool (
 require (
 	github.com/arduino/go-paths-helper v1.14.0
 	github.com/google/go-github/v79 v79.0.0
-	github.com/sirupsen/logrus v1.9.4
+	github.com/sirupsen/logrus v1.10.0
 	github.com/spf13/cobra v1.10.2
 	github.com/stretchr/testify v1.12.0
 	go.yaml.in/yaml/v4 v4.0.0-rc.6
