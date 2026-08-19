@@ -1,5 +1,7 @@
 # See: https://cspell.org/docs/Configuration
 
+ignorePaths:
+  - /exclusions.yml
 language: en
 words:
   - barbranch
