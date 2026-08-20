@@ -45,6 +45,10 @@ The necessary **Licensed** tool can be installed by following [these instruction
 
 An updated cache is also generated whenever the cache is found to be outdated by the "**Check Go Dependencies**" CI workflow and made available for download via the `dep-licenses-cache` [workflow artifact](https://docs.github.com/actions/how-tos/manage-workflow-runs/download-workflow-artifacts).
 
+### Tests
+
+Some of the project's unit tests call functions that perform GitHub API requests. These tests only run if a `GITHUB_TOKEN` environment variable is set. See [the instructions for creating a suitable personal access token](../README.md#b-set-up-git-hub-access-token) in the project readme.
+
 ## Automatic Corrections
 
 Tools are provided to automatically bring the project into compliance with some of the required checks.
