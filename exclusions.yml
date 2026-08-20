@@ -1367,6 +1367,9 @@
   owner: ^carlosperate$
   name: ^ArduinoCore-Template$
 - host: ^github\.com$
+  owner: ^cesarvasco2$
+  name: ^RAK-STM32-RUI$
+- host: ^github\.com$
   owner: ^cetrespeo$
   name: ^ESP32-E-Paper-Weather$
 - host: ^github\.com$
