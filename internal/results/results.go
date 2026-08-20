@@ -3,7 +3,6 @@ package results
 
 import (
 	"slices"
-	"strings"
 
 	"github.com/per1234-org/ino-platform-discovery/internal/catalog"
 	"github.com/per1234-org/ino-platform-discovery/internal/catalog/catalogentry"
@@ -85,16 +84,6 @@ func (results *Type) Prefilter() {
 	filtered := slices.DeleteFunc(
 		*results,
 		func(result result.Type) bool {
-			/*
-				PlatformIO apparently makes a copy of a project's platform dependency and places it under a folder named
-				`Packages_Patches` (e.g., `/libraries/MQTTPubSubClient_Generic/Packages_Patches/adafruit/hardware/nrf52/1.1.0/`).
-				So the presence of this distinctive folder name in the platform path serves as a reliable indicator that the
-				result is not a unique platform.
-			*/
-			if result.Content == content.Platform && strings.Contains(result.Path, "/Packages_Patches/") {
-				return true
-			}
-
 			/*
 				The platform search query uses the `filename` qualifier to search for files named `boards.txt`. This qualifier
 				also matches against filenames that are a substring match (e.g., a file named `foo.boards.txt` matches against
