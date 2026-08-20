@@ -3,6 +3,13 @@
 - host: .*
   owner: .*
   name: .*
+  # PlatformIO apparently makes a copy of a project's platform dependency and places it under a folder named
+  # `Packages_Patches` (e.g., `/libraries/MQTTPubSubClient_Generic/Packages_Patches/adafruit/hardware/nrf52/1.1.0/`).
+  # So the presence of this distinctive folder name in a platform path serves as a reliable indicator it is not novel.
+  path: /Packages_Patches/
+- host: .*
+  owner: .*
+  name: .*
   path: platformio
 - host: .*
   owner: .*
