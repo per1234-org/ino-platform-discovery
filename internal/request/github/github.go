@@ -21,6 +21,7 @@ func HandleRateLimiting(err error) error {
 		resetTime := primaryRateLimitErr.Rate.Reset.Add(resetOffset)
 		fmt.Printf("Reached primary GitHub API rate limit. Waiting until it resets at %s.\n", resetTime)
 		time.Sleep(time.Until(resetTime))
+		fmt.Println("Rate limit has now reset. Resuming.")
 
 		return nil
 	}
@@ -32,6 +33,7 @@ func HandleRateLimiting(err error) error {
 			time.Now().Add(*secondaryRateLimitErr.RetryAfter),
 		)
 		time.Sleep(*secondaryRateLimitErr.RetryAfter)
+		fmt.Println("Rate limit has now reset. Resuming.")
 
 		return nil
 	}
