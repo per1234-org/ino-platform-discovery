@@ -1003,6 +1003,14 @@
   owner: ^TanawatJukmongkol$
   name: ^RAI-line-following$
 - host: ^github\.com$
+  owner: ^TeddyWiz$
+  name: ^teddywiz.github.io$
+  path: ^files/arduino/package_WizFi360_index\.json$
+- host: ^github\.com$
+  owner: ^TeddyWiz$
+  name: ^teddywiz.github.io$
+  path: ^files/arduino/package_wmcom_index\.json$
+- host: ^github\.com$
   owner: ^Tedezed$
   name: ^Arduino$
 - host: ^github\.com$
