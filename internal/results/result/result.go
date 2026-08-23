@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/per1234-org/ino-platform-discovery/internal/catalog"
 	"github.com/per1234-org/ino-platform-discovery/internal/catalog/catalogcolumn"
 	"github.com/per1234-org/ino-platform-discovery/internal/catalog/catalogentry"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/repo"
@@ -30,6 +31,18 @@ type Type struct {
 	RepositoryName string
 	// RepositoryURL is the URL of the result's repository.
 	RepositoryURL string
+}
+
+// IsDuplicate returns whether the given result is already present in the catalog.
+func (result Type) IsDuplicate(catalog catalog.Type) bool {
+	resultEntry := result.ToCatalogEntry()
+	for _, catalogEntry := range catalog {
+		if catalogentry.IsDuplicate(resultEntry, catalogEntry) {
+			return true
+		}
+	}
+
+	return false
 }
 
 // ToCatalogEntry returns the given result in the catalog entry data format.
