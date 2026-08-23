@@ -24,13 +24,13 @@ import (
 
 // Search searches for GitHub repositories that contain a package index and/or platform.
 func Search() (results.Type, error) {
-	feedback.Println("Searching GitHub for package indexes in non-fork repositories...")
+	feedback.Phase("Searching GitHub for package indexes in non-fork repositories")
 	results, err := indexes(false)
 	if err != nil {
 		return nil, err
 	}
 
-	feedback.Println("Searching GitHub for package indexes in fork repositories...")
+	feedback.Phase("Searching GitHub for package indexes in fork repositories")
 	additionalResults, err := indexes(true)
 	if err != nil {
 		return nil, err
@@ -44,7 +44,7 @@ func Search() (results.Type, error) {
 	*/
 	results = append(results, additionalResults...)
 
-	feedback.Println("Searching GitHub for platforms in non-fork repositories...")
+	feedback.Phase("Searching GitHub for platforms in non-fork repositories")
 	additionalResults, err = platforms(false)
 	if err != nil {
 		return nil, err
@@ -52,7 +52,7 @@ func Search() (results.Type, error) {
 
 	results = append(results, additionalResults...)
 
-	feedback.Println("Searching GitHub for platforms in fork repositories...")
+	feedback.Phase("Searching GitHub for platforms in fork repositories")
 	additionalResults, err = platforms(true)
 	if err != nil {
 		return nil, err
@@ -89,13 +89,17 @@ func indexes(forks bool) (results.Type, error) {
 		return results, err
 	}
 
-	if len(searchResults) == 0 {
+	searchResultCount := len(searchResults)
+
+	if searchResultCount == 0 {
 		// The raw search will always return results, so this is an "impossible" outcome that indicates a bug in the code.
 		panic("no results from index search")
 	}
 
-	feedback.Println("Validating package index search results...")
-	for _, searchResult := range searchResults {
+	feedback.Phase("Validating package index search results")
+	for searchResultIndex, searchResult := range searchResults {
+		feedback.Progress(searchResultIndex+1, searchResultCount)
+
 		/*
 			The code search query syntax doesn't provide any mechanism for specifying an exact filename format, so might
 			return invalid results which can be identified by having a noncompliant filename.
@@ -248,6 +252,7 @@ func search(query string) ([]*gogithub.CodeResult, error) {
 	}
 
 	logrus.Tracef("Making GitHub API /search/code endpoint request for %s", query)
+	feedback.Progress(0, 1) // Ensure progress indicator will be displayed immediately.
 	for {
 		logrus.Tracef("Requesting results page %v", requestOptions.Page)
 		result, response, err := clients.Clients.GitHub.Search.Code(
@@ -269,6 +274,14 @@ func search(query string) ([]*gogithub.CodeResult, error) {
 
 		// Request was successful.
 		results = append(results, result.CodeResults...)
+
+		/*
+			The GitHub code search API returns a maximum of 1000 results:
+			https://docs.github.com/en/rest/search/search?apiVersion=2026-03-10#about-search
+			`result.Total` is the total number of results that were found, which may be more than the obtainable 1000.
+		*/
+		resultCount := min(*result.Total, 1000)
+		feedback.Progress(len(results), resultCount)
 
 		// Handle pagination.
 		if response.NextPage == 0 {

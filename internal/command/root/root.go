@@ -60,7 +60,7 @@ func Run(command *cobra.Command, _ []string) {
 	searchResults.Exclude(exclusions)
 
 	// Obtain additional data for each of the results.
-	feedback.Println("Obtaining supplemental data for discoveries...")
+	feedback.Phase("Obtaining supplemental data for discoveries")
 	if err := request.Supplement(&searchResults); err != nil {
 		feedback.Error(fmt.Errorf("while supplementing results: %s", err))
 		os.Exit(1)
@@ -74,6 +74,7 @@ func Run(command *cobra.Command, _ []string) {
 		This must be performed after supplementing the results, as the branch name is one of the items compared to determine
 		whether a result is a duplicate, and that is added by supplementation.
 	*/
+	feedback.Phase("Removing duplicates")
 	searchResults.Deduplicate(catalog)
 
 	if len(searchResults) == 0 {

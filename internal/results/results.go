@@ -7,6 +7,7 @@ import (
 	"github.com/per1234-org/ino-platform-discovery/internal/catalog"
 	"github.com/per1234-org/ino-platform-discovery/internal/data"
 	"github.com/per1234-org/ino-platform-discovery/internal/exclusions"
+	"github.com/per1234-org/ino-platform-discovery/internal/feedback"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/repo"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/result"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/result/content"
@@ -19,7 +20,10 @@ type Type []result.Type
 func (results *Type) Deduplicate(catalog catalog.Type) {
 	deduplicated := Type{}
 
-	for _, candidateResult := range *results {
+	resultCount := len(*results)
+	for resultIndex, candidateResult := range *results {
+		feedback.Progress(resultIndex+1, resultCount)
+
 		if !candidateResult.IsDuplicate(catalog) {
 			deduplicated = append(deduplicated, candidateResult)
 		}
