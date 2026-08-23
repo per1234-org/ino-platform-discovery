@@ -3,10 +3,10 @@ package github
 
 import (
 	"errors"
-	"fmt"
 	"time"
 
 	"github.com/google/go-github/v79/github"
+	"github.com/per1234-org/ino-platform-discovery/internal/feedback"
 	"github.com/sirupsen/logrus"
 )
 
@@ -19,21 +19,21 @@ func HandleRateLimiting(err error) error {
 		resetOffset := time.Second * 3
 
 		resetTime := primaryRateLimitErr.Rate.Reset.Add(resetOffset)
-		fmt.Printf("Reached primary GitHub API rate limit. Waiting until it resets at %s.\n", resetTime)
+		feedback.Printf("Reached primary GitHub API rate limit. Waiting until it resets at %s.\n", resetTime)
 		time.Sleep(time.Until(resetTime))
-		fmt.Println("Rate limit has now reset. Resuming.")
+		feedback.Println("Rate limit has now reset. Resuming.")
 
 		return nil
 	}
 
 	var secondaryRateLimitErr *github.AbuseRateLimitError
 	if errors.As(err, &secondaryRateLimitErr) {
-		fmt.Printf(
+		feedback.Printf(
 			"Reached secondary GitHub API rate limit. Waiting until it resets at %s.\n",
 			time.Now().Add(*secondaryRateLimitErr.RetryAfter),
 		)
 		time.Sleep(*secondaryRateLimitErr.RetryAfter)
-		fmt.Println("Rate limit has now reset. Resuming.")
+		feedback.Println("Rate limit has now reset. Resuming.")
 
 		return nil
 	}

@@ -60,7 +60,7 @@ func Run(command *cobra.Command, _ []string) {
 	searchResults.Exclude(exclusions)
 
 	// Obtain additional data for each of the results.
-	fmt.Println("Obtaining supplemental data for discoveries...")
+	feedback.Println("Obtaining supplemental data for discoveries...")
 	if err := request.Supplement(&searchResults); err != nil {
 		feedback.Error(fmt.Errorf("while supplementing results: %s", err))
 		os.Exit(1)
@@ -95,7 +95,7 @@ func Run(command *cobra.Command, _ []string) {
 		os.Exit(1)
 	}
 
-	fmt.Printf("Discovery finished successfully. Results saved to: %s\n", outputArg)
+	feedback.Printf("Discovery finished successfully. Results saved to: %s\n", outputArg)
 }
 
 // validateUserInput validates the user input for the command.

@@ -12,6 +12,7 @@ import (
 
 	gogithub "github.com/google/go-github/v79/github"
 	"github.com/per1234-org/ino-platform-discovery/internal/data"
+	"github.com/per1234-org/ino-platform-discovery/internal/feedback"
 	"github.com/per1234-org/ino-platform-discovery/internal/request/clients"
 	"github.com/per1234-org/ino-platform-discovery/internal/request/github"
 	"github.com/per1234-org/ino-platform-discovery/internal/results"
@@ -23,13 +24,13 @@ import (
 
 // Search searches for GitHub repositories that contain a package index and/or platform.
 func Search() (results.Type, error) {
-	fmt.Println("Searching GitHub for package indexes in non-fork repositories...")
+	feedback.Println("Searching GitHub for package indexes in non-fork repositories...")
 	results, err := indexes(false)
 	if err != nil {
 		return nil, err
 	}
 
-	fmt.Println("Searching GitHub for package indexes in fork repositories...")
+	feedback.Println("Searching GitHub for package indexes in fork repositories...")
 	additionalResults, err := indexes(true)
 	if err != nil {
 		return nil, err
@@ -43,7 +44,7 @@ func Search() (results.Type, error) {
 	*/
 	results = append(results, additionalResults...)
 
-	fmt.Println("Searching GitHub for platforms in non-fork repositories...")
+	feedback.Println("Searching GitHub for platforms in non-fork repositories...")
 	additionalResults, err = platforms(false)
 	if err != nil {
 		return nil, err
@@ -51,7 +52,7 @@ func Search() (results.Type, error) {
 
 	results = append(results, additionalResults...)
 
-	fmt.Println("Searching GitHub for platforms in fork repositories...")
+	feedback.Println("Searching GitHub for platforms in fork repositories...")
 	additionalResults, err = platforms(true)
 	if err != nil {
 		return nil, err
@@ -93,7 +94,7 @@ func indexes(forks bool) (results.Type, error) {
 		panic("no results from index search")
 	}
 
-	fmt.Println("Validating package index search results...")
+	feedback.Println("Validating package index search results...")
 	for _, searchResult := range searchResults {
 		/*
 			The code search query syntax doesn't provide any mechanism for specifying an exact filename format, so might
