@@ -2,6 +2,7 @@
 package request
 
 import (
+	"github.com/per1234-org/ino-platform-discovery/internal/feedback"
 	"github.com/per1234-org/ino-platform-discovery/internal/request/github/ghrepo"
 	"github.com/per1234-org/ino-platform-discovery/internal/request/github/ghsearch"
 	"github.com/per1234-org/ino-platform-discovery/internal/results"
@@ -17,7 +18,10 @@ func Search() (results.Type, error) {
 // Supplement requests additional data and uses it to supplement the passed results.
 func Supplement(results *results.Type) error {
 	repositoriesData := make(map[string](resultsrepo.Type))
+	resultCount := len(*results)
 	for resultIndex, result := range *results {
+		feedback.Progress(resultIndex+1, resultCount)
+
 		// A repository may contain multiple platforms or indexes. In this case, it will be present multiple times in the
 		// results. The repository data API request should only be made once for each repository in the results.
 		repositoryData, populated := repositoriesData[result.RepositoryURL]

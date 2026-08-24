@@ -5,9 +5,9 @@ import (
 	"slices"
 
 	"github.com/per1234-org/ino-platform-discovery/internal/catalog"
-	"github.com/per1234-org/ino-platform-discovery/internal/catalog/catalogentry"
 	"github.com/per1234-org/ino-platform-discovery/internal/data"
 	"github.com/per1234-org/ino-platform-discovery/internal/exclusions"
+	"github.com/per1234-org/ino-platform-discovery/internal/feedback"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/repo"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/result"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/result/content"
@@ -18,21 +18,16 @@ type Type []result.Type
 
 // Deduplicate removes results that are already present in the catalog.
 func (results *Type) Deduplicate(catalog catalog.Type) {
-	deduplicated := slices.DeleteFunc(
-		*results,
-		func(result result.Type) bool {
-			resultEntry := result.ToCatalogEntry()
-			for _, catalogEntry := range catalog {
-				if catalogentry.IsDuplicate(resultEntry, catalogEntry) {
-					// Result is duplicate, delete.
-					return true
-				}
-			}
+	deduplicated := Type{}
 
-			// Result is novel, retain.
-			return false
-		},
-	)
+	resultCount := len(*results)
+	for resultIndex, candidateResult := range *results {
+		feedback.Progress(resultIndex+1, resultCount)
+
+		if !candidateResult.IsDuplicate(catalog) {
+			deduplicated = append(deduplicated, candidateResult)
+		}
+	}
 
 	*results = deduplicated
 }

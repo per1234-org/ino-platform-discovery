@@ -3,11 +3,79 @@ package result
 import (
 	"testing"
 
+	"github.com/per1234-org/ino-platform-discovery/internal/catalog"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/repo"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/result/content"
 	"github.com/per1234-org/ino-platform-discovery/internal/results/result/host"
 	"github.com/stretchr/testify/assert"
 )
+
+// TestIsDuplicate provides coverage for the `(Type) IsDuplicate` method.
+func TestIsDuplicate(t *testing.T) {
+	theResult := Type{
+		Content: content.Platform,
+		Path:    "foo-platform-path/boards.txt",
+		RepositoryData: repo.Type{
+			DefaultBranch: "foo-branch",
+		},
+		RepositoryURL: "https://example.com/foo-owner/foo-repo",
+	}
+
+	theCatalog := catalog.Type{
+		{
+			"",
+			"",
+			"",
+			"https://example.com/bar-owner/bar-repo",
+			"",
+			"/bar-platform-path/",
+			"bar-branch",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+		},
+		{
+			"",
+			"",
+			"",
+			"https://example.com/foo-owner/foo-repo",
+			"",
+			"/foo-platform-path/",
+			"foo-branch",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+		},
+	}
+
+	assert.True(t, theResult.IsDuplicate(theCatalog), "It should return true when matching catalog entry present")
+
+	theCatalog = catalog.Type{
+		{
+			"",
+			"",
+			"",
+			"https://example.com/bar-owner/bar-repo",
+			"",
+			"/bar-platform-path/",
+			"bar-branch",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+		},
+	}
+
+	assert.False(t, theResult.IsDuplicate(theCatalog), "It should return false when no matching catalog entry present")
+}
 
 // TestTypeToCatalogEntry provides coverage for the `(*Type) ToCatalogEntry` method.
 func TestTypeToCatalogEntry(t *testing.T) {
