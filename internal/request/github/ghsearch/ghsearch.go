@@ -24,13 +24,11 @@ import (
 
 // Search searches for GitHub repositories that contain a package index and/or platform.
 func Search() (results.Type, error) {
-	feedback.Phase("Searching GitHub for package indexes in non-fork repositories")
 	results, err := indexes(false)
 	if err != nil {
 		return nil, err
 	}
 
-	feedback.Phase("Searching GitHub for package indexes in fork repositories")
 	additionalResults, err := indexes(true)
 	if err != nil {
 		return nil, err
@@ -44,7 +42,6 @@ func Search() (results.Type, error) {
 	*/
 	results = append(results, additionalResults...)
 
-	feedback.Phase("Searching GitHub for platforms in non-fork repositories")
 	additionalResults, err = platforms(false)
 	if err != nil {
 		return nil, err
@@ -52,7 +49,6 @@ func Search() (results.Type, error) {
 
 	results = append(results, additionalResults...)
 
-	feedback.Phase("Searching GitHub for platforms in fork repositories")
 	additionalResults, err = platforms(true)
 	if err != nil {
 		return nil, err
@@ -65,6 +61,27 @@ func Search() (results.Type, error) {
 
 // indexes searches for package indexes.
 func indexes(forks bool) (results.Type, error) {
+	/*
+		The GitHub code search API returns a maximum of 1000 results:
+		https://docs.github.com/en/rest/search/search?apiVersion=2026-03-10#about-search
+		In order to obtain all results, it is necessary to make multiple requests, each of which is configured to return a
+		unique set of conservatively less than 1000 results. This is accomplished by using `size` qualifiers for distinct
+		ranges. Suitable ranges were determined experimentally.
+	*/
+	sizeBins := map[bool][]string{
+		true: {
+			"*..2500",
+			"2501..12500",
+			"12501..*",
+		},
+		false: {
+			"*..1700",
+			"1701..7500",
+			"7501..27000",
+			"27001..*",
+		},
+	}
+
 	results := results.Type{}
 	var err error
 
@@ -84,9 +101,25 @@ func indexes(forks bool) (results.Type, error) {
 		*/
 		query = fmt.Sprintf("fork:true %s", query)
 	}
-	searchResults, err := search(query)
-	if err != nil {
-		return results, err
+
+	searchResults := []*gogithub.CodeResult{}
+	for sizeBinIndex, sizeBin := range sizeBins[forks] {
+		forkMessageComponent := ""
+		if forks {
+			forkMessageComponent = "fork"
+		} else {
+			forkMessageComponent = "non-fork"
+		}
+		feedback.Phase(fmt.Sprintf("Searching GitHub for package indexes in %s repositories (query %d/%d)", forkMessageComponent, sizeBinIndex+1, len(sizeBins[forks])))
+
+		binnedQuery := fmt.Sprintf("size:%s %s", sizeBin, query)
+
+		binResults, err := search(binnedQuery)
+		if err != nil {
+			return results, err
+		}
+
+		searchResults = append(searchResults, binResults...)
 	}
 
 	searchResultCount := len(searchResults)
@@ -206,6 +239,29 @@ func indexes(forks bool) (results.Type, error) {
 
 // platforms searches for platforms.
 func platforms(forks bool) (results.Type, error) {
+	sizeBins := map[bool][]string{
+		true: {
+			"*..2300",
+			"2301..13000",
+			"13001..26050",
+			"26051..82000",
+			"82001..*",
+		},
+		false: {
+			"*..1100",
+			"1101..2350",
+			"2351..4300",
+			"4301..15000",
+			"15001..23350",
+			"23351..23750",
+			"23751..26050",
+			"26051..32450",
+			"32451..72500",
+			"72500..90400",
+			"90400..*",
+		},
+	}
+
 	results := results.Type{}
 
 	// See: https://docs.github.com/search-github/searching-on-github/searching-code
@@ -213,9 +269,25 @@ func platforms(forks bool) (results.Type, error) {
 	if forks {
 		query = fmt.Sprintf("fork:true %s", query)
 	}
-	searchResults, err := search(query)
-	if err != nil {
-		return results, err
+
+	searchResults := []*gogithub.CodeResult{}
+	for sizeBinIndex, sizeBin := range sizeBins[forks] {
+		forkMessageComponent := ""
+		if forks {
+			forkMessageComponent = "fork"
+		} else {
+			forkMessageComponent = "non-fork"
+		}
+		feedback.Phase(fmt.Sprintf("Searching GitHub for platforms in %s repositories (query %d/%d)", forkMessageComponent, sizeBinIndex+1, len(sizeBins[forks])))
+
+		binnedQuery := fmt.Sprintf("size:%s %s", sizeBin, query)
+
+		binResults, err := search(binnedQuery)
+		if err != nil {
+			return results, err
+		}
+
+		searchResults = append(searchResults, binResults...)
 	}
 
 	for _, searchResult := range searchResults {
