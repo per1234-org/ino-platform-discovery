@@ -16,7 +16,7 @@ func Error(message error) {
 
 // Phase prints a phase indicator.
 func Phase(message string) {
-	total := 8
+	total := 29
 	currentPhase++
 	if currentPhase > total {
 		panic("incorrect total phase count")
