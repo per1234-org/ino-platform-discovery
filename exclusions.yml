@@ -28,6 +28,9 @@
 - host: ^.+$
   owner: ^.+$
   name: ^.*[Bb]lockly.*$
+- host: ^.+$
+  owner: ^.+$
+  name: ^.*[Tt]asmota.*$
 - host: ^github\.com$
   owner: ^0hotpotman0$
   name: ^BLE_52840_Core$
@@ -317,9 +320,6 @@
 - host: ^github\.com$
   owner: ^BrownSpaceEngineering$
   name: ^ArduinoCore-samd$
-- host: ^github\.com$
-  owner: ^CadConsultants$
-  name: ^Tasmota$
 - host: ^github\.com$
   owner: ^CannotLoadName$
   name: ^CannotLoadName\.github\.io$
@@ -1555,9 +1555,6 @@
   owner: ^arendst$
   name: ^Sonoff-MQTT-OTA-Arduino$
 - host: ^github\.com$
-  owner: ^arendst$
-  name: ^Tasmota-Playground$
-- host: ^github\.com$
   owner: ^argoso$
   name: ^sunray-public$
 - host: ^github\.com$
@@ -1805,9 +1802,6 @@
 - host: ^github\.com$
   owner: ^chipsi007$
   name: ^LittleArduinoProjects$
-- host: ^github\.com$
-  owner: ^chipsi007$
-  name: ^Sonoff-Tasmota$
 - host: ^github\.com$
   owner: ^choukitty912$
   name: ^Petoi$
@@ -2171,9 +2165,6 @@
 - host: ^github\.com$
   owner: ^gimasi$
   name: ^TUINO_ZERO_96$
-- host: ^github\.com$
-  owner: ^gnkarn$
-  name: ^Sonoff-Tasmota-5\.10\.0$
 - host: ^github\.com$
   owner: ^goandreus$
   name: ^arduino-go$
@@ -3075,9 +3066,6 @@
   owner: ^robertinant$
   name: ^energia-package-index$
 - host: ^github\.com$
-  owner: ^roblad$
-  name: ^Sonoff-Tasmota$
-- host: ^github\.com$
   owner: ^robsonos$
   name: ^arduino-esp32$
 - host: ^github\.com$
@@ -3291,9 +3279,6 @@
 - host: ^github\.com$
   owner: ^synthmusic$
   name: ^keebnonsense$
-- host: ^github\.com$
-  owner: ^t0ny-peng$
-  name: ^Sonoff-Tasmota$
 - host: ^github\.com$
   owner: ^talelas$
   name: ^Elyssa-dev-board--test-continous-deployement$
@@ -3538,9 +3523,6 @@
 - host: ^github\.com$
   owner: ^yuan910715$
   name: ^Xiaomi_Scooter_HUD$
-- host: ^github\.com$
-  owner: ^yury-sannikov$
-  name: ^Sonoff-Tasmota-Sensor$
 - host: ^github\.com$
   owner: ^zhuangsh0713$
   name: ^CS110$
