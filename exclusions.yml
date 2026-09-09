@@ -25,6 +25,9 @@
 - host: .*
   owner: .*
   name: platformio
+- host: ^.+$
+  owner: ^.+$
+  name: ^.*[Bb]lockly.*$
 - host: ^github\.com$
   owner: ^0hotpotman0$
   name: ^BLE_52840_Core$
@@ -309,9 +312,6 @@
   owner: ^BirdAndEarth$
   name: ^Arduino$
 - host: ^github\.com$
-  owner: ^BlocklyDuino$
-  name: ^BlocklyDuino2Electron$
-- host: ^github\.com$
   owner: ^BohdanZatserkovnyi$
   name: ^Bachelor-s-Diploma$
 - host: ^github\.com$
@@ -332,9 +332,6 @@
 - host: ^github\.com$
   owner: ^CheeseAnt$
   name: ^Gouda$
-- host: ^github\.com$
-  owner: ^ChenWeiLiu$
-  name: ^BlocklyduinoF2_Mac$
 - host: ^github\.com$
   owner: ^CircuitMess$
   name: ^CircuitMess-Ringo-Arduino-packages$
@@ -664,9 +661,6 @@
   owner: ^JimmyTai$
   name: ^esp8266-AWSIoT$
 - host: ^github\.com$
-  owner: ^JoelHanerth$
-  name: ^BlocklyArduino_AIO$
-- host: ^github\.com$
   owner: ^JohnDVos$
   name: ^Computer-Science-Brighton-Uni$
 - host: ^github\.com$
@@ -890,9 +884,6 @@
 - host: ^github\.com$
   owner: ^OpenSwift$
   name: ^nRFMicro-Arduino-Core$
-- host: ^github\.com$
-  owner: ^OttoDIY$
-  name: ^blocklyLinux$
 - host: ^github\.com$
   owner: ^PUT-Motorsport$
   name: ^PUTM_EV_TELEMETRY_SOFTWARE_2022$
@@ -1295,9 +1286,6 @@
   owner: ^Zaph-x$
   name: ^PseudoIno-lang$
 - host: ^github\.com$
-  owner: ^ZeroWorkshop$
-  name: ^ZeroBlocklyLite$
-- host: ^github\.com$
   owner: ^ZiTAL$
   name: ^arduino$
 - host: ^github\.com$
@@ -1369,12 +1357,6 @@
 - host: ^github\.com$
   owner: ^agafford-ST$
   name: ^platfromTest$
-- host: ^github\.com$
-  owner: ^agomezgar$
-  name: ^masayloBlockly$
-- host: ^github\.com$
-  owner: ^agomezgar$
-  name: ^masayloBlocklyLinux$
 - host: ^github\.com$
   owner: ^aichi$
   name: ^Arduino-2$
@@ -1910,9 +1892,6 @@
 - host: ^github\.com$
   owner: ^darkomen$
   name: ^Arduino$
-- host: ^github\.com$
-  owner: ^darrintw$
-  name: ^ardublockly-tw$
 - host: ^github\.com$
   owner: ^darthm0e$
   name: ^esp32-101$
@@ -2682,9 +2661,6 @@
   owner: ^mcgurk$
   name: ^Arduino-USB-HID-RetroJoystickAdapter$
 - host: ^github\.com$
-  owner: ^mcvdmvs$
-  name: ^blocklyLinux$
-- host: ^github\.com$
   owner: ^mdevaev$
   name: ^arduino-cli$
 - host: ^github\.com$
@@ -3352,15 +3328,6 @@
 - host: ^github\.com$
   owner: ^technologiescollege$
   name: ^ArduinoTechnoEduc$
-- host: ^github\.com$
-  owner: ^technologiescollege$
-  name: ^BlocklyArduino_AIO$
-- host: ^github\.com$
-  owner: ^technologiescollege$
-  name: ^BlocklyArduino_AIO_deprecated$
-- host: ^github\.com$
-  owner: ^technologiescollege$
-  name: ^BlocklyArduino_electrified$
 - host: ^github\.com$
   owner: ^tehfedaykin$
   name: ^arduino-library$
